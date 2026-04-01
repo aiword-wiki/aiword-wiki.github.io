@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Wiki</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #F3F0EB;
+    color: #4a4540;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  header {
+    position: sticky; top:0; z-index:50;
+    background: rgba(243,240,235,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #ddd8d0;
+    padding: 16px 32px;
+    display: flex; align-items: center; gap: 24px;
+  }
+
+  .logo { font-size: 20px; font-weight: 900; color: #C4613A; letter-spacing: -0.5px; flex-shrink:0; }
+
+  input {
+    flex:1; max-width: 360px;
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #d5d0c8;
+    border-radius: 8px;
+    color: #2d2a26;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+  }
+  input::placeholder { color: #aaa598; }
+  input:focus { border-color: #C4613A; }
+
+  .filters {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto;
+  }
+
+  .f {
+    padding: 5px 14px;
+    background: transparent;
+    border: 1px solid #d5d0c8;
+    border-radius: 20px;
+    color: #8a8478;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .f:hover { border-color: #b0a898; color: #5a5550; }
+  .f.on { border-color: #C4613A; color: #C4613A; background: rgba(196,97,58,0.06); }
+
+  /* Grid */
+  .grid {
+    max-width: 1400px;
+    margin: 32px auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  /* Card */
+  .card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e4dfd8;
+    border-radius: 14px;
+    padding: 24px;
+    min-height: 200px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card:hover {
+    background: #fdfcfa;
+    border-color: #c8c0b8;
+  }
+
+  .card-cat {
+    position: absolute;
+    top: 16px; left: 20px;
+    font-size: 11px;
+    color: #a09888;
+  }
+
+  .card-heat {
+    position: absolute;
+    top: 14px; right: 18px;
+    font-size: 13px;
+  }
+
+  .card-keyword {
+    font-size: 24px;
+    font-weight: 900;
+    color: #2d2a26;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    text-align: center;
+  }
+
+  /* Heat dots */
+  .card-heat {
+    position: absolute;
+    top: 16px; right: 18px;
+    display: flex;
+    gap: 4px;
+  }
+
+  .heat-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #ddd8d0;
+  }
+
+  .heat-dot.on { background: #C4613A; }
+
+  /* No results */
+  .empty {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 100px 20px;
+    color: #a09888;
+    font-size: 15px;
+  }
+
+  /* Modal */
+  .overlay {
+    display:none; position:fixed; inset:0;
+    background: rgba(40,36,32,0.4);
+    backdrop-filter: blur(10px);
+    z-index:100;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    overflow-y: auto;
+  }
+  .overlay.open { display:flex; }
+
+  .modal {
+    background: #fff;
+    border: 1px solid #e4dfd8;
+    border-radius: 16px;
+    max-width: 640px;
+    width: 100%;
+    padding: 36px;
+    animation: up 0.15s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+
+  @keyframes up { from { opacity:0; transform:translateY(12px); } }
+
+  .modal-close {
+    float: right;
+    background: none; border: none;
+    color: #aaa598; font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .modal-close:hover { color: #6a6560; }
+
+  .modal-cat { font-size: 12px; color: #a09888; margin-bottom: 8px; }
+  .modal-title { font-size: 30px; font-weight: 900; color: #2d2a26; margin-bottom: 4px; letter-spacing: -0.5px; }
+  .modal-en { font-size: 13px; color: #a09888; margin-bottom: 16px; }
+
+  .modal-heat {
+    display: flex; align-items: center; gap: 6px;
+    margin-bottom: 20px; padding-bottom: 20px;
+    border-bottom: 1px solid #e8e4de;
+    font-size: 13px; color: #8a8478;
+  }
+
+  .modal-heat .pips { display:flex; gap:3px; }
+  .modal-heat .pip { width:18px; height:5px; border-radius:3px; background:#e8e4de; }
+  .modal-heat .pip.on { background: #C4613A; }
+
+  .modal-body p { font-size: 14px; color: #5a5550; line-height: 1.8; margin-bottom: 12px; }
+  .modal-body h4 { font-size: 14px; font-weight: 700; color: #2d2a26; margin: 20px 0 8px; }
+  .modal-body h4:first-child { margin-top: 0; }
+  .modal-body ul { padding-left: 18px; margin: 6px 0; }
+  .modal-body li { font-size: 13.5px; color: #6a6560; line-height: 1.7; margin-bottom: 3px; }
+  .modal-body code { font-family: monospace; background: rgba(196,97,58,0.08); padding: 1px 5px; border-radius: 3px; font-size: 12px; color: #C4613A; }
+  .modal-body pre { background: #F3F0EB; border: 1px solid #e4dfd8; border-radius: 8px; padding: 14px; overflow-x:auto; margin: 10px 0; }
+  .modal-body pre code { background:none; padding:0; font-size:12.5px; color:#4a4540; }
+
+  .modal-related { margin-top: 24px; padding-top: 20px; border-top: 1px solid #e8e4de; }
+  .modal-related h4 { margin-top: 0; }
+  .rel-links { display:flex; flex-wrap:wrap; gap:8px; }
+  .rel-link { font-size:13px; padding:6px 14px; border-radius:8px; background:#F3F0EB; color:#6a6560; cursor:pointer; border:1px solid #e4dfd8; }
+  .rel-link:hover { background:#e8e4de; color:#2d2a26; }
+
+  .modal-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:20px; }
+  .modal-tags span { font-size:11px; padding:3px 9px; border-radius:12px; background:#F3F0EB; color:#8a8478; cursor:pointer; }
+  .modal-tags span:hover { color:#C4613A; }
+
+  @media (max-width:700px) {
+    header { flex-wrap:wrap; padding:12px 16px; }
+    input { max-width:100%; order:10; flex-basis:100%; }
+    .filters { order:11; width:100%; }
+    .grid { padding:0 12px; margin:16px auto; grid-template-columns:1fr; }
+    .card { min-height:160px; padding:24px 20px; }
+    .card-keyword { font-size:22px; }
+    .modal { padding:24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">AI Wiki</div>
+  <input type="text" id="q" placeholder="검색..." autocomplete="off">
+  <div class="filters" id="filters"></div>
+</header>
+
+<div class="grid" id="grid"></div>
+
+<div class="overlay" id="ov">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+const CATS = {
+  prompting:'프롬프팅', model:'모델', tooling:'도구',
+  data:'데이터', agent:'에이전트', infra:'인프라',
+  safety:'안전', application:'응용'
+};
+
+const HEAT = ['','Cool','Mild','Warm','Hot','Blazing'];
+
+const D = [
+  {id:'harness-engineering',t:'하네스 엔지니어링',en:'Harness Engineering',c:'prompting',h:5,tags:['시스템설계','오케스트레이션'],
+   sum:'AI 모델을 감싸는 전체 시스템 설계. 시스템 프롬프트, 도구 연결, 메모리, 에러 처리 등 포함.',
+   det:`<h4>개요</h4><p>프롬프트 엔지니어링의 상위 개념. "무엇을 말할까"가 아닌 "전체 시스템을 어떻게 구성할까"에 집중합니다. GeekNews 주간 1위 주제.</p><h4>핵심 구성</h4><ul><li>시스템 프롬프트 설계</li><li>도구 연결(Tool Binding)</li><li>메모리 시스템</li><li>오케스트레이션</li><li>가드레일 / 에러 처리</li></ul>`,
+   rel:['system-prompt','mcp','tool-use','agent-framework']},
+
+  {id:'mcp',t:'MCP',en:'Model Context Protocol',c:'tooling',h:5,tags:['프로토콜','Anthropic','도구연결'],
+   sum:'AI와 외부 도구/데이터를 연결하는 개방형 프로토콜. "AI의 USB-C".',
+   det:`<h4>구성 요소</h4><ul><li><strong>MCP Server</strong>: 도구/데이터 제공</li><li><strong>MCP Client</strong>: 모델 측 연결</li><li><strong>Resources / Tools / Prompts</strong></li></ul><h4>활용</h4><ul><li>파일 시스템, DB, 외부 API (Slack, GitHub 등)</li></ul>`,
+   rel:['tool-use','harness-engineering','claude-code']},
+
+  {id:'claude-code',t:'Claude Code',en:'Claude Code CLI',c:'tooling',h:5,tags:['CLI','Anthropic','코딩에이전트'],
+   sum:'Anthropic의 공식 CLI 코딩 에이전트. 코드 편집, Git, 테스트, MCP 지원.',
+   det:`<h4>핵심 기능</h4><ul><li>코드 편집 / 명령 실행</li><li>Git 통합 (커밋, PR)</li><li>MCP 서버 연결</li><li>메모리 / 스킬 / 훅</li></ul>`,
+   rel:['mcp','skills','hooks','claude-md']},
+
+  {id:'ai-agent',t:'AI 에이전트',en:'AI Agent',c:'agent',h:5,tags:['자율','계획','도구활용'],
+   sum:'자율적으로 판단하고 도구를 활용하며 계획을 세워 실행하는 AI 시스템.',
+   det:`<h4>핵심 능력</h4><ul><li>계획(Planning)</li><li>도구 사용(Tool Use)</li><li>메모리(Memory)</li><li>반성(Reflection)</li></ul><h4>패턴</h4><ul><li>ReAct: 추론 + 행동 반복</li><li>Plan-and-Execute</li><li>Multi-Agent: 협업</li></ul>`,
+   rel:['multi-agent','agent-framework','tool-use']},
+
+  {id:'multi-agent',t:'멀티 에이전트',en:'Multi-Agent System',c:'agent',h:5,tags:['협업','에이전트팀','분업'],
+   sum:'여러 에이전트가 역할을 나눠 협력하는 시스템. "에이전트 팀" 시대.',
+   det:`<h4>패턴</h4><ul><li>감독자(Supervisor)</li><li>토론(Debate)</li><li>파이프라인 / 병렬 처리</li></ul><h4>사례</h4><p>gstack (YC CEO), Harness (108pt) 등 실제 구현 급증.</p>`,
+   rel:['ai-agent','agent-framework','harness-engineering']},
+
+  {id:'ai-coding',t:'AI 코딩 어시스턴트',en:'AI Coding Assistant',c:'application',h:5,tags:['코딩','IDE','개발도구'],
+   sum:'AI로 코드 작성·리뷰·디버깅 지원. Claude Code, Cursor, Copilot.',
+   det:`<h4>주요 도구</h4><ul><li>Claude Code: 터미널 에이전트</li><li>Cursor: AI 에디터</li><li>GitHub Copilot: 인라인</li><li>Windsurf / Codex</li></ul>`,
+   rel:['claude-code','ai-agent','tool-use']},
+
+  {id:'skills',t:'스킬',en:'Skills / Slash Commands',c:'tooling',h:4,tags:['자동화','Claude Code'],
+   sum:'Claude Code에서 /로 호출하는 커스텀 자동화. gstack, Harness의 핵심.',
+   det:`<h4>정의 위치</h4><ul><li>프로젝트: <code>.claude/skills/</code></li><li>사용자: <code>~/.claude/skills/</code></li></ul><h4>내장</h4><ul><li><code>/commit</code> <code>/review-pr</code> <code>/simplify</code></li></ul>`,
+   rel:['claude-code','hooks','claude-md']},
+
+  {id:'hooks',t:'훅',en:'Hooks',c:'tooling',h:4,tags:['이벤트','트리거','자동화'],
+   sum:'Claude Code 이벤트 발생 시 자동 실행되는 셸 명령.',
+   det:`<h4>이벤트</h4><ul><li>PreToolUse / PostToolUse</li><li>Notification / Stop</li></ul>`,
+   rel:['claude-code','skills']},
+
+  {id:'claude-md',t:'CLAUDE.md',en:'CLAUDE.md',c:'tooling',h:4,tags:['설정','프로젝트'],
+   sum:'Claude Code가 참조하는 프로젝트 설정 파일. 규칙, 컨벤션, 빌드 명령 정의.',
+   det:`<h4>포함 내용</h4><ul><li>프로젝트 설명 / 아키텍처</li><li>코드 스타일 / 빌드 명령</li><li>작업 규칙</li></ul>`,
+   rel:['claude-code','skills','hooks']},
+
+  {id:'tool-use',t:'도구 사용',en:'Tool Use / Function Calling',c:'tooling',h:4,tags:['API','함수호출'],
+   sum:'AI 모델이 함수/도구를 호출하여 외부 작업을 수행하는 기능.',
+   det:`<h4>동작</h4><ul><li>개발자가 스키마 정의</li><li>모델이 도구 선택 + 파라미터 생성</li><li>클라이언트가 실행</li><li>결과를 모델에 반환</li></ul>`,
+   rel:['mcp','agent-framework','harness-engineering']},
+
+  {id:'rag',t:'RAG',en:'Retrieval-Augmented Generation',c:'data',h:4,tags:['검색','지식베이스','벡터DB'],
+   sum:'외부 지식에서 검색 후 컨텍스트에 포함시켜 응답 생성. 환각 감소.',
+   det:`<h4>파이프라인</h4><ul><li>인덱싱: 문서→청크→임베딩→벡터DB</li><li>검색: 질문→유사 청크 검색</li><li>생성: 컨텍스트+질문→LLM 답변</li></ul>`,
+   rel:['embedding','vector-db','chunking']},
+
+  {id:'context-window',t:'컨텍스트 윈도우',en:'Context Window',c:'infra',h:4,tags:['토큰','제한'],
+   sum:'LLM이 한 번에 처리 가능한 최대 토큰 수. Claude 1M, Gemini 2M.',
+   det:`<h4>모델별</h4><ul><li>Claude Opus 4.6: 1M</li><li>GPT-4: 128K</li><li>Gemini 1.5 Pro: 2M</li></ul>`,
+   rel:['tokenization','llm','rag']},
+
+  {id:'agent-framework',t:'에이전트 프레임워크',en:'Agent Framework',c:'agent',h:4,tags:['SDK','프레임워크'],
+   sum:'AI 에이전트 구축 프레임워크. Claude Agent SDK, LangGraph, CrewAI.',
+   det:`<h4>주요</h4><ul><li>Claude Agent SDK</li><li>LangGraph</li><li>CrewAI / AutoGen</li></ul>`,
+   rel:['ai-agent','mcp','multi-agent']},
+
+  {id:'ai-workflow',t:'AI 워크플로우',en:'AI Workflow Automation',c:'application',h:4,tags:['자동화','파이프라인'],
+   sum:'AI와 서비스를 연결하여 반복 업무를 자동화. n8n, Make, Zapier.',
+   det:`<h4>플랫폼</h4><ul><li>n8n (오픈소스)</li><li>Make / Zapier</li><li>LangGraph (코드 기반)</li></ul>`,
+   rel:['ai-agent','mcp','tool-use']},
+
+  {id:'prompt-engineering',t:'프롬프트 엔지니어링',en:'Prompt Engineering',c:'prompting',h:3,tags:['프롬프트','입력설계'],
+   sum:'AI에서 원하는 결과를 얻기 위해 입력을 설계하고 최적화하는 기술.',
+   det:`<h4>기법</h4><ul><li>역할 부여 / 구조화된 출력</li><li>제약 조건 명시 / 단계적 지시</li></ul>`,
+   rel:['few-shot','chain-of-thought','system-prompt']},
+
+  {id:'system-prompt',t:'시스템 프롬프트',en:'System Prompt',c:'prompting',h:3,tags:['설정','역할부여'],
+   sum:'AI의 동작 방식, 성격, 제약 조건을 사전 정의하는 프롬프트.',
+   det:`<h4>구성</h4><ul><li>역할 정의 / 행동 규칙</li><li>출력 형식 / 지식 범위</li></ul>`,
+   rel:['prompt-engineering','harness-engineering']},
+
+  {id:'chain-of-thought',t:'사고의 사슬',en:'Chain-of-Thought',c:'prompting',h:3,tags:['추론','단계적사고'],
+   sum:'중간 추론 과정을 명시적으로 생성하도록 유도하는 기법.',
+   det:`<h4>변형</h4><ul><li>Zero-shot CoT</li><li>Tree of Thought</li></ul>`,
+   rel:['prompt-engineering','few-shot']},
+
+  {id:'llm',t:'대규모 언어 모델',en:'Large Language Model',c:'model',h:3,tags:['GPT','Claude','Transformer'],
+   sum:'수십억 파라미터의 딥러닝 모델. 텍스트 생성·이해·추론 수행.',
+   det:`<h4>주요 모델</h4><ul><li>Claude (Anthropic)</li><li>GPT (OpenAI)</li><li>Gemini (Google)</li><li>Llama (Meta)</li></ul>`,
+   rel:['transformer','fine-tuning','tokenization']},
+
+  {id:'fine-tuning',t:'파인튜닝',en:'Fine-Tuning',c:'model',h:3,tags:['학습','LoRA','맞춤화'],
+   sum:'사전 학습된 모델을 특정 도메인에 맞게 추가 학습시키는 과정.',
+   det:`<h4>기법</h4><ul><li>LoRA / QLoRA</li><li>RLHF / DPO</li></ul>`,
+   rel:['llm','rlhf']},
+
+  {id:'multimodal',t:'멀티모달',en:'Multimodal AI',c:'model',h:3,tags:['비전','음성','영상'],
+   sum:'텍스트, 이미지, 음성 등 다양한 형태를 동시에 이해하고 생성하는 AI.',
+   det:`<h4>모달리티</h4><ul><li>텍스트+이미지 / 텍스트+음성</li><li>텍스트+영상 / 텍스트+코드</li></ul>`,
+   rel:['llm','embedding']},
+
+  {id:'embedding',t:'임베딩',en:'Embedding',c:'data',h:3,tags:['벡터','유사도'],
+   sum:'데이터를 고차원 벡터로 변환하여 의미적 유사도 비교를 가능하게 하는 기술.',
+   det:`<h4>주요 모델</h4><ul><li>OpenAI text-embedding-3</li><li>Voyage AI / Cohere Embed</li></ul>`,
+   rel:['rag','vector-db']},
+
+  {id:'vector-db',t:'벡터 DB',en:'Vector Database',c:'data',h:3,tags:['벡터검색','저장소'],
+   sum:'벡터를 저장하고 유사도 검색을 수행하는 전문 DB. RAG의 핵심 인프라.',
+   det:`<h4>솔루션</h4><ul><li>Pinecone / Weaviate / Chroma</li><li>Qdrant / pgvector</li></ul>`,
+   rel:['embedding','rag','chunking']},
+
+  {id:'chunking',t:'청킹',en:'Chunking',c:'data',h:3,tags:['전처리','문서분할'],
+   sum:'대용량 문서를 모델이 처리 가능한 작은 단위로 분할하는 과정.',
+   det:`<h4>전략</h4><ul><li>고정 크기 / 의미 기반</li><li>재귀적 / 슬라이딩 윈도우</li></ul>`,
+   rel:['rag','embedding']},
+
+  {id:'langchain',t:'랭체인',en:'LangChain',c:'tooling',h:3,tags:['프레임워크','Python'],
+   sum:'LLM 기반 앱 구축 프레임워크. 체인, 에이전트, 메모리 추상화 제공.',
+   det:`<h4>모듈</h4><ul><li>Chains / Agents / Memory</li><li>LangGraph / LangSmith</li></ul>`,
+   rel:['agent-framework','rag']},
+
+  {id:'eval',t:'AI 평가',en:'Evaluation',c:'infra',h:3,tags:['벤치마크','품질측정'],
+   sum:'AI 모델의 성능·정확도·안전성을 체계적으로 측정하는 프로세스.',
+   det:`<h4>유형</h4><ul><li>자동: LLM-as-Judge</li><li>인간 평가 / 벤치마크</li></ul>`,
+   rel:['llm','guardrail']},
+
+  {id:'hallucination',t:'환각',en:'Hallucination',c:'safety',h:3,tags:['신뢰성','오류'],
+   sum:'AI가 사실이 아닌 정보를 확신 있게 생성하는 현상.',
+   det:`<h4>완화</h4><ul><li>RAG / 출처 인용</li><li>자기 검증 / 온도 조절</li></ul>`,
+   rel:['rag','guardrail']},
+
+  {id:'guardrail',t:'가드레일',en:'Guardrail',c:'safety',h:3,tags:['안전장치','필터링'],
+   sum:'AI 입출력을 검증하고 위험한 내용을 차단하는 안전 메커니즘.',
+   det:`<h4>영역</h4><ul><li>입력: 인젝션 차단</li><li>출력: 유해 콘텐츠 필터</li><li>구조: 출력 형식 검증</li></ul>`,
+   rel:['hallucination','prompt-injection']},
+
+  {id:'prompt-injection',t:'프롬프트 인젝션',en:'Prompt Injection',c:'safety',h:3,tags:['보안','공격'],
+   sum:'악의적 입력으로 AI의 원래 지시를 무시하게 만드는 공격 기법.',
+   det:`<h4>유형</h4><ul><li>직접 / 간접 인젝션</li><li>탈옥(Jailbreak)</li></ul>`,
+   rel:['guardrail','system-prompt']},
+
+  {id:'chatbot',t:'챗봇',en:'Conversational AI',c:'application',h:3,tags:['대화','고객응대'],
+   sum:'자연어로 사용자와 대화하는 AI 인터페이스.',
+   det:`<h4>구성</h4><ul><li>대화 관리 / 지식 베이스</li><li>도구 연결 / 페르소나</li></ul>`,
+   rel:['rag','system-prompt']},
+
+  {id:'ai-search',t:'AI 검색',en:'AI-Powered Search',c:'application',h:3,tags:['의미검색'],
+   sum:'의미 기반으로 정보를 검색하고 답변을 생성하는 기술.',
+   det:`<h4>기술</h4><ul><li>의미 검색 / 하이브리드</li><li>Re-ranking / 답변 생성</li></ul>`,
+   rel:['rag','embedding']},
+
+  {id:'structured-output',t:'구조화된 출력',en:'Structured Output',c:'application',h:3,tags:['JSON','스키마'],
+   sum:'AI가 JSON 등 정해진 형식으로 응답하도록 하는 기술.',
+   det:`<h4>방법</h4><ul><li>프롬프트 / 스키마 기반</li><li>Tool Use / Constrained Decoding</li></ul>`,
+   rel:['tool-use','prompt-engineering']},
+
+  {id:'react-pattern',t:'ReAct 패턴',en:'ReAct',c:'agent',h:3,tags:['추론','행동루프'],
+   sum:'추론과 행동을 번갈아 수행하는 에이전트 설계 패턴.',
+   det:`<h4>루프</h4><ul><li>Thought → Action → Observation</li><li>목표 달성까지 반복</li></ul>`,
+   rel:['ai-agent','chain-of-thought']},
+
+  {id:'few-shot',t:'퓨샷',en:'Few-Shot Prompting',c:'prompting',h:2,tags:['예시학습'],
+   sum:'몇 개의 입출력 예시를 제공하여 패턴을 학습시키는 프롬프팅 기법.',
+   det:`<h4>유형</h4><ul><li>Zero-shot / One-shot / Few-shot</li></ul>`,
+   rel:['prompt-engineering','chain-of-thought']},
+
+  {id:'transformer',t:'트랜스포머',en:'Transformer',c:'model',h:2,tags:['아키텍처','attention'],
+   sum:'Self-Attention 기반 아키텍처. 현대 LLM의 근간.',
+   det:`<h4>구성</h4><ul><li>Self-Attention / Multi-Head</li><li>Position Encoding / FFN</li></ul>`,
+   rel:['llm','embedding']},
+
+  {id:'tokenization',t:'토큰화',en:'Tokenization',c:'model',h:2,tags:['전처리','BPE'],
+   sum:'텍스트를 모델이 처리할 수 있는 토큰 단위로 분할하는 과정.',
+   det:`<h4>알고리즘</h4><ul><li>BPE / SentencePiece / WordPiece</li></ul>`,
+   rel:['llm','context-window']},
+
+  {id:'rlhf',t:'RLHF',en:'RL from Human Feedback',c:'model',h:2,tags:['강화학습','정렬'],
+   sum:'인간 피드백으로 모델을 인간 의도에 맞게 정렬하는 학습 기법.',
+   det:`<h4>과정</h4><ul><li>사전학습 → 인간 순위 → 보상 모델 → PPO</li><li>변형: DPO, RLAIF</li></ul>`,
+   rel:['fine-tuning','llm']},
+
+  {id:'in-context-learning',t:'인컨텍스트 러닝',en:'In-Context Learning',c:'model',h:2,tags:['추론시학습'],
+   sum:'프롬프트 내 예시만으로 새 작업을 수행하는 LLM의 능력.',
+   det:`<h4>특징</h4><ul><li>파라미터 업데이트 없이 동작</li><li>모델 크기가 클수록 강력</li></ul>`,
+   rel:['few-shot','llm']},
+
+  {id:'api-gateway',t:'AI API 게이트웨이',en:'AI API Gateway',c:'infra',h:2,tags:['라우팅','비용관리'],
+   sum:'AI 모델 API 호출 관리 계층. 라우팅, 폴백, 캐싱.',
+   det:`<h4>솔루션</h4><ul><li>LiteLLM / Portkey / Helicone</li></ul>`,
+   rel:['llm','eval']},
+];
+
+// State
+let cat = 'all', q = '';
+
+function render() {
+  let list = D.filter(e => {
+    if (cat !== 'all' && e.c !== cat) return false;
+    if (!q) return true;
+    const s = q.toLowerCase();
+    return e.t.toLowerCase().includes(s) || e.en.toLowerCase().includes(s) || e.tags.some(t=>t.includes(s));
+  }).sort((a,b) => b.h - a.h || a.t.localeCompare(b.t));
+
+  const g = document.getElementById('grid');
+  if (!list.length) { g.innerHTML = '<div class="empty">검색 결과 없음</div>'; return; }
+
+  g.innerHTML = list.map(e => {
+    const dots = [1,2,3,4,5].map(i => `<div class="heat-dot${i<=e.h?' on':''}"></div>`).join('');
+    return `<div class="card" onclick="open_m('${e.id}')">
+      <div class="card-cat">${CATS[e.c]}</div>
+      <div class="card-heat">${dots}</div>
+      <div class="card-keyword">${e.t}</div>
+    </div>`;
+  }).join('');
+}
+
+// Filters
+(function(){
+  const f = document.getElementById('filters');
+  f.innerHTML = `<button class="f on" data-c="all">전체</button>` +
+    Object.entries(CATS).map(([k,v])=>`<button class="f" data-c="${k}">${v}</button>`).join('');
+  f.addEventListener('click', e => {
+    const b = e.target.closest('.f');
+    if (!b) return;
+    f.querySelectorAll('.f').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    cat = b.dataset.c;
+    render();
+  });
+})();
+
+// Search
+document.getElementById('q').addEventListener('input', e => { q = e.target.value.trim(); render(); });
+
+// Modal
+function open_m(id) {
+  const e = D.find(x=>x.id===id);
+  if (!e) return;
+  const rels = (e.rel||[]).map(r=>D.find(x=>x.id===r)).filter(Boolean);
+  document.getElementById('modal').innerHTML = `
+    <button class="modal-close" onclick="close_m()">✕</button>
+    <div class="modal-cat">${CATS[e.c]}</div>
+    <div class="modal-title">${e.t}</div>
+    <div class="modal-en">${e.en}</div>
+    <div class="modal-heat">
+      <span>Heat</span>
+      <div class="pips">${[1,2,3,4,5].map(i=>`<div class="pip${i<=e.h?' on':''}"></div>`).join('')}</div>
+      <span>${HEAT[e.h]}</span>
+    </div>
+    <div class="modal-body"><p>${e.sum}</p>${e.det}</div>
+    ${e.tags.length?`<div class="modal-tags">${e.tags.map(t=>`<span onclick="document.getElementById('q').value='${t}';q='${t}';close_m();render()">#${t}</span>`).join('')}</div>`:''}
+    ${rels.length?`<div class="modal-related"><h4>관련 키워드</h4><div class="rel-links">${rels.map(r=>`<span class="rel-link" onclick="open_m('${r.id}')">${r.t}</span>`).join('')}</div></div>`:''}
+  `;
+  document.getElementById('ov').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function close_m() {
+  document.getElementById('ov').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.getElementById('ov').addEventListener('click', e => { if(e.target===e.currentTarget) close_m(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') close_m(); });
+
+render();
+</script>
+</body>
+</html>
