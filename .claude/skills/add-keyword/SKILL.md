@@ -1,3 +1,8 @@
+---
+name: add-keyword
+description: AI Wiki에 새 키워드 1개를 리서치+수집+Heat 산출 후 추가
+---
+
 # /add-keyword
 
 AI Wiki에 새 키워드를 추가한다. 리서치, 레퍼런스 수집, Heat 산출을 서브에이전트로 병렬 처리한 뒤 결과를 종합하여 index.html에 반영한다.

@@ -1,3 +1,8 @@
+---
+name: batch-add
+description: 여러 키워드를 한 번에 AI Wiki에 추가
+---
+
 # /batch-add
 
 여러 키워드를 한 번에 AI Wiki에 추가한다. 카테고리나 주제를 입력하면 관련 키워드를 먼저 선정한 뒤, 각 키워드를 `/add-keyword`와 동일한 방식으로 처리한다.
