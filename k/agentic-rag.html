@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에이전틱 RAG (Agentic RAG) — AI Wiki</title>
+<meta name="description" content="단순 검색-생성 파이프라인을 넘어, AI 에이전트가 검색 전략을 스스로 결정하고 반복·검증하는 고급 RAG 방식. 복잡한 질문에도 정확한 답을 찾아낸다.">
+<meta name="keywords" content="RAG, 에이전트, 검색, AI, 에이전틱 RAG">
+<meta property="og:type" content="article">
+<meta property="og:title" content="에이전틱 RAG (Agentic RAG) — AI Wiki">
+<meta property="og:description" content="단순 검색-생성 파이프라인을 넘어, AI 에이전트가 검색 전략을 스스로 결정하고 반복·검증하는 고급 RAG 방식. 복잡한 질문에도 정확한 답을 찾아낸다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/agentic-rag.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="에이전틱 RAG (Agentic RAG) — AI Wiki">
+<meta name="twitter:description" content="단순 검색-생성 파이프라인을 넘어, AI 에이전트가 검색 전략을 스스로 결정하고 반복·검증하는 고급 RAG 방식. 복잡한 질문에도 정확한 답을 찾아낸다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/agentic-rag.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/agentic-rag.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "에이전틱 RAG",
+  "alternateName": "Agentic RAG",
+  "description": "단순 검색-생성 파이프라인을 넘어, AI 에이전트가 검색 전략을 스스로 결정하고 반복·검증하는 고급 RAG 방식. 복잡한 질문에도 정확한 답을 찾아낸다.",
+  "url": "https://aiword-wiki.github.io/k/agentic-rag.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <div class="title">에이전틱 RAG</div>
+  <div class="en">Agentic RAG</div>
+  <div class="body"><p>단순 검색-생성 파이프라인을 넘어, AI 에이전트가 검색 전략을 스스로 결정하고 반복·검증하는 고급 RAG 방식. 복잡한 질문에도 정확한 답을 찾아낸다.</p><h4>개념 설명</h4><p>기본 RAG는 질문 → 검색 → 생성의 단순한 흐름이다. 에이전틱 RAG는 여기에 에이전트의 판단력을 더한다. 검색 결과가 불충분하면 다시 검색하고, 여러 소스를 비교하고, 필요하면 질문 자체를 바꿔가며 탐색한다. "한 번의 검색으로 못 찾으면 포기"하는 것이 아니라, 사람처럼 끈질기게 정보를 찾아가는 방식이다.</p><h4>사용 예시</h4><p>법률 문서 검색 시스템에서 사용자가 복잡한 법적 질문을 하면, 에이전틱 RAG는 먼저 관련 조항을 찾고, 결과가 부족하면 관련 판례로 검색을 확장하고, 두 소스를 비교해 모순이 있으면 추가 검증을 거치는 식으로 동작한다. LlamaIndex의 <code>RouterQueryEngine</code>이나 LangChain의 <code>AgentExecutor</code>로 구현할 수 있다.</p></div>
+  <div class="tags"><span>#RAG</span><span>#에이전트</span><span>#검색</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#agentic-rag">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>어텐션 메커니즘 (Attention Mechanism) — AI Wiki</title>
+<meta name="description" content="입력 시퀀스에서 어느 부분에 집중할지를 동적으로 결정하는 메커니즘. Transformer의 핵심 원리로, LLM이 문맥을 이해하는 방식 자체를 바꿨다.">
+<meta name="keywords" content="Transformer, self-attention, 가중치, AI, 어텐션 메커니즘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="어텐션 메커니즘 (Attention Mechanism) — AI Wiki">
+<meta property="og:description" content="입력 시퀀스에서 어느 부분에 집중할지를 동적으로 결정하는 메커니즘. Transformer의 핵심 원리로, LLM이 문맥을 이해하는 방식 자체를 바꿨다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/attention-mechanism.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="어텐션 메커니즘 (Attention Mechanism) — AI Wiki">
+<meta name="twitter:description" content="입력 시퀀스에서 어느 부분에 집중할지를 동적으로 결정하는 메커니즘. Transformer의 핵심 원리로, LLM이 문맥을 이해하는 방식 자체를 바꿨다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/attention-mechanism.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/attention-mechanism.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "어텐션 메커니즘",
+  "alternateName": "Attention Mechanism",
+  "description": "입력 시퀀스에서 어느 부분에 집중할지를 동적으로 결정하는 메커니즘. Transformer의 핵심 원리로, LLM이 문맥을 이해하는 방식 자체를 바꿨다.",
+  "url": "https://aiword-wiki.github.io/k/attention-mechanism.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">어텐션 메커니즘</div>
+  <div class="en">Attention Mechanism</div>
+  <div class="body"><p>입력 시퀀스에서 어느 부분에 집중할지를 동적으로 결정하는 메커니즘. Transformer의 핵심 원리로, LLM이 문맥을 이해하는 방식 자체를 바꿨다.</p><h4>개념 설명</h4><p>문장을 처리할 때 모든 단어를 동등하게 보는 게 아니라, 지금 이 단어와 가장 관련 있는 다른 단어들에 더 많은 "주의"를 기울이는 방식이다. "나는 사과를 먹었다. 그것은 달았다"에서 '그것'이 '사과'를 가리킨다는 걸 파악하는 것처럼, 어텐션은 단어 사이의 관계를 점수로 계산해 문맥을 포착한다.</p><p>Transformer 논문(2017)에서 제안된 <strong>Self-Attention</strong>은 시퀀스 내 모든 토큰 쌍의 관계를 동시에 계산한다. Query, Key, Value 세 행렬을 이용해 각 토큰이 다른 토큰들에 얼마나 주목해야 하는지를 소프트맥스 확률로 표현한다.</p><h4>사용 예시</h4><p>LLM이 긴 대화 내용을 처리할 때, 수백 턴 전에 언급된 사용자 이름이나 조건을 다시 참조할 수 있는 것도 어텐션 덕분이다. 멀티헤드 어텐션은 여러 관점(문법적 관계, 의미적 유사성 등)을 동시에 계산해 더 풍부한 표현을 만든다. 코드 생성 시 함수 선언과 호출부 사이의 관계를 포착하는 것도 같은 원리다.</p></div>
+  <div class="tags"><span>#Transformer</span><span>#self-attention</span><span>#가중치</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#attention-mechanism">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

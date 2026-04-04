@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>활성화 함수 (Activation Function) — AI Wiki</title>
+<meta name="description" content="신경망 각 뉴런의 출력을 결정하는 함수. 비선형성을 도입해서 신경망이 복잡한 패턴을 학습할 수 있게 하는 핵심 구성 요소다.">
+<meta name="keywords" content="ReLU, 비선형성, 신경망, AI, 활성화 함수">
+<meta property="og:type" content="article">
+<meta property="og:title" content="활성화 함수 (Activation Function) — AI Wiki">
+<meta property="og:description" content="신경망 각 뉴런의 출력을 결정하는 함수. 비선형성을 도입해서 신경망이 복잡한 패턴을 학습할 수 있게 하는 핵심 구성 요소다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/activation-function.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="활성화 함수 (Activation Function) — AI Wiki">
+<meta name="twitter:description" content="신경망 각 뉴런의 출력을 결정하는 함수. 비선형성을 도입해서 신경망이 복잡한 패턴을 학습할 수 있게 하는 핵심 구성 요소다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/activation-function.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/activation-function.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "활성화 함수",
+  "alternateName": "Activation Function",
+  "description": "신경망 각 뉴런의 출력을 결정하는 함수. 비선형성을 도입해서 신경망이 복잡한 패턴을 학습할 수 있게 하는 핵심 구성 요소다.",
+  "url": "https://aiword-wiki.github.io/k/activation-function.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">활성화 함수</div>
+  <div class="en">Activation Function</div>
+  <div class="body"><p>신경망 각 뉴런의 출력을 결정하는 함수. 비선형성을 도입해서 신경망이 복잡한 패턴을 학습할 수 있게 하는 핵심 구성 요소다.</p><h4>개념 설명</h4><p>선형 변환만으로는 아무리 층을 쌓아도 결국 하나의 선형 변환과 같다. 활성화 함수는 각 뉴런의 출력에 비선형 변환을 적용해서 신경망이 비선형 패턴을 학습할 수 있게 만든다. <strong>ReLU</strong>는 음수를 0으로, 양수는 그대로 통과시키는 단순한 함수인데 딥러닝에서 가장 많이 쓰인다. <strong>Sigmoid</strong>는 출력을 0~1로 압축해서 확률 출력에, <strong>Softmax</strong>는 다중 클래스 분류 마지막 층에 주로 쓰인다.</p>
+<h4>사용 예시</h4><p>PyTorch로 신경망을 구현할 때 <code>nn.ReLU()</code>, <code>nn.GELU()</code> 같은 레이어를 선형 레이어 사이에 추가한다. LLM에서는 GELU나 SwiGLU 활성화가 주로 쓰인다. 활성화 함수 선택이 학습 안정성과 성능에 영향을 주는데, 대부분의 경우 기본값(ReLU 또는 GELU)이 잘 동작한다. 그래디언트 소실 문제가 있을 때 ReLU 대신 Leaky ReLU나 ELU를 시도해볼 수 있다.</p></div>
+  <div class="tags"><span>#ReLU</span><span>#비선형성</span><span>#신경망</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#activation-function">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

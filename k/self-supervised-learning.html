@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자기 지도 학습 (Self-Supervised Learning) — AI Wiki</title>
+<meta name="description" content="정답 라벨 없이 데이터 자체에서 학습 신호를 만들어내는 방법. LLM의 &quot;다음 토큰 예측&quot;이 대표적 자기 지도 학습으로, 수십억 개의 레이블 없는 텍스트를 그대로 학습 데이터로 쓸 수 있다.">
+<meta name="keywords" content="레이블없음, 사전학습, 표현학습, AI, 자기 지도 학습">
+<meta property="og:type" content="article">
+<meta property="og:title" content="자기 지도 학습 (Self-Supervised Learning) — AI Wiki">
+<meta property="og:description" content="정답 라벨 없이 데이터 자체에서 학습 신호를 만들어내는 방법. LLM의 &quot;다음 토큰 예측&quot;이 대표적 자기 지도 학습으로, 수십억 개의 레이블 없는 텍스트를 그대로 학습 데이터로 쓸 수 있다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/self-supervised-learning.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="자기 지도 학습 (Self-Supervised Learning) — AI Wiki">
+<meta name="twitter:description" content="정답 라벨 없이 데이터 자체에서 학습 신호를 만들어내는 방법. LLM의 &quot;다음 토큰 예측&quot;이 대표적 자기 지도 학습으로, 수십억 개의 레이블 없는 텍스트를 그대로 학습 데이터로 쓸 수 있다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/self-supervised-learning.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/self-supervised-learning.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "자기 지도 학습",
+  "alternateName": "Self-Supervised Learning",
+  "description": "정답 라벨 없이 데이터 자체에서 학습 신호를 만들어내는 방법. LLM의 \"다음 토큰 예측\"이 대표적 자기 지도 학습으로, 수십억 개의 레이블 없는 텍스트를 그대로 학습 데이터로 쓸 수 있다.",
+  "url": "https://aiword-wiki.github.io/k/self-supervised-learning.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">자기 지도 학습</div>
+  <div class="en">Self-Supervised Learning</div>
+  <div class="body"><p>정답 라벨 없이 데이터 자체에서 학습 신호를 만들어내는 방법. LLM의 "다음 토큰 예측"이 대표적 자기 지도 학습으로, 수십억 개의 레이블 없는 텍스트를 그대로 학습 데이터로 쓸 수 있다.</p><h4>개념 설명</h4><p>사람이 일일이 라벨을 붙여야 하는 지도 학습과 달리, 자기 지도 학습은 데이터 내에 숨겨진 구조를 문제로 삼는다. "다음 단어 예측"은 글 자체가 정답이고, "가려진 단어 맞추기"도 마찬가지다. 이 덕분에 인터넷에 존재하는 모든 텍스트를 라벨링 비용 없이 학습 데이터로 활용할 수 있다. 현대 LLM이 수조 개의 토큰으로 학습될 수 있는 이유다.</p><p>텍스트뿐 아니라 이미지(MAE — Masked Autoencoder), 오디오(wav2vec), 비디오 등 다양한 모달리티에서도 같은 원리가 적용된다.</p><h4>사용 예시</h4><p>Llama, Mistral 등 오픈소스 모델의 사전학습은 모두 자기 지도 학습 방식이다. 도메인 특화 모델을 만들 때 해당 분야의 논문, 문서, 코드를 모아 레이블 없이 지속적 사전학습을 하면 전문성이 올라간다. HuggingFace의 <code>DataCollatorForLanguageModeling</code>이 이 학습 방식을 지원한다.</p></div>
+  <div class="tags"><span>#레이블없음</span><span>#사전학습</span><span>#표현학습</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#self-supervised-learning">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

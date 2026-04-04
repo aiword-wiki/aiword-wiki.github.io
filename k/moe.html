@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoE (Mixture of Experts) — AI Wiki</title>
+<meta name="description" content="하나의 큰 모델 대신 여러 개의 전문가(expert) 네트워크를 두고, 입력에 따라 일부만 활성화하는 아키텍처. 전체 파라미터 수를 늘리면서도 실제 연산량은 줄여 효율적으로 모델을 스케일업할 수 있다.">
+<meta name="keywords" content="아키텍처, 희소 활성화, 스케일링, LLM, AI, MoE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MoE (Mixture of Experts) — AI Wiki">
+<meta property="og:description" content="하나의 큰 모델 대신 여러 개의 전문가(expert) 네트워크를 두고, 입력에 따라 일부만 활성화하는 아키텍처. 전체 파라미터 수를 늘리면서도 실제 연산량은 줄여 효율적으로 모델을 스케일업할 수 있다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/moe.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MoE (Mixture of Experts) — AI Wiki">
+<meta name="twitter:description" content="하나의 큰 모델 대신 여러 개의 전문가(expert) 네트워크를 두고, 입력에 따라 일부만 활성화하는 아키텍처. 전체 파라미터 수를 늘리면서도 실제 연산량은 줄여 효율적으로 모델을 스케일업할 수 있다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/moe.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/moe.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "MoE",
+  "alternateName": "Mixture of Experts",
+  "description": "하나의 큰 모델 대신 여러 개의 전문가(expert) 네트워크를 두고, 입력에 따라 일부만 활성화하는 아키텍처. 전체 파라미터 수를 늘리면서도 실제 연산량은 줄여 효율적으로 모델을 스케일업할 수 있다.",
+  "url": "https://aiword-wiki.github.io/k/moe.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">MoE</div>
+  <div class="en">Mixture of Experts</div>
+  <div class="body"><p>하나의 큰 모델 대신 여러 개의 전문가(expert) 네트워크를 두고, 입력에 따라 일부만 활성화하는 아키텍처. 전체 파라미터 수를 늘리면서도 실제 연산량은 줄여 효율적으로 모델을 스케일업할 수 있다.</p><h4>개념 설명</h4><p>모델이 커질수록 모든 파라미터를 매번 계산하는 건 비효율적이다. <strong>MoE(Mixture of Experts)</strong>는 이 문제를 '전문가 분업'으로 해결한다. 모델 내부에 여러 개의 독립적인 전문가 네트워크를 두고, 입력 토큰마다 라우터(router)가 어떤 전문가를 쓸지 선택한다. 예를 들어 총 8명의 전문가가 있더라도, 각 토큰은 그 중 2명의 전문가만 거친다. 덕분에 파라미터 수는 8배로 늘어나도 실제 연산량은 2배 수준에 그친다.</p><p>이 구조는 트랜스포머의 피드포워드 레이어(FFN)를 MoE 레이어로 교체하는 방식으로 구현된다. 각 전문가는 구조상 일반 FFN과 동일하지만, 학습 과정에서 서로 다른 유형의 토큰에 자연스럽게 특화된다.</p><h4>사용 예시</h4><p>오늘날 주요 프런티어 모델 대부분이 MoE를 채택하고 있다. Mistral AI의 Mixtral 8×7B는 총 467억 개의 파라미터를 갖지만, 토큰당 실제 활성화 파라미터는 129억 개에 불과하다. 훨씬 적은 연산으로 더 큰 모델과 동등한 성능을 낸다. DeepSeek-V3는 이를 극단까지 밀어붙여 총 6,710억 개의 파라미터에 256개의 전문가를 두되, 토큰당 370억 개만 활성화한다. 이 덕분에 경쟁 모델 대비 훨씬 적은 GPU 시간으로 학습을 완료했다. Google의 Gemini 1.5도 MoE 아키텍처를 적용한 것으로 알려져 있다.</p><p>개발자 입장에서는 MoE 모델을 API로 쓸 때 특별히 달라지는 것은 없다. 다만 오픈소스 MoE 모델을 로컬에서 운용할 때는 총 파라미터 수만큼 VRAM이 필요하다는 점을 주의해야 한다. Mixtral 8×7B를 풀 정밀도로 로드하려면 전문가 전체를 메모리에 올려야 하기 때문이다.</p><h4>심화 내용</h4><p>라우팅 방식은 크게 세 가지로 나뉜다. 토큰이 전문가를 선택하는 방식(token-choice), 전문가가 토큰을 선택하는 방식(expert-choice), 그리고 전역 매칭 방식이다. 가장 일반적인 token-choice는 라우터가 각 토큰에 대해 점수를 계산하고 상위 k개의 전문가를 선택해 출력을 가중합산한다.</p><h4>주의할 점</h4><p>MoE의 가장 큰 약점은 <strong>전문가 붕괴(expert collapse)</strong>다. 학습 초기에 특정 전문가가 더 많은 토큰을 받으면, 그 전문가가 더 잘 학습되고, 라우터는 그 전문가를 더 선호하는 악순환이 생긴다. 결국 몇몇 전문가만 일하고 나머지는 유휴 상태가 되어, MoE의 장점이 사라진다. 이를 막기 위한 보조 손실 함수(auxiliary loss)나 손실 없는 밸런싱(loss-free balancing) 기법이 함께 사용된다. DeepSeek-V3는 보조 손실 없이 밸런싱을 달성한 방식으로 주목받았다.</p></div>
+  <div class="tags"><span>#아키텍처</span><span>#희소 활성화</span><span>#스케일링</span><span>#LLM</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#moe">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

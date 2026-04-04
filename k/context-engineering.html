@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨텍스트 엔지니어링 (Context Engineering) — AI Wiki</title>
+<meta name="description" content="프롬프트뿐 아니라 도구 정의, 검색 결과, 대화 이력, 시스템 상태 등 LLM에 전달되는 전체 맥락을 체계적으로 설계하는 방법론. 프롬프트 엔지니어링의 진화형이다.">
+<meta name="keywords" content="프롬프팅진화, 컨텍스트설계, 하네스, AI, 컨텍스트 엔지니어링">
+<meta property="og:type" content="article">
+<meta property="og:title" content="컨텍스트 엔지니어링 (Context Engineering) — AI Wiki">
+<meta property="og:description" content="프롬프트뿐 아니라 도구 정의, 검색 결과, 대화 이력, 시스템 상태 등 LLM에 전달되는 전체 맥락을 체계적으로 설계하는 방법론. 프롬프트 엔지니어링의 진화형이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/context-engineering.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="컨텍스트 엔지니어링 (Context Engineering) — AI Wiki">
+<meta name="twitter:description" content="프롬프트뿐 아니라 도구 정의, 검색 결과, 대화 이력, 시스템 상태 등 LLM에 전달되는 전체 맥락을 체계적으로 설계하는 방법론. 프롬프트 엔지니어링의 진화형이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/context-engineering.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/context-engineering.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "컨텍스트 엔지니어링",
+  "alternateName": "Context Engineering",
+  "description": "프롬프트뿐 아니라 도구 정의, 검색 결과, 대화 이력, 시스템 상태 등 LLM에 전달되는 전체 맥락을 체계적으로 설계하는 방법론. 프롬프트 엔지니어링의 진화형이다.",
+  "url": "https://aiword-wiki.github.io/k/context-engineering.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">컨텍스트 엔지니어링</div>
+  <div class="en">Context Engineering</div>
+  <div class="body"><p>프롬프트뿐 아니라 도구 정의, 검색 결과, 대화 이력, 시스템 상태 등 LLM에 전달되는 전체 맥락을 체계적으로 설계하는 방법론. 프롬프트 엔지니어링의 진화형이다.</p><h4>개념 설명</h4><p>프롬프트 엔지니어링이 "어떤 말을 하느냐"에 집중했다면, 컨텍스트 엔지니어링은 "모델이 보는 전체 그림을 어떻게 구성하느냐"로 범위가 넓어진다. 시스템 프롬프트, 도구 정의, RAG 검색 결과, 대화 요약, 사용자 프로필까지 모델의 컨텍스트 윈도우에 들어가는 모든 것을 설계 대상으로 본다. Anthropic의 Toby Lutke가 이 용어를 대중화했다.</p><h4>사용 예시</h4><p>Claude Code에서 CLAUDE.md에 프로젝트 규칙을 적고, 에이전트 정의를 .claude/agents/에 두고, MCP로 도구를 연결하고, 훅으로 가드레일을 거는 것 전체가 컨텍스트 엔지니어링이다. 단순히 프롬프트 한 줄을 다듬는 것보다 이 전체 구조를 어떻게 짜느냐가 에이전트 품질을 결정한다.</p></div>
+  <div class="tags"><span>#프롬프팅진화</span><span>#컨텍스트설계</span><span>#하네스</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#context-engineering">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

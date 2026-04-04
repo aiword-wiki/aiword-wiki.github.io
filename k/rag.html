@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG (Retrieval-Augmented Generation) — AI Wiki</title>
+<meta name="description" content="LLM이 응답을 만들기 전에 외부 문서나 DB에서 관련 정보를 검색해 컨텍스트에 넣어 주는 기술. 모델이 모르는 정보도 정확하게 답할 수 있게 해준다.">
+<meta name="keywords" content="검색, 지식베이스, 벡터DB, AI, RAG">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RAG (Retrieval-Augmented Generation) — AI Wiki">
+<meta property="og:description" content="LLM이 응답을 만들기 전에 외부 문서나 DB에서 관련 정보를 검색해 컨텍스트에 넣어 주는 기술. 모델이 모르는 정보도 정확하게 답할 수 있게 해준다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/rag.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RAG (Retrieval-Augmented Generation) — AI Wiki">
+<meta name="twitter:description" content="LLM이 응답을 만들기 전에 외부 문서나 DB에서 관련 정보를 검색해 컨텍스트에 넣어 주는 기술. 모델이 모르는 정보도 정확하게 답할 수 있게 해준다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/rag.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/rag.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "RAG",
+  "alternateName": "Retrieval-Augmented Generation",
+  "description": "LLM이 응답을 만들기 전에 외부 문서나 DB에서 관련 정보를 검색해 컨텍스트에 넣어 주는 기술. 모델이 모르는 정보도 정확하게 답할 수 있게 해준다.",
+  "url": "https://aiword-wiki.github.io/k/rag.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">RAG</div>
+  <div class="en">Retrieval-Augmented Generation</div>
+  <div class="body"><p>LLM이 응답을 만들기 전에 외부 문서나 DB에서 관련 정보를 검색해 컨텍스트에 넣어 주는 기술. 모델이 모르는 정보도 정확하게 답할 수 있게 해준다.</p><h4>RAG란</h4><p>LLM은 학습 시점까지의 지식만 가지고 있고, 모르는 건 그럴듯하게 지어낸다(환각). RAG는 이 문제를 "답하기 전에 먼저 찾아보기"로 해결한다. 사용자 질문이 들어오면 관련 문서를 벡터 DB에서 검색하고, 찾은 내용을 프롬프트에 넣어서 모델이 근거 있는 답변을 생성하도록 한다.</p>
+<h4>사용 예시</h4><p>가장 흔한 활용은 자체 문서 기반 Q&A다. 사내 위키, API 문서, 매뉴얼을 임베딩해서 벡터 DB에 넣어 두면, "배포 절차가 어떻게 돼?"라고 물었을 때 실제 문서에서 관련 부분을 찾아 답변한다.</p>
+<p>구축 파이프라인은 문서 수집 → 청킹(작은 단위로 분할) → 임베딩(벡터 변환) → 벡터 DB 저장 → 검색 → LLM 생성의 6단계다. LangChain이나 LlamaIndex 같은 프레임워크로 이 파이프라인을 빠르게 구성할 수 있다.</p>
+<p>기본 RAG 외에도 Graph RAG(지식 그래프 기반 검색), Agentic RAG(에이전트가 검색 전략을 스스로 결정), Hybrid RAG(키워드 + 시맨틱 검색 결합) 등으로 진화하고 있다.</p></div>
+  <div class="tags"><span>#검색</span><span>#지식베이스</span><span>#벡터DB</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#rag">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

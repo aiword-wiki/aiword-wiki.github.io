@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>청킹 (Chunking) — AI Wiki</title>
+<meta name="description" content="대용량 문서를 벡터 DB에 넣기 좋은 작은 단위로 쪼개는 전처리 과정. 쪼개는 방식에 따라 RAG 검색 정확도가 크게 달라진다.">
+<meta name="keywords" content="전처리, 문서분할, AI, 청킹">
+<meta property="og:type" content="article">
+<meta property="og:title" content="청킹 (Chunking) — AI Wiki">
+<meta property="og:description" content="대용량 문서를 벡터 DB에 넣기 좋은 작은 단위로 쪼개는 전처리 과정. 쪼개는 방식에 따라 RAG 검색 정확도가 크게 달라진다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/chunking.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="청킹 (Chunking) — AI Wiki">
+<meta name="twitter:description" content="대용량 문서를 벡터 DB에 넣기 좋은 작은 단위로 쪼개는 전처리 과정. 쪼개는 방식에 따라 RAG 검색 정확도가 크게 달라진다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/chunking.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/chunking.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "청킹",
+  "alternateName": "Chunking",
+  "description": "대용량 문서를 벡터 DB에 넣기 좋은 작은 단위로 쪼개는 전처리 과정. 쪼개는 방식에 따라 RAG 검색 정확도가 크게 달라진다.",
+  "url": "https://aiword-wiki.github.io/k/chunking.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">청킹</div>
+  <div class="en">Chunking</div>
+  <div class="body"><p>대용량 문서를 벡터 DB에 넣기 좋은 작은 단위로 쪼개는 전처리 과정. 쪼개는 방식에 따라 RAG 검색 정확도가 크게 달라진다.</p><h4>청킹이 중요한 이유</h4><p>PDF 200페이지짜리 문서를 통째로 임베딩할 수는 없다. 적절한 크기로 쪼개야 하는데, 너무 크면 검색 시 노이즈가 많고, 너무 작으면 문맥이 끊긴다. 청킹은 이 "적절한 크기"를 찾는 과정이다.</p>
+<h4>사용 예시</h4><p>LangChain의 <code>RecursiveCharacterTextSplitter</code>가 가장 많이 쓰인다. 문단, 문장, 단어 순서로 자연스러운 경계를 찾아 분할하며, 400~512 토큰에 10~20% 오버랩이 일반적인 출발점이다.</p>
+<p><strong>시맨틱 청킹</strong>은 임베딩 유사도가 급격히 변하는 지점을 경계로 삼아서 의미 단위로 정확하게 나눈다. 코드 파일이면 함수 단위, 마크다운이면 헤딩 단위로 나누는 <strong>구조 기반 청킹</strong>도 있다. 도메인에 따라 최적의 전략이 다르므로, 단순한 방법으로 베이스라인을 먼저 잡고 개선하는 게 실용적이다.</p></div>
+  <div class="tags"><span>#전처리</span><span>#문서분할</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#chunking">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ollama — AI Wiki</title>
+<meta name="description" content="로컬에서 LLM을 한 줄 명령으로 실행할 수 있게 해주는 도구. Docker가 컨테이너를 쉽게 만들듯, Ollama는 LLM을 쉽게 돌린다.">
+<meta name="keywords" content="로컬실행, CLI, 오픈소스, AI, Ollama">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ollama — AI Wiki">
+<meta property="og:description" content="로컬에서 LLM을 한 줄 명령으로 실행할 수 있게 해주는 도구. Docker가 컨테이너를 쉽게 만들듯, Ollama는 LLM을 쉽게 돌린다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/ollama.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ollama — AI Wiki">
+<meta name="twitter:description" content="로컬에서 LLM을 한 줄 명령으로 실행할 수 있게 해주는 도구. Docker가 컨테이너를 쉽게 만들듯, Ollama는 LLM을 쉽게 돌린다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/ollama.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/ollama.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Ollama",
+  "alternateName": "Ollama",
+  "description": "로컬에서 LLM을 한 줄 명령으로 실행할 수 있게 해주는 도구. Docker가 컨테이너를 쉽게 만들듯, Ollama는 LLM을 쉽게 돌린다.",
+  "url": "https://aiword-wiki.github.io/k/ollama.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">Ollama</div>
+  <div class="en"></div>
+  <div class="body"><p>로컬에서 LLM을 한 줄 명령으로 실행할 수 있게 해주는 도구. Docker가 컨테이너를 쉽게 만들듯, Ollama는 LLM을 쉽게 돌린다.</p><h4>개념 설명</h4><p>오픈 웨이트 모델을 로컬에서 실행하려면 원래 모델 다운로드, 양자화, 서빙 설정 등 복잡한 과정이 필요했다. Ollama는 <code>ollama run llama3</code> 한 줄이면 모델 다운로드부터 서빙까지 알아서 처리한다. llama.cpp 기반으로 CPU와 GPU 모두 지원하며, Apple Silicon에서 특히 잘 최적화되어 있다.</p><h4>사용 예시</h4><p>맥북에서 <code>ollama run gemma3</code>으로 로컬 AI를 바로 쓸 수 있다. OpenAI 호환 API를 제공해서 기존 코드의 base_url만 <code>http://localhost:11434</code>로 바꾸면 로컬 모델로 전환된다. API 비용 없이 실험하거나, 민감 데이터를 외부로 보내지 않아야 하는 환경에서 핵심 도구다.</p></div>
+  <div class="tags"><span>#로컬실행</span><span>#CLI</span><span>#오픈소스</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#ollama">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

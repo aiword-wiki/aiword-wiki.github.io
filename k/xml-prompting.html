@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XML 프롬프팅 (XML Prompting) — AI Wiki</title>
+<meta name="description" content="XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.">
+<meta name="keywords" content="구조화, Anthropic, Claude, AI, XML 프롬프팅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XML 프롬프팅 (XML Prompting) — AI Wiki">
+<meta property="og:description" content="XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/xml-prompting.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XML 프롬프팅 (XML Prompting) — AI Wiki">
+<meta name="twitter:description" content="XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/xml-prompting.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/xml-prompting.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "XML 프롬프팅",
+  "alternateName": "XML Prompting",
+  "description": "XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.",
+  "url": "https://aiword-wiki.github.io/k/xml-prompting.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">XML 프롬프팅</div>
+  <div class="en">XML Prompting</div>
+  <div class="body"><p>XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.</p><h4>개념 설명</h4><p>긴 프롬프트에서 "지시사항과 예시와 사용자 입력"을 줄바꿈으로만 구분하면 LLM이 경계를 혼동하기 쉽다. <strong>XML 프롬프팅</strong>은 <code>&lt;instructions&gt;</code>, <code>&lt;examples&gt;</code>, <code>&lt;user_query&gt;</code>처럼 XML 태그로 각 영역을 명확히 표시해서 구조를 잡는 방식이다. Anthropic은 Claude가 XML 태그 구조에 특히 잘 반응하도록 학습됐다고 밝혀, Claude 프롬프팅 가이드에서 권장하는 방식이다.</p><h4>사용 예시</h4><p>복잡한 시스템 프롬프트를 구성할 때 <code>&lt;role&gt;</code>에 역할을, <code>&lt;context&gt;</code>에 배경 정보를, <code>&lt;rules&gt;</code>에 제약 조건을, <code>&lt;task&gt;</code>에 실제 작업을 담으면 Claude가 각 섹션을 정확히 구분해서 처리한다. 프롬프트 인젝션을 방어하는 데도 유용하다.</p></div>
+  <div class="tags"><span>#구조화</span><span>#Anthropic</span><span>#Claude</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#xml-prompting">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

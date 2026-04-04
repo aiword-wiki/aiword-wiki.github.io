@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>훅 (Hooks) — AI Wiki</title>
+<meta name="description" content="Claude Code에서 특정 이벤트 전후에 자동으로 실행되는 셸 명령. 프롬프트가 아니라 운영체제가 직접 실행하므로 100% 확실하게 동작한다.">
+<meta name="keywords" content="이벤트, 트리거, 자동화, AI, 훅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="훅 (Hooks) — AI Wiki">
+<meta property="og:description" content="Claude Code에서 특정 이벤트 전후에 자동으로 실행되는 셸 명령. 프롬프트가 아니라 운영체제가 직접 실행하므로 100% 확실하게 동작한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/hooks.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="훅 (Hooks) — AI Wiki">
+<meta name="twitter:description" content="Claude Code에서 특정 이벤트 전후에 자동으로 실행되는 셸 명령. 프롬프트가 아니라 운영체제가 직접 실행하므로 100% 확실하게 동작한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/hooks.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/hooks.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "훅",
+  "alternateName": "Hooks",
+  "description": "Claude Code에서 특정 이벤트 전후에 자동으로 실행되는 셸 명령. 프롬프트가 아니라 운영체제가 직접 실행하므로 100% 확실하게 동작한다.",
+  "url": "https://aiword-wiki.github.io/k/hooks.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">훅</div>
+  <div class="en">Hooks</div>
+  <div class="body"><p>Claude Code에서 특정 이벤트 전후에 자동으로 실행되는 셸 명령. 프롬프트가 아니라 운영체제가 직접 실행하므로 100% 확실하게 동작한다.</p><h4>훅이란</h4><p>Claude가 파일을 수정하거나 명령을 실행할 때, 그 전후에 자동으로 셸 스크립트를 실행시키는 메커니즘이다. 중요한 점은 LLM이 해석하는 프롬프트가 아니라 <strong>운영체제가 직접 실행하는 스크립트</strong>라는 것이다. "prettier 돌려줘"라고 부탁하는 게 아니라, 파일이 수정되면 무조건 prettier가 돌아간다.</p>
+<h4>사용 예시</h4><p><code>settings.json</code>에서 이벤트별로 훅을 등록한다. PostToolUse 훅에 <code>prettier</code>를 걸면 파일 수정 후 자동으로 포맷팅이 적용된다. PreToolUse 훅으로 <code>rm -rf</code>나 <code>DROP TABLE</code>이 포함된 명령을 차단하면 위험한 실행을 원천 봉쇄할 수 있다.</p>
+<p>멀티에이전트와 조합하면 더 유용하다. 여러 에이전트가 동시에 코드를 건드려도 훅이 매번 린트와 타입 체크를 돌려서 코드 스타일이 깨지지 않는다. 하네스 엔지니어링 관점에서 훅은 에이전트의 행동을 감싸는 가드레일 역할을 한다.</p></div>
+  <div class="tags"><span>#이벤트</span><span>#트리거</span><span>#자동화</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#hooks">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

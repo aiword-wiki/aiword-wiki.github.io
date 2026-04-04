@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>토큰화 (Tokenization) — AI Wiki</title>
+<meta name="description" content="텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.">
+<meta name="keywords" content="전처리, BPE, AI, 토큰화">
+<meta property="og:type" content="article">
+<meta property="og:title" content="토큰화 (Tokenization) — AI Wiki">
+<meta property="og:description" content="텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/tokenization.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="토큰화 (Tokenization) — AI Wiki">
+<meta name="twitter:description" content="텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/tokenization.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/tokenization.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "토큰화",
+  "alternateName": "Tokenization",
+  "description": "텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.",
+  "url": "https://aiword-wiki.github.io/k/tokenization.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">토큰화</div>
+  <div class="en">Tokenization</div>
+  <div class="body"><p>텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.</p><h4>토큰화란</h4><p>LLM은 글자가 아니라 토큰 단위로 생각한다. "안녕하세요"가 1토큰일 수도, 3토큰일 수도 있다. BPE(Byte Pair Encoding)가 가장 널리 쓰이는 분할 알고리즘이며, 자주 나오는 글자 조합을 하나의 토큰으로 묶는다.</p>
+<h4>왜 알아야 하나</h4><p>API 비용이 토큰 수에 비례하므로, 같은 내용이라도 토큰을 적게 쓰면 비용이 줄어든다. 영어는 1,000단어가 약 750토큰이지만, 한국어는 같은 분량에서 더 많은 토큰을 소비한다. 이건 한국어가 비효율적이라는 게 아니라, 토크나이저가 영어 중심으로 설계됐기 때문이다.</p>
+<p>컨텍스트 윈도우도 토큰 단위다. "100만 토큰 지원"이 한국어로 얼마나 되는지는 토크나이저에 따라 다르다. OpenAI의 <code>tiktoken</code>이나 Anthropic의 토큰 카운터로 미리 토큰 수를 확인하는 습관이 비용 관리에 도움된다.</p></div>
+  <div class="tags"><span>#전처리</span><span>#BPE</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#tokenization">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

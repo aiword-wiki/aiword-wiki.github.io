@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헌법적 AI (Constitutional AI) — AI Wiki</title>
+<meta name="description" content="AI 모델이 스스로 자신의 출력을 헌법(원칙 목록)에 비추어 평가하고 수정하도록 훈련하는 방법. 사람이 일일이 라벨링하지 않아도 AI가 안전하고 도움이 되는 방향으로 스스로 개선되게 한다.">
+<meta name="keywords" content="Anthropic, 정렬, RLHF, AI, 헌법적 AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="헌법적 AI (Constitutional AI) — AI Wiki">
+<meta property="og:description" content="AI 모델이 스스로 자신의 출력을 헌법(원칙 목록)에 비추어 평가하고 수정하도록 훈련하는 방법. 사람이 일일이 라벨링하지 않아도 AI가 안전하고 도움이 되는 방향으로 스스로 개선되게 한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/constitutional-ai.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="헌법적 AI (Constitutional AI) — AI Wiki">
+<meta name="twitter:description" content="AI 모델이 스스로 자신의 출력을 헌법(원칙 목록)에 비추어 평가하고 수정하도록 훈련하는 방법. 사람이 일일이 라벨링하지 않아도 AI가 안전하고 도움이 되는 방향으로 스스로 개선되게 한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/constitutional-ai.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/constitutional-ai.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "헌법적 AI",
+  "alternateName": "Constitutional AI",
+  "description": "AI 모델이 스스로 자신의 출력을 헌법(원칙 목록)에 비추어 평가하고 수정하도록 훈련하는 방법. 사람이 일일이 라벨링하지 않아도 AI가 안전하고 도움이 되는 방향으로 스스로 개선되게 한다.",
+  "url": "https://aiword-wiki.github.io/k/constitutional-ai.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">안전</div>
+  <div class="title">헌법적 AI</div>
+  <div class="en">Constitutional AI</div>
+  <div class="body"><p>AI 모델이 스스로 자신의 출력을 헌법(원칙 목록)에 비추어 평가하고 수정하도록 훈련하는 방법. 사람이 일일이 라벨링하지 않아도 AI가 안전하고 도움이 되는 방향으로 스스로 개선되게 한다.</p><h4>개념 설명</h4><p>Anthropic이 개발한 방법론으로, AI에게 "다음 원칙들을 지켜라"는 식의 헌법을 주고 자신의 응답이 그 원칙에 부합하는지 스스로 비판하게 한다. 기존 RLHF가 사람의 피드백에 의존했다면, Constitutional AI는 AI 자신이 비평가 역할을 맡는다. 이렇게 하면 대량의 인간 라벨링 없이도 더 일관된 안전 기준을 적용할 수 있다.</p><h4>사용 예시</h4><p>Claude 시리즈 모델이 Constitutional AI로 훈련된 대표적 사례다. 유해한 요청에 단순히 거부하는 것이 아니라, 왜 거부하는지 설명하고 대안을 제시하는 방식은 이 훈련 방식에서 비롯된다. 개발자가 시스템 프롬프트에 사용 정책을 명시하면, 모델은 그 정책을 헌법의 일부로 해석해 동작한다.</p></div>
+  <div class="tags"><span>#Anthropic</span><span>#정렬</span><span>#RLHF</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#constitutional-ai">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

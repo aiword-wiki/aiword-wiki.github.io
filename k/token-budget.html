@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>토큰 예산 (Token Budget) — AI Wiki</title>
+<meta name="description" content="추론 모델이 답을 생성하기 전에 얼마나 오래 &quot;생각&quot;할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.">
+<meta name="keywords" content="사고예산, 비용제어, 추론, AI, 토큰 예산">
+<meta property="og:type" content="article">
+<meta property="og:title" content="토큰 예산 (Token Budget) — AI Wiki">
+<meta property="og:description" content="추론 모델이 답을 생성하기 전에 얼마나 오래 &quot;생각&quot;할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/token-budget.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="토큰 예산 (Token Budget) — AI Wiki">
+<meta name="twitter:description" content="추론 모델이 답을 생성하기 전에 얼마나 오래 &quot;생각&quot;할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/token-budget.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/token-budget.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "토큰 예산",
+  "alternateName": "Token Budget",
+  "description": "추론 모델이 답을 생성하기 전에 얼마나 오래 \"생각\"할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.",
+  "url": "https://aiword-wiki.github.io/k/token-budget.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <div class="title">토큰 예산</div>
+  <div class="en">Token Budget</div>
+  <div class="body"><p>추론 모델이 답을 생성하기 전에 얼마나 오래 "생각"할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.</p><h4>개념 설명</h4><p>Claude의 확장 사고나 OpenAI의 추론 모델(o-series)처럼 내부적으로 사고 과정을 생성하는 모델들은 얼마나 길게 생각할지 조절할 수 있다. 토큰 예산은 이 사고에 사용할 수 있는 최대 토큰 수를 설정하는 파라미터다. 예산이 높을수록 더 깊이 생각해 어려운 문제에서 정확도가 올라가지만, 비용과 지연도 함께 늘어난다.</p><p>간단한 질문에 불필요하게 큰 예산을 쓰는 것은 낭비이므로, 태스크 복잡도에 따라 예산을 동적으로 조절하는 전략이 필요하다.</p><h4>사용 예시</h4><p>Claude API에서 <code>thinking: {type: "enabled", budget_tokens: 10000}</code>으로 사고 예산을 설정한다. 수학 증명이나 복잡한 코드 디버깅에는 예산을 높게, 단순 요약이나 번역에는 낮게 또는 비활성화해 비용을 관리한다. 프로덕션에서는 요청의 복잡도를 분류해 예산을 자동으로 설정하는 라우터를 구성하는 것이 이상적이다.</p></div>
+  <div class="tags"><span>#사고예산</span><span>#비용제어</span><span>#추론</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#token-budget">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

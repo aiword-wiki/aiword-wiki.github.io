@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사고의 사슬 (Chain-of-Thought) — AI Wiki</title>
+<meta name="description" content="&quot;답부터 말하지 말고 과정을 보여줘&quot;라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.">
+<meta name="keywords" content="추론, 단계적사고, AI, 사고의 사슬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="사고의 사슬 (Chain-of-Thought) — AI Wiki">
+<meta property="og:description" content="&quot;답부터 말하지 말고 과정을 보여줘&quot;라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/chain-of-thought.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="사고의 사슬 (Chain-of-Thought) — AI Wiki">
+<meta name="twitter:description" content="&quot;답부터 말하지 말고 과정을 보여줘&quot;라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/chain-of-thought.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/chain-of-thought.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "사고의 사슬",
+  "alternateName": "Chain-of-Thought",
+  "description": "\"답부터 말하지 말고 과정을 보여줘\"라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.",
+  "url": "https://aiword-wiki.github.io/k/chain-of-thought.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">사고의 사슬</div>
+  <div class="en">Chain-of-Thought</div>
+  <div class="body"><p>"답부터 말하지 말고 과정을 보여줘"라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.</p><h4>사고의 사슬이란</h4><p>"서울에서 부산까지 KTX 요금이 59,800원이고 3명이 가면?"이라는 질문에 바로 답하면 틀리기 쉽다. "59,800 × 3 = 179,400원"처럼 단계를 밟으면 정확해진다. 사고의 사슬은 모델에게 이 "단계별 사고"를 하도록 유도하는 기법이다. 프롬프트에 "단계별로 생각해"라고 한 줄 추가하는 것만으로도 수학, 논리, 코드 추론의 정확도가 크게 올라간다.</p>
+<h4>사용 예시</h4><p>Claude API에서 시스템 프롬프트에 "Before answering, think step by step"을 넣거나, Claude의 extended thinking 기능을 활성화하면 모델이 중간 추론 과정을 내부적으로 수행한다.</p>
+<p>복잡한 코드 리뷰를 시킬 때 "이 코드의 문제점을 찾아줘"보다 "1) 이 함수의 입출력을 파악하고 2) 엣지 케이스를 확인하고 3) 잠재적 버그를 찾아줘"처럼 단계를 명시하면 더 정확한 분석을 얻을 수 있다. 프롬프트 엔지니어링의 핵심 기법 중 하나로, 퓨샷과 결합하면 더 강력해진다.</p></div>
+  <div class="tags"><span>#추론</span><span>#단계적사고</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#chain-of-thought">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

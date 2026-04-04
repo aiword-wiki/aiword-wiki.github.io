@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연속 배칭 (Continuous Batching) — AI Wiki</title>
+<meta name="description" content="LLM 서빙에서 완료된 요청을 즉시 새 요청으로 교체해 GPU를 쉬지 않고 활용하는 스케줄링 기법. 기존 정적 배칭 대비 처리량을 수십 배 높인다.">
+<meta name="keywords" content="처리량, 스케줄링, vLLM, AI, 연속 배칭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="연속 배칭 (Continuous Batching) — AI Wiki">
+<meta property="og:description" content="LLM 서빙에서 완료된 요청을 즉시 새 요청으로 교체해 GPU를 쉬지 않고 활용하는 스케줄링 기법. 기존 정적 배칭 대비 처리량을 수십 배 높인다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/continuous-batching.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="연속 배칭 (Continuous Batching) — AI Wiki">
+<meta name="twitter:description" content="LLM 서빙에서 완료된 요청을 즉시 새 요청으로 교체해 GPU를 쉬지 않고 활용하는 스케줄링 기법. 기존 정적 배칭 대비 처리량을 수십 배 높인다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/continuous-batching.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/continuous-batching.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "연속 배칭",
+  "alternateName": "Continuous Batching",
+  "description": "LLM 서빙에서 완료된 요청을 즉시 새 요청으로 교체해 GPU를 쉬지 않고 활용하는 스케줄링 기법. 기존 정적 배칭 대비 처리량을 수십 배 높인다.",
+  "url": "https://aiword-wiki.github.io/k/continuous-batching.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <div class="title">연속 배칭</div>
+  <div class="en">Continuous Batching</div>
+  <div class="body"><p>LLM 서빙에서 완료된 요청을 즉시 새 요청으로 교체해 GPU를 쉬지 않고 활용하는 스케줄링 기법. 기존 정적 배칭 대비 처리량을 수십 배 높인다.</p><h4>개념 설명</h4><p>기존 배칭은 같은 배치의 모든 요청이 끝날 때까지 새 요청을 받지 않았다. 짧은 요청이 먼저 끝나도 긴 요청이 끝날 때까지 GPU가 절반 놀고 있는 셈이다. 연속 배칭은 한 요청이 완료되는 즉시 대기 중인 새 요청이 그 자리를 채운다. 항상 GPU가 꽉 찬 상태로 돌아가기 때문에 처리량이 극적으로 향상된다.</p><p>vLLM, TGI 등 현대 LLM 서빙 프레임워크의 핵심 기능이다. <strong>iteration-level 스케줄링</strong>이라고도 불리며, 각 토큰 생성 단계에서 배치를 동적으로 재구성한다.</p><h4>사용 예시</h4><p>vLLM은 기본적으로 연속 배칭을 사용한다. 다양한 길이의 요청이 섞이는 실제 서비스 환경에서 단순 정적 배칭 대비 GPU 활용률이 크게 올라가고, 같은 인프라로 더 많은 요청을 처리할 수 있다. 특히 짧은 요청과 긴 요청이 혼재하는 챗봇 서비스에서 효과가 크다.</p></div>
+  <div class="tags"><span>#처리량</span><span>#스케줄링</span><span>#vLLM</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#continuous-batching">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

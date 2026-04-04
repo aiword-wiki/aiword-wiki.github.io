@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시스템 프롬프트 (System Prompt) — AI Wiki</title>
+<meta name="description" content="AI에게 대화가 시작되기 전 역할, 규칙, 제약을 미리 알려주는 특수 지시문. 모든 사용자 메시지에 일관되게 적용되는 보이지 않는 규칙서다.">
+<meta name="keywords" content="설정, 역할부여, AI, 시스템 프롬프트">
+<meta property="og:type" content="article">
+<meta property="og:title" content="시스템 프롬프트 (System Prompt) — AI Wiki">
+<meta property="og:description" content="AI에게 대화가 시작되기 전 역할, 규칙, 제약을 미리 알려주는 특수 지시문. 모든 사용자 메시지에 일관되게 적용되는 보이지 않는 규칙서다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/system-prompt.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="시스템 프롬프트 (System Prompt) — AI Wiki">
+<meta name="twitter:description" content="AI에게 대화가 시작되기 전 역할, 규칙, 제약을 미리 알려주는 특수 지시문. 모든 사용자 메시지에 일관되게 적용되는 보이지 않는 규칙서다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/system-prompt.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/system-prompt.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "시스템 프롬프트",
+  "alternateName": "System Prompt",
+  "description": "AI에게 대화가 시작되기 전 역할, 규칙, 제약을 미리 알려주는 특수 지시문. 모든 사용자 메시지에 일관되게 적용되는 보이지 않는 규칙서다.",
+  "url": "https://aiword-wiki.github.io/k/system-prompt.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">시스템 프롬프트</div>
+  <div class="en">System Prompt</div>
+  <div class="body"><p>AI에게 대화가 시작되기 전 역할, 규칙, 제약을 미리 알려주는 특수 지시문. 모든 사용자 메시지에 일관되게 적용되는 보이지 않는 규칙서다.</p><h4>시스템 프롬프트란</h4><p>사용자 메시지와 별도로, 개발자가 모델에게 전달하는 사전 지시문이다. 페르소나("너는 시니어 개발자야"), 응답 범위("코딩 관련 질문에만 답해"), 출력 형식("JSON으로 반환해"), 금지 행동("개인정보를 절대 출력하지 마")을 규정하면 모든 후속 대화에 일관되게 적용된다.</p>
+<h4>사용 예시</h4><p>Claude API에서 <code>system</code> 파라미터로 전달한다. Claude Code에서는 CLAUDE.md가 사실상 시스템 프롬프트 역할을 한다 — 세션 시작 시 자동으로 읽혀서 에이전트의 행동 규칙이 된다.</p>
+<p>에이전트를 만들 때 시스템 프롬프트는 하네스 엔지니어링의 첫 번째 레이어다. 여기서 에이전트의 역할과 제약을 잡고, 도구 정의로 할 수 있는 일의 범위를 정하고, 훅으로 실행 시점의 가드레일을 거는 식으로 층층이 하네스를 쌓는다.</p></div>
+  <div class="tags"><span>#설정</span><span>#역할부여</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#system-prompt">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

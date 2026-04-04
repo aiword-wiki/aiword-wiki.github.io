@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic SDK — AI Wiki</title>
+<meta name="description" content="Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.">
+<meta name="keywords" content="Anthropic, API, Python, TypeScript, AI, Anthropic SDK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anthropic SDK — AI Wiki">
+<meta property="og:description" content="Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/anthropic-sdk.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Anthropic SDK — AI Wiki">
+<meta name="twitter:description" content="Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/anthropic-sdk.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/anthropic-sdk.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Anthropic SDK",
+  "alternateName": "Anthropic SDK",
+  "description": "Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.",
+  "url": "https://aiword-wiki.github.io/k/anthropic-sdk.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">Anthropic SDK</div>
+  <div class="en"></div>
+  <div class="body"><p>Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.</p><h4>개념 설명</h4><p>Claude API를 raw HTTP로 호출할 수도 있지만, 인증, 재시도, 스트리밍 처리, 타입 안전성 같은 반복 작업을 직접 처리해야 한다. <strong>Anthropic SDK</strong>는 이런 부분을 모두 추상화해서 Claude 호출에 집중할 수 있게 한다. Python과 TypeScript/JavaScript 버전을 공식 제공하며, 메시지 API, 스트리밍, 툴 사용, 배치 처리를 모두 지원한다.</p><h4>사용 예시</h4><p><code>pip install anthropic</code> 후 <code>client = Anthropic()</code>로 클라이언트를 만들고 <code>client.messages.create(model="claude-opus-4-5", messages=[...])</code>로 바로 호출할 수 있다. 스트리밍은 <code>with client.messages.stream(...) as stream</code> 패턴으로, 툴 사용은 <code>tools</code> 파라미터에 정의를 넘기면 된다.</p></div>
+  <div class="tags"><span>#Anthropic</span><span>#API</span><span>#Python</span><span>#TypeScript</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#anthropic-sdk">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

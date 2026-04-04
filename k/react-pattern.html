@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReAct 패턴 (ReAct) — AI Wiki</title>
+<meta name="description" content="&quot;생각 → 행동 → 관찰&quot;을 반복하면서 도구를 사용해 문제를 단계별로 해결하는 에이전트 설계 패턴. 대부분의 AI 에이전트가 이 구조로 동작한다.">
+<meta name="keywords" content="추론, 행동루프, AI, ReAct 패턴">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReAct 패턴 (ReAct) — AI Wiki">
+<meta property="og:description" content="&quot;생각 → 행동 → 관찰&quot;을 반복하면서 도구를 사용해 문제를 단계별로 해결하는 에이전트 설계 패턴. 대부분의 AI 에이전트가 이 구조로 동작한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/react-pattern.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ReAct 패턴 (ReAct) — AI Wiki">
+<meta name="twitter:description" content="&quot;생각 → 행동 → 관찰&quot;을 반복하면서 도구를 사용해 문제를 단계별로 해결하는 에이전트 설계 패턴. 대부분의 AI 에이전트가 이 구조로 동작한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/react-pattern.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/react-pattern.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "ReAct 패턴",
+  "alternateName": "ReAct",
+  "description": "\"생각 → 행동 → 관찰\"을 반복하면서 도구를 사용해 문제를 단계별로 해결하는 에이전트 설계 패턴. 대부분의 AI 에이전트가 이 구조로 동작한다.",
+  "url": "https://aiword-wiki.github.io/k/react-pattern.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <div class="title">ReAct 패턴</div>
+  <div class="en">ReAct</div>
+  <div class="body"><p>"생각 → 행동 → 관찰"을 반복하면서 도구를 사용해 문제를 단계별로 해결하는 에이전트 설계 패턴. 대부분의 AI 에이전트가 이 구조로 동작한다.</p><h4>ReAct 패턴이란</h4><p>에이전트가 문제를 풀 때 머릿속으로 생각만 하는 것도 아니고, 생각 없이 행동만 하는 것도 아닌, 둘을 번갈아 하는 패턴이다. Thought(이 문제를 풀려면 먼저 ~를 확인해야겠다) → Action(검색 도구 호출) → Observation(검색 결과 확인) → Thought(이 결과를 보면 ~인 것 같다) → Action(다음 도구 호출)... 이 루프가 답에 도달할 때까지 반복된다.</p>
+<h4>사용 예시</h4><p>Claude의 도구 사용이 이 패턴으로 동작한다. "이 프로젝트의 테스트 커버리지를 확인해줘"라고 시키면, 먼저 프로젝트 구조를 탐색하고(Action), 테스트 파일들을 확인하고(Observation), 커버리지 도구를 실행하고(Action), 결과를 분석해서(Observation) 보고한다.</p>
+<p>추론 과정이 명시적으로 기록되기 때문에 에이전트가 왜 그런 행동을 했는지 추적하고 디버깅할 수 있다. 에이전트가 이상하게 동작하면 Thought 로그를 확인해서 어디서 판단이 잘못됐는지 찾을 수 있다.</p></div>
+  <div class="tags"><span>#추론</span><span>#행동루프</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#react-pattern">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>레이턴시 최적화 (Latency Optimization) — AI Wiki</title>
+<meta name="description" content="LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.">
+<meta name="keywords" content="TTFT, 지연시간, 응답속도, AI, 레이턴시 최적화">
+<meta property="og:type" content="article">
+<meta property="og:title" content="레이턴시 최적화 (Latency Optimization) — AI Wiki">
+<meta property="og:description" content="LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/latency-optimization.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="레이턴시 최적화 (Latency Optimization) — AI Wiki">
+<meta name="twitter:description" content="LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/latency-optimization.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/latency-optimization.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "레이턴시 최적화",
+  "alternateName": "Latency Optimization",
+  "description": "LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.",
+  "url": "https://aiword-wiki.github.io/k/latency-optimization.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <div class="title">레이턴시 최적화</div>
+  <div class="en">Latency Optimization</div>
+  <div class="body"><p>LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.</p><h4>개념 설명</h4><p>레이턴시는 크게 두 지표로 나뉜다. <strong>TTFT(Time to First Token)</strong>는 요청 후 첫 토큰이 오기까지의 시간이고, <strong>TPOT(Time Per Output Token)</strong>는 이후 각 토큰 생성 간격이다. 사용자 체감에는 TTFT가 가장 중요하다. TTFT를 줄이려면 프롬프트 처리 속도를 높여야 하고(Flash Attention, KV Cache), TPOT는 토큰 생성 속도를 높이는 데 집중한다.</p><p>추측적 디코딩은 TPOT를 줄이고, 프롬프트 캐싱은 TTFT를 줄인다. 사용자에게 가까운 지역에 서빙 인프라를 배치하는 지역 최적화도 중요하다.</p><h4>사용 예시</h4><p>Claude API의 프롬프트 캐싱을 활성화해 반복되는 시스템 프롬프트의 TTFT를 줄이고, vLLM의 추측적 디코딩으로 생성 속도를 높이며, 사용자가 많은 지역의 데이터센터 엔드포인트를 우선 호출하는 세 가지를 조합하면 레이턴시를 크게 줄일 수 있다.</p></div>
+  <div class="tags"><span>#TTFT</span><span>#지연시간</span><span>#응답속도</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#latency-optimization">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

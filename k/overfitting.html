@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>과적합 (Overfitting) — AI Wiki</title>
+<meta name="description" content="모델이 훈련 데이터에 너무 맞게 학습되어 새로운 데이터에서 성능이 나빠지는 현상. AI 모델이 &quot;외운 것&quot;과 &quot;이해한 것&quot;을 구분하는 핵심 개념이다.">
+<meta name="keywords" content="일반화, 정규화, 검증, AI, 과적합">
+<meta property="og:type" content="article">
+<meta property="og:title" content="과적합 (Overfitting) — AI Wiki">
+<meta property="og:description" content="모델이 훈련 데이터에 너무 맞게 학습되어 새로운 데이터에서 성능이 나빠지는 현상. AI 모델이 &quot;외운 것&quot;과 &quot;이해한 것&quot;을 구분하는 핵심 개념이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/overfitting.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="과적합 (Overfitting) — AI Wiki">
+<meta name="twitter:description" content="모델이 훈련 데이터에 너무 맞게 학습되어 새로운 데이터에서 성능이 나빠지는 현상. AI 모델이 &quot;외운 것&quot;과 &quot;이해한 것&quot;을 구분하는 핵심 개념이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/overfitting.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/overfitting.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "과적합",
+  "alternateName": "Overfitting",
+  "description": "모델이 훈련 데이터에 너무 맞게 학습되어 새로운 데이터에서 성능이 나빠지는 현상. AI 모델이 \"외운 것\"과 \"이해한 것\"을 구분하는 핵심 개념이다.",
+  "url": "https://aiword-wiki.github.io/k/overfitting.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">과적합</div>
+  <div class="en">Overfitting</div>
+  <div class="body"><p>모델이 훈련 데이터에 너무 맞게 학습되어 새로운 데이터에서 성능이 나빠지는 현상. AI 모델이 "외운 것"과 "이해한 것"을 구분하는 핵심 개념이다.</p><h4>개념 설명</h4><p>시험 문제를 풀 때 기출문제를 통째로 외운 학생과 개념을 이해한 학생의 차이와 비슷하다. 기출문제만 외운 학생은 시험 문제가 조금만 바뀌면 틀린다 — 과적합이 이런 현상이다. 훈련 데이터의 노이즈와 특이한 패턴까지 학습해서 훈련 성능은 높은데 테스트 성능은 낮은 상태다. 과소적합(모델이 너무 단순)과 반대 개념이다.</p>
+<h4>사용 예시</h4><p>파인튜닝할 때 가장 흔히 만나는 문제다. 훈련 손실은 계속 줄어드는데 검증 손실이 어느 순간부터 늘어나기 시작하면 과적합이 시작된 것이다. 드롭아웃(학습 중 일부 뉴런을 무작위로 비활성화), L2 정규화, 조기 종료(early stopping), 데이터 증강으로 과적합을 줄인다. 훈련/검증/테스트 데이터를 분리하고 검증 성능을 모니터링하는 습관이 과적합 탐지의 기본이다.</p></div>
+  <div class="tags"><span>#일반화</span><span>#정규화</span><span>#검증</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#overfitting">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

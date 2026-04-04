@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>텍스트-투-SQL (Text-to-SQL) — AI Wiki</title>
+<meta name="description" content="자연어 질문을 SQL 쿼리로 자동 변환해서 비전문가도 데이터베이스를 조회할 수 있게 해주는 기술. BI 도구와 데이터 팀의 부담을 줄이는 핵심 AI 응용이다.">
+<meta name="keywords" content="데이터베이스, 자연어인터페이스, SQL, AI, 텍스트-투-SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="텍스트-투-SQL (Text-to-SQL) — AI Wiki">
+<meta property="og:description" content="자연어 질문을 SQL 쿼리로 자동 변환해서 비전문가도 데이터베이스를 조회할 수 있게 해주는 기술. BI 도구와 데이터 팀의 부담을 줄이는 핵심 AI 응용이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/text-to-sql.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="텍스트-투-SQL (Text-to-SQL) — AI Wiki">
+<meta name="twitter:description" content="자연어 질문을 SQL 쿼리로 자동 변환해서 비전문가도 데이터베이스를 조회할 수 있게 해주는 기술. BI 도구와 데이터 팀의 부담을 줄이는 핵심 AI 응용이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/text-to-sql.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/text-to-sql.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "텍스트-투-SQL",
+  "alternateName": "Text-to-SQL",
+  "description": "자연어 질문을 SQL 쿼리로 자동 변환해서 비전문가도 데이터베이스를 조회할 수 있게 해주는 기술. BI 도구와 데이터 팀의 부담을 줄이는 핵심 AI 응용이다.",
+  "url": "https://aiword-wiki.github.io/k/text-to-sql.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">응용</div>
+  <div class="title">텍스트-투-SQL</div>
+  <div class="en">Text-to-SQL</div>
+  <div class="body"><p>자연어 질문을 SQL 쿼리로 자동 변환해서 비전문가도 데이터베이스를 조회할 수 있게 해주는 기술. BI 도구와 데이터 팀의 부담을 줄이는 핵심 AI 응용이다.</p><h4>개념 설명</h4><p>"지난달 가장 많이 팔린 상품 10개 보여줘"를 SQL로 쓰려면 테이블 구조를 알고 쿼리 문법도 알아야 한다. Text-to-SQL은 자연어 질문을 받아서 해당 데이터베이스의 스키마에 맞는 SQL을 자동 생성한다. 스키마 정보를 LLM에 함께 제공하는 것이 핵심이고, 테이블명·컬럼명·관계를 맥락으로 주면 꽤 복잡한 쿼리도 정확하게 생성된다.</p>
+<h4>사용 예시</h4><p>내부 데이터 분석 도구를 만들 때 Text-to-SQL 인터페이스를 추가하면 SQL 모르는 팀원도 데이터를 조회할 수 있다. 구현 방법은 시스템 프롬프트에 데이터베이스 스키마를 포함시키고 사용자 질문과 함께 LLM에 전달하는 것이다. 생성된 SQL을 실행하기 전에 항상 검증 단계를 두는 것이 중요한데, 테이블이 없거나 잘못된 조건이 포함될 수 있기 때문이다. <code>sqlglot</code> 같은 라이브러리로 SQL 파싱 후 실행하는 패턴이 안전하다.</p></div>
+  <div class="tags"><span>#데이터베이스</span><span>#자연어인터페이스</span><span>#SQL</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#text-to-sql">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

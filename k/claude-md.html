@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAUDE.md — AI Wiki</title>
+<meta name="description" content="Claude Code가 세션 시작 시 자동으로 읽는 프로젝트 설정 파일. 코드만으로는 알 수 없는 규칙 — 빌드 명령, 코딩 컨벤션, 아키텍처 결정 — 을 담는다.">
+<meta name="keywords" content="설정, 프로젝트, AI, CLAUDE.md">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CLAUDE.md — AI Wiki">
+<meta property="og:description" content="Claude Code가 세션 시작 시 자동으로 읽는 프로젝트 설정 파일. 코드만으로는 알 수 없는 규칙 — 빌드 명령, 코딩 컨벤션, 아키텍처 결정 — 을 담는다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/claude-md.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CLAUDE.md — AI Wiki">
+<meta name="twitter:description" content="Claude Code가 세션 시작 시 자동으로 읽는 프로젝트 설정 파일. 코드만으로는 알 수 없는 규칙 — 빌드 명령, 코딩 컨벤션, 아키텍처 결정 — 을 담는다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/claude-md.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/claude-md.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "CLAUDE.md",
+  "alternateName": "CLAUDE.md",
+  "description": "Claude Code가 세션 시작 시 자동으로 읽는 프로젝트 설정 파일. 코드만으로는 알 수 없는 규칙 — 빌드 명령, 코딩 컨벤션, 아키텍처 결정 — 을 담는다.",
+  "url": "https://aiword-wiki.github.io/k/claude-md.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">CLAUDE.md</div>
+  <div class="en"></div>
+  <div class="body"><p>Claude Code가 세션 시작 시 자동으로 읽는 프로젝트 설정 파일. 코드만으로는 알 수 없는 규칙 — 빌드 명령, 코딩 컨벤션, 아키텍처 결정 — 을 담는다.</p><h4>CLAUDE.md란</h4><p>프로젝트 루트에 <code>CLAUDE.md</code> 파일을 두면 Claude Code가 매 세션 시작 시 자동으로 읽어서 시스템 프롬프트에 포함시킨다. 코드를 아무리 읽어도 알 수 없는 것들 — "테스트는 이렇게 돌려", "이 폴더는 건드리지 마", "커밋 메시지는 한국어로" — 을 여기에 적는다.</p>
+<h4>사용 예시</h4><p>프로젝트 루트의 <code>./CLAUDE.md</code>와 전역 <code>~/.claude/CLAUDE.md</code> 두 계층이 있다. 프로젝트별 빌드 명령, 코딩 컨벤션, 금지 사항은 프로젝트 파일에, 모든 프로젝트에 공통인 규칙은 전역 파일에 넣는다.</p>
+<p>가장 효과적인 패턴은 작업하면서 점진적으로 키워 나가는 것이다. Claude가 실수할 때마다 "이건 이렇게 해"라고 알려주면서 CLAUDE.md에 추가하면, 시간이 지날수록 에이전트가 프로젝트를 더 잘 이해하게 된다. 하네스 엔지니어링의 첫 번째 레이어로, 에이전트에게 맥락과 제약을 주는 가장 기본적인 방법이다.</p></div>
+  <div class="tags"><span>#설정</span><span>#프로젝트</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#claude-md">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

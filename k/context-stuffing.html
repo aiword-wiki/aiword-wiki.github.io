@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨텍스트 스터핑 (Context Stuffing) — AI Wiki</title>
+<meta name="description" content="LLM에게 많은 양의 참고 문서를 컨텍스트로 넣어서 답변 정확도를 높이는 방식. RAG의 검색 단계를 생략하고 전부 넣는다.">
+<meta name="keywords" content="RAG, 긴컨텍스트, 검색, AI, 컨텍스트 스터핑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="컨텍스트 스터핑 (Context Stuffing) — AI Wiki">
+<meta property="og:description" content="LLM에게 많은 양의 참고 문서를 컨텍스트로 넣어서 답변 정확도를 높이는 방식. RAG의 검색 단계를 생략하고 전부 넣는다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/context-stuffing.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="컨텍스트 스터핑 (Context Stuffing) — AI Wiki">
+<meta name="twitter:description" content="LLM에게 많은 양의 참고 문서를 컨텍스트로 넣어서 답변 정확도를 높이는 방식. RAG의 검색 단계를 생략하고 전부 넣는다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/context-stuffing.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/context-stuffing.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "컨텍스트 스터핑",
+  "alternateName": "Context Stuffing",
+  "description": "LLM에게 많은 양의 참고 문서를 컨텍스트로 넣어서 답변 정확도를 높이는 방식. RAG의 검색 단계를 생략하고 전부 넣는다.",
+  "url": "https://aiword-wiki.github.io/k/context-stuffing.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">컨텍스트 스터핑</div>
+  <div class="en">Context Stuffing</div>
+  <div class="body"><p>LLM에게 많은 양의 참고 문서를 컨텍스트로 넣어서 답변 정확도를 높이는 방식. RAG의 검색 단계를 생략하고 전부 넣는다.</p><h4>개념 설명</h4><p>RAG는 벡터 검색으로 관련 문서를 골라 넣지만, 어떤 문서가 필요한지 정확히 예측하기 어려울 때는 놓치는 정보가 생긴다. <strong>컨텍스트 스터핑</strong>은 필요한 문서를 선별하는 대신, 관련 문서 전체를 컨텍스트에 쏟아 넣어서 LLM이 스스로 필요한 부분을 찾아 쓰게 하는 방식이다. 컨텍스트 윈도우가 길어지면서 현실적인 선택지가 됐다.</p><h4>사용 예시</h4><p>소규모 회사 내부 문서(전체 100만 토큰 이하)라면 RAG 파이프라인을 구축하는 대신 전체를 컨텍스트에 넣고 질의하는 방식이 더 간단하다. Claude의 200K 컨텍스트를 활용하면 긴 소설을 통째로 넣고 내용을 분석하거나, 전체 코드베이스를 넣고 리팩토링 계획을 세울 수 있다. 단, 비용과 속도를 고려해야 한다.</p></div>
+  <div class="tags"><span>#RAG</span><span>#긴컨텍스트</span><span>#검색</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#context-stuffing">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지식 베이스 (Knowledge Base) — AI Wiki</title>
+<meta name="description" content="조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.">
+<meta name="keywords" content="RAG, 문서관리, 검색, AI, 지식 베이스">
+<meta property="og:type" content="article">
+<meta property="og:title" content="지식 베이스 (Knowledge Base) — AI Wiki">
+<meta property="og:description" content="조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/knowledge-base.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="지식 베이스 (Knowledge Base) — AI Wiki">
+<meta name="twitter:description" content="조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/knowledge-base.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/knowledge-base.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "지식 베이스",
+  "alternateName": "Knowledge Base",
+  "description": "조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.",
+  "url": "https://aiword-wiki.github.io/k/knowledge-base.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">응용</div>
+  <div class="title">지식 베이스</div>
+  <div class="en">Knowledge Base</div>
+  <div class="body"><p>조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.</p><h4>개념 설명</h4><p>LLM은 학습 시점 이후의 정보를 모르고, 특정 조직의 내부 정보도 없다. 지식 베이스는 이 공백을 채운다. 회사 내부 문서, 제품 매뉴얼, FAQ, 코드 레포지토리를 인덱싱해서 AI가 질문할 때 관련 정보를 검색해 참조할 수 있게 만든다. 전통적인 검색 가능한 문서 저장소와 달리, AI용 지식 베이스는 의미 기반 검색이 가능하도록 임베딩 벡터로 변환해서 저장한다.</p>
+<h4>사용 예시</h4><p>회사 내부 위키, Notion 페이지, Confluence 문서를 자동으로 임베딩해서 벡터 DB에 저장하면 직원이 "이 기능 관련 기획서 있어?"라고 물을 때 AI가 관련 문서를 찾아서 답변을 생성할 수 있다. Notion AI, Confluence AI, 또는 커스텀 RAG 파이프라인으로 구현한다. 문서가 업데이트될 때 임베딩을 자동으로 갱신하는 동기화 파이프라인이 지식 베이스의 품질을 유지하는 핵심이다.</p></div>
+  <div class="tags"><span>#RAG</span><span>#문서관리</span><span>#검색</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#knowledge-base">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

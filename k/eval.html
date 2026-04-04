@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 평가 (Evaluation) — AI Wiki</title>
+<meta name="description" content="AI 모델이나 시스템의 성능과 품질을 체계적으로 측정하는 프로세스. &quot;잘 되는 것 같다&quot;가 아니라 수치로 증명하기 위한 과정이다.">
+<meta name="keywords" content="벤치마크, 품질측정, AI, AI 평가">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 평가 (Evaluation) — AI Wiki">
+<meta property="og:description" content="AI 모델이나 시스템의 성능과 품질을 체계적으로 측정하는 프로세스. &quot;잘 되는 것 같다&quot;가 아니라 수치로 증명하기 위한 과정이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/eval.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI 평가 (Evaluation) — AI Wiki">
+<meta name="twitter:description" content="AI 모델이나 시스템의 성능과 품질을 체계적으로 측정하는 프로세스. &quot;잘 되는 것 같다&quot;가 아니라 수치로 증명하기 위한 과정이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/eval.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/eval.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "AI 평가",
+  "alternateName": "Evaluation",
+  "description": "AI 모델이나 시스템의 성능과 품질을 체계적으로 측정하는 프로세스. \"잘 되는 것 같다\"가 아니라 수치로 증명하기 위한 과정이다.",
+  "url": "https://aiword-wiki.github.io/k/eval.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <div class="title">AI 평가</div>
+  <div class="en">Evaluation</div>
+  <div class="body"><p>AI 모델이나 시스템의 성능과 품질을 체계적으로 측정하는 프로세스. "잘 되는 것 같다"가 아니라 수치로 증명하기 위한 과정이다.</p><h4>평가가 중요한 이유</h4><p>LLM은 같은 입력에도 다른 출력을 낼 수 있고, 환각도 생성한다. 프롬프트를 바꿨을 때 정말 나아진 건지, 모델을 교체했을 때 성능이 유지되는지를 감이 아니라 데이터로 확인해야 한다.</p>
+<h4>사용 예시</h4><p>가장 기본적인 방법은 테스트 케이스를 만들어 두는 것이다. 입력과 기대 출력 쌍을 준비해 두고, 프롬프트나 모델을 바꿀 때마다 돌려 보는 식이다. <strong>결정론적 평가</strong>는 정답이 명확한 경우(코드 실행 결과, 분류 정확도), <strong>LLM-as-a-Judge</strong>는 응답 품질처럼 정답이 모호한 경우에 다른 LLM이 채점한다.</p>
+<p>DeepEval, Langfuse, LangSmith 같은 프레임워크를 쓰면 평가를 CI/CD 파이프라인에 통합할 수 있다. 코드를 커밋할 때 테스트를 돌리듯, AI 프롬프트를 변경할 때 자동으로 평가가 돌아가는 구조를 만들 수 있다.</p></div>
+  <div class="tags"><span>#벤치마크</span><span>#품질측정</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#eval">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

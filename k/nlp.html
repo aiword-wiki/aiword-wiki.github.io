@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자연어 처리 (Natural Language Processing) — AI Wiki</title>
+<meta name="description" content="컴퓨터가 인간의 언어를 이해하고 생성하는 기술 분야. LLM 등장 전부터 번역, 감성 분석, 정보 추출 등에 쓰였고, LLM이 NLP의 거의 모든 과제를 통합했다.">
+<meta name="keywords" content="NLP, 텍스트분석, 언어이해, AI, 자연어 처리">
+<meta property="og:type" content="article">
+<meta property="og:title" content="자연어 처리 (Natural Language Processing) — AI Wiki">
+<meta property="og:description" content="컴퓨터가 인간의 언어를 이해하고 생성하는 기술 분야. LLM 등장 전부터 번역, 감성 분석, 정보 추출 등에 쓰였고, LLM이 NLP의 거의 모든 과제를 통합했다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/nlp.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="자연어 처리 (Natural Language Processing) — AI Wiki">
+<meta name="twitter:description" content="컴퓨터가 인간의 언어를 이해하고 생성하는 기술 분야. LLM 등장 전부터 번역, 감성 분석, 정보 추출 등에 쓰였고, LLM이 NLP의 거의 모든 과제를 통합했다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/nlp.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/nlp.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "자연어 처리",
+  "alternateName": "Natural Language Processing",
+  "description": "컴퓨터가 인간의 언어를 이해하고 생성하는 기술 분야. LLM 등장 전부터 번역, 감성 분석, 정보 추출 등에 쓰였고, LLM이 NLP의 거의 모든 과제를 통합했다.",
+  "url": "https://aiword-wiki.github.io/k/nlp.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">자연어 처리</div>
+  <div class="en">Natural Language Processing</div>
+  <div class="body"><p>컴퓨터가 인간의 언어를 이해하고 생성하는 기술 분야. LLM 등장 전부터 번역, 감성 분석, 정보 추출 등에 쓰였고, LLM이 NLP의 거의 모든 과제를 통합했다.</p><h4>개념 설명</h4><p>자연어 처리는 텍스트를 컴퓨터가 이해할 수 있는 형식으로 다루는 기술의 총칭이다. 형태소 분석, 품사 태깅, 개체명 인식(NER), 감성 분석, 기계번역, 질의응답, 텍스트 요약 등이 전통적인 NLP 과제다. Transformer와 BERT, GPT 계열이 등장하면서 이 모든 과제에서 기존 방식을 압도하는 성능이 나왔다.</p>
+<h4>사용 예시</h4><p>Python에서 NLP 작업을 할 때는 spaCy(빠른 파이프라인), NLTK(교육용), Hugging Face Transformers(최신 모델)가 대표 라이브러리다. 고객 리뷰에서 감성을 분류하거나, 계약서에서 날짜와 금액을 추출하거나, 문서를 카테고리로 분류하는 작업을 API 호출 없이 로컬에서 처리할 수 있다. 요즘은 많은 NLP 작업이 LLM API 호출로 대체되고 있지만, 레이턴시와 비용이 중요할 때는 경량 NLP 모델이 여전히 유용하다.</p></div>
+  <div class="tags"><span>#NLP</span><span>#텍스트분석</span><span>#언어이해</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#nlp">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

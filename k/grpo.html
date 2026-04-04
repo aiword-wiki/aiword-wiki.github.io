@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRPO (Group Relative Policy Optimization) — AI Wiki</title>
+<meta name="description" content="같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.">
+<meta name="keywords" content="강화학습, DeepSeek, 추론모델, AI, GRPO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GRPO (Group Relative Policy Optimization) — AI Wiki">
+<meta property="og:description" content="같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/grpo.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GRPO (Group Relative Policy Optimization) — AI Wiki">
+<meta name="twitter:description" content="같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/grpo.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/grpo.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "GRPO",
+  "alternateName": "Group Relative Policy Optimization",
+  "description": "같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.",
+  "url": "https://aiword-wiki.github.io/k/grpo.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">GRPO</div>
+  <div class="en">Group Relative Policy Optimization</div>
+  <div class="body"><p>같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.</p><h4>개념 설명</h4><p>기존 PPO는 강화학습 과정에서 별도의 가치 함수(critic)를 학습해야 해서 메모리와 계산 비용이 높았다. GRPO는 같은 질문에 여러 응답을 생성하고, 그 그룹 내에서 상대적으로 좋고 나쁨을 비교해 보상을 계산한다. 가치 함수 없이 그룹 내 비교만으로 학습 신호를 만드는 것이다.</p><p>DeepSeek이 DeepSeek-Math(2024)와 DeepSeek-R1에서 GRPO로 추론 능력을 획기적으로 향상시키면서 큰 주목을 받았다. 수학 문제의 정오답처럼 검증 가능한 보상이 있을 때 특히 효과적이다.</p><h4>사용 예시</h4><p>TRL 라이브러리에 <code>GRPOTrainer</code>가 구현되어 있다. 수학 풀이, 코드 생성, 형식 준수 같이 자동으로 정오답을 판별할 수 있는 태스크에 적합하다. 보상 함수를 정답 확인 함수로 정의하고, 같은 문제에 8~16개의 응답을 샘플링해 상대적 점수를 계산한다.</p></div>
+  <div class="tags"><span>#강화학습</span><span>#DeepSeek</span><span>#추론모델</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#grpo">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

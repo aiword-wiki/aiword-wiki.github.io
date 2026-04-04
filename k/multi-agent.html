@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>멀티 에이전트 (Multi-Agent System) — AI Wiki</title>
+<meta name="description" content="여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.">
+<meta name="keywords" content="협업, 에이전트팀, 분업, AI, 멀티 에이전트">
+<meta property="og:type" content="article">
+<meta property="og:title" content="멀티 에이전트 (Multi-Agent System) — AI Wiki">
+<meta property="og:description" content="여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/multi-agent.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="멀티 에이전트 (Multi-Agent System) — AI Wiki">
+<meta name="twitter:description" content="여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/multi-agent.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/multi-agent.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "멀티 에이전트",
+  "alternateName": "Multi-Agent System",
+  "description": "여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.",
+  "url": "https://aiword-wiki.github.io/k/multi-agent.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <div class="title">멀티 에이전트</div>
+  <div class="en">Multi-Agent System</div>
+  <div class="body"><p>여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.</p><h4>왜 혼자가 아니라 팀인가</h4><p>AI 에이전트 하나가 모든 일을 혼자 하면 어떻게 될까? 조사도 하고, 코드도 짜고, 검증도 하고, 문서도 써야 한다. 컨텍스트 윈도우는 한정되어 있고, 한 가지에 집중하면 다른 걸 놓친다. 사람이 혼자서 기획·디자인·개발·QA를 다 하면 품질이 떨어지는 것과 같다. 멀티 에이전트는 이 문제를 "팀"으로 해결한다. 조사 전문 에이전트, 코드 작성 에이전트, 검증 에이전트가 각자 맡은 일을 하고 결과를 합치는 방식이다.</p>
+<h4>사용 예시</h4><p>Claude Code의 <code>.claude/agents/</code>에 에이전트를 마크다운으로 정의해 두면, Claude가 작업 맥락에 따라 적절한 에이전트를 자동으로 선택해 호출한다. 직접 지정하고 싶으면 프롬프트에 "researcher 에이전트로 조사해"처럼 에이전트 이름을 명시하면 된다.</p>
+<p>외부 API 연동 기능을 만들 때 API 문서를 조사하는 에이전트와 클라이언트 코드를 작성하는 에이전트가 병렬로 돌아가고, 대규모 리팩토링에서는 파일 탐색과 수정을 여러 에이전트가 나눠 처리해서 컨텍스트 한계를 우회할 수 있다. 문서 사이트를 만들 때도 자료 수집, 글 작성, 레퍼런스 검증을 각각 맡기면 혼자서도 팀 단위 작업이 가능하다.</p>
+<p>에이전트 여러 개를 조합할수록 진짜 힘이 나는 건 각 에이전트가 서로 다른 도구를 쓸 수 있을 때다. 한 에이전트는 MCP로 GitHub 이슈를 읽고, 다른 에이전트는 MCP로 DB 스키마를 조회하고, 또 다른 에이전트가 그 결과를 종합해서 코드를 짜는 식이다. 이런 멀티 에이전트 워크플로우를 스킬로 묶어 두면 <code>/deploy</code>처럼 슬래시 커맨드 한 줄로 매번 같은 팀을 소환할 수 있고, 훅을 걸어 두면 어떤 에이전트가 코드를 수정하든 자동으로 린트가 돌아가서 여러 손이 동시에 작업해도 코드가 뒤섞이지 않는다.</p>
+<p>Claude Code 바깥에서 독립적으로 구축하려면 LangGraph나 CrewAI 같은 프레임워크로 에이전트 간 역할과 통신 흐름을 그래프로 설계할 수 있다.</p>
+<h4>어떤 식으로 협업하나</h4><p>가장 흔한 방식은 <strong>감독자(Supervisor) 패턴</strong>이다. 메인 에이전트가 일감을 받으면, "이건 리서치 에이전트가, 이건 코딩 에이전트가" 하고 나눠준 뒤 결과를 모아서 최종 산출물을 만든다. <strong>파이프라인 패턴</strong>은 조립라인처럼 순서대로 넘기는 방식이다. A 에이전트가 요구사항을 정리하면 → B가 구현하고 → C가 테스트하는 식이다. <strong>토론 패턴</strong>은 찬성 에이전트와 반대 에이전트가 논쟁하고 심판 에이전트가 결론을 내리는 구조로, 코드 리뷰나 아키텍처 결정처럼 신중한 판단이 필요할 때 쓴다.</p>
+<h4>주의할 점</h4><p>팀이 크다고 항상 좋은 건 아니다. 에이전트가 4개를 넘어가면 서로 소통하는 비용이 실제 작업보다 커질 수 있다. 회의가 너무 많아서 일이 안 되는 회사처럼. 단순한 작업이라면 에이전트 하나로 충분하고, 정말 역할 분담이 필요한 복잡한 작업에서만 멀티 에이전트를 고려하는 게 좋다.</p></div>
+  <div class="tags"><span>#협업</span><span>#에이전트팀</span><span>#분업</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#multi-agent">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

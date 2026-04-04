@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>랭체인 (LangChain) — AI Wiki</title>
+<meta name="description" content="LLM 호출, 메모리 관리, 도구 연동, 에이전트 오케스트레이션을 하나의 인터페이스로 묶어주는 오픈소스 프레임워크. Python AI 에이전트 개발의 사실상 표준이다.">
+<meta name="keywords" content="프레임워크, Python, AI, 랭체인">
+<meta property="og:type" content="article">
+<meta property="og:title" content="랭체인 (LangChain) — AI Wiki">
+<meta property="og:description" content="LLM 호출, 메모리 관리, 도구 연동, 에이전트 오케스트레이션을 하나의 인터페이스로 묶어주는 오픈소스 프레임워크. Python AI 에이전트 개발의 사실상 표준이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/langchain.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="랭체인 (LangChain) — AI Wiki">
+<meta name="twitter:description" content="LLM 호출, 메모리 관리, 도구 연동, 에이전트 오케스트레이션을 하나의 인터페이스로 묶어주는 오픈소스 프레임워크. Python AI 에이전트 개발의 사실상 표준이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/langchain.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/langchain.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "랭체인",
+  "alternateName": "LangChain",
+  "description": "LLM 호출, 메모리 관리, 도구 연동, 에이전트 오케스트레이션을 하나의 인터페이스로 묶어주는 오픈소스 프레임워크. Python AI 에이전트 개발의 사실상 표준이다.",
+  "url": "https://aiword-wiki.github.io/k/langchain.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">랭체인</div>
+  <div class="en">LangChain</div>
+  <div class="body"><p>LLM 호출, 메모리 관리, 도구 연동, 에이전트 오케스트레이션을 하나의 인터페이스로 묶어주는 오픈소스 프레임워크. Python AI 에이전트 개발의 사실상 표준이다.</p><h4>LangChain이란</h4><p>LLM 기반 앱을 만들려면 API 호출, 프롬프트 관리, 도구 연결, 대화 메모리, 에러 처리 등 부수적인 코드가 많다. LangChain은 이걸 통합 인터페이스로 묶어서, 개발자가 로직에 집중할 수 있게 해주는 프레임워크다.</p>
+<h4>사용 예시</h4><p>RAG를 가장 빠르게 구축할 수 있는 도구 중 하나다. 문서 로더 → 텍스트 스플리터 → 임베딩 → 벡터 스토어 → 리트리버 → LLM 체인을 파이프라인으로 연결하면 몇 십 줄 코드로 문서 Q&A가 완성된다.</p>
+<p><strong>LangGraph</strong>는 LangChain 위에서 복잡한 에이전트 워크플로우를 그래프로 설계할 수 있게 해준다. 조건부 분기, 병렬 실행, 상태 관리가 필요한 멀티에이전트 시스템을 구축할 때 쓴다. LangSmith로 에이전트 실행을 추적하고 디버깅하는 것도 가능하다.</p></div>
+  <div class="tags"><span>#프레임워크</span><span>#Python</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#langchain">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

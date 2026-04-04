@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>임베딩 (Embedding) — AI Wiki</title>
+<meta name="description" content="텍스트, 이미지, 코드 등을 의미를 담은 숫자 벡터로 변환하는 기술. &quot;자동차&quot;와 &quot;automobile&quot;이 벡터 공간에서 가까이 놓여, 의미 기반 검색과 비교가 가능해진다.">
+<meta name="keywords" content="벡터, 유사도, AI, 임베딩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="임베딩 (Embedding) — AI Wiki">
+<meta property="og:description" content="텍스트, 이미지, 코드 등을 의미를 담은 숫자 벡터로 변환하는 기술. &quot;자동차&quot;와 &quot;automobile&quot;이 벡터 공간에서 가까이 놓여, 의미 기반 검색과 비교가 가능해진다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/embedding.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="임베딩 (Embedding) — AI Wiki">
+<meta name="twitter:description" content="텍스트, 이미지, 코드 등을 의미를 담은 숫자 벡터로 변환하는 기술. &quot;자동차&quot;와 &quot;automobile&quot;이 벡터 공간에서 가까이 놓여, 의미 기반 검색과 비교가 가능해진다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/embedding.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/embedding.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "임베딩",
+  "alternateName": "Embedding",
+  "description": "텍스트, 이미지, 코드 등을 의미를 담은 숫자 벡터로 변환하는 기술. \"자동차\"와 \"automobile\"이 벡터 공간에서 가까이 놓여, 의미 기반 검색과 비교가 가능해진다.",
+  "url": "https://aiword-wiki.github.io/k/embedding.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">임베딩</div>
+  <div class="en">Embedding</div>
+  <div class="body"><p>텍스트, 이미지, 코드 등을 의미를 담은 숫자 벡터로 변환하는 기술. "자동차"와 "automobile"이 벡터 공간에서 가까이 놓여, 의미 기반 검색과 비교가 가능해진다.</p><h4>임베딩이란</h4><p>"자동차"와 "automobile"은 글자가 다르지만 의미는 같다. 임베딩은 이런 의미적 관계를 수백~수천 차원의 숫자 벡터로 표현한다. 비슷한 의미의 단어는 벡터 공간에서 가까이 놓이고, 코사인 유사도로 얼마나 비슷한지를 수치로 측정할 수 있다.</p>
+<h4>사용 예시</h4><p>RAG 파이프라인에서 핵심 역할을 한다. 문서를 임베딩으로 변환해 벡터 DB에 저장하고, 사용자 질문도 임베딩으로 변환해서 가장 유사한 문서를 찾는다. 키워드 매칭이 아니라 의미 기반으로 검색하니까, "파이썬 리스트 정렬"과 "Python list sort"가 같은 결과를 반환한다.</p>
+<p>OpenAI의 <code>text-embedding-3</code>, Google의 Gemini Embedding, Anthropic의 Voyage 등이 대표적인 임베딩 모델이다. API 한 줄로 텍스트를 벡터로 변환할 수 있다.</p></div>
+  <div class="tags"><span>#벡터</span><span>#유사도</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#embedding">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>콘텐츠 모더레이션 (Content Moderation) — AI Wiki</title>
+<meta name="description" content="플랫폼에 올라오거나 AI가 생성하는 콘텐츠 중 유해하거나 부적절한 것을 탐지하고 관리하는 과정. 자동화된 AI 분류기와 사람 검토자의 조합으로 이루어지는 경우가 많다.">
+<meta name="keywords" content="필터링, 유해 콘텐츠, 플랫폼 안전, AI, 콘텐츠 모더레이션">
+<meta property="og:type" content="article">
+<meta property="og:title" content="콘텐츠 모더레이션 (Content Moderation) — AI Wiki">
+<meta property="og:description" content="플랫폼에 올라오거나 AI가 생성하는 콘텐츠 중 유해하거나 부적절한 것을 탐지하고 관리하는 과정. 자동화된 AI 분류기와 사람 검토자의 조합으로 이루어지는 경우가 많다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/content-moderation.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="콘텐츠 모더레이션 (Content Moderation) — AI Wiki">
+<meta name="twitter:description" content="플랫폼에 올라오거나 AI가 생성하는 콘텐츠 중 유해하거나 부적절한 것을 탐지하고 관리하는 과정. 자동화된 AI 분류기와 사람 검토자의 조합으로 이루어지는 경우가 많다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/content-moderation.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/content-moderation.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "콘텐츠 모더레이션",
+  "alternateName": "Content Moderation",
+  "description": "플랫폼에 올라오거나 AI가 생성하는 콘텐츠 중 유해하거나 부적절한 것을 탐지하고 관리하는 과정. 자동화된 AI 분류기와 사람 검토자의 조합으로 이루어지는 경우가 많다.",
+  "url": "https://aiword-wiki.github.io/k/content-moderation.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">안전</div>
+  <div class="title">콘텐츠 모더레이션</div>
+  <div class="en">Content Moderation</div>
+  <div class="body"><p>플랫폼에 올라오거나 AI가 생성하는 콘텐츠 중 유해하거나 부적절한 것을 탐지하고 관리하는 과정. 자동화된 AI 분류기와 사람 검토자의 조합으로 이루어지는 경우가 많다.</p><h4>개념 설명</h4><p>소셜 미디어, 커뮤니티, AI 챗봇 서비스 모두 콘텐츠 모더레이션이 필요하다. 혐오 표현, 폭력, 성인 콘텐츠, 허위 정보 등을 빠르게 처리하려면 AI 분류 모델이 1차로 걸러내고, 모호한 케이스는 사람이 최종 판단하는 방식이 흔하다. 완전 자동화는 문화·언어적 맥락을 놓치는 경우가 많아, 사람-AI 협업 구조가 현실적인 대안이다.</p><h4>사용 예시</h4><p>생성형 AI 서비스를 만들 때, 모델 응답을 출력하기 전에 분류 모델을 하나 더 돌려 유해성 점수가 임계값을 넘는 응답을 차단하는 방식이 출력 필터링의 대표 사례다. OpenAI Moderation API처럼 외부 API를 써서 입력과 출력을 동시에 검사하면, 별도 모델을 훈련하지 않아도 빠르게 구현할 수 있다.</p></div>
+  <div class="tags"><span>#필터링</span><span>#유해 콘텐츠</span><span>#플랫폼 안전</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#content-moderation">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

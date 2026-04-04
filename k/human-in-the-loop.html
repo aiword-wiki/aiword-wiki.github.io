@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>휴먼 인 더 루프 (Human-in-the-Loop) — AI Wiki</title>
+<meta name="description" content="AI 에이전트의 실행 과정에 사람의 판단과 승인을 개입시키는 설계 패턴. 자율성과 안전성 사이의 균형을 맞추는 핵심 전략이다.">
+<meta name="keywords" content="안전, 검수, 감독, AI, 휴먼 인 더 루프">
+<meta property="og:type" content="article">
+<meta property="og:title" content="휴먼 인 더 루프 (Human-in-the-Loop) — AI Wiki">
+<meta property="og:description" content="AI 에이전트의 실행 과정에 사람의 판단과 승인을 개입시키는 설계 패턴. 자율성과 안전성 사이의 균형을 맞추는 핵심 전략이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/human-in-the-loop.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="휴먼 인 더 루프 (Human-in-the-Loop) — AI Wiki">
+<meta name="twitter:description" content="AI 에이전트의 실행 과정에 사람의 판단과 승인을 개입시키는 설계 패턴. 자율성과 안전성 사이의 균형을 맞추는 핵심 전략이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/human-in-the-loop.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/human-in-the-loop.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "휴먼 인 더 루프",
+  "alternateName": "Human-in-the-Loop",
+  "description": "AI 에이전트의 실행 과정에 사람의 판단과 승인을 개입시키는 설계 패턴. 자율성과 안전성 사이의 균형을 맞추는 핵심 전략이다.",
+  "url": "https://aiword-wiki.github.io/k/human-in-the-loop.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <div class="title">휴먼 인 더 루프</div>
+  <div class="en">Human-in-the-Loop</div>
+  <div class="body"><p>AI 에이전트의 실행 과정에 사람의 판단과 승인을 개입시키는 설계 패턴. 자율성과 안전성 사이의 균형을 맞추는 핵심 전략이다.</p><h4>개념 설명</h4><p>완전 자율 에이전트는 빠르지만 위험할 수 있다. 잘못된 판단으로 데이터를 삭제하거나, 의도치 않은 API를 호출하거나, 돌이킬 수 없는 행동을 할 수 있다. 휴먼 인 더 루프는 에이전트가 중요한 결정을 내리기 전에 사람에게 확인을 받는 체크포인트를 두는 방식이다. 위험도가 낮은 작업은 자동화하고, 중요한 순간에만 사람이 개입하는 하이브리드 구조가 현실적이다.</p><h4>사용 예시</h4><p>배포 자동화 파이프라인에서 코드 분석과 테스트는 자동으로 수행하되, 프로덕션 배포 직전에는 사람의 승인을 기다리는 식으로 설계한다. Claude Code에서는 민감한 작업(파일 삭제, 외부 API 호출)에 <code>--permission-mode</code>를 설정해 자동으로 확인을 요청하게 할 수 있다.</p></div>
+  <div class="tags"><span>#안전</span><span>#검수</span><span>#감독</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#human-in-the-loop">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>멀티모달 임베딩 (Multimodal Embedding) — AI Wiki</title>
+<meta name="description" content="텍스트와 이미지, 오디오 등 서로 다른 형식의 데이터를 같은 벡터 공간에 표현하는 기술. &quot;이 이미지와 비슷한 설명 찾기&quot;처럼 형식을 넘나드는 검색이 가능해진다.">
+<meta name="keywords" content="CLIP, 이미지검색, 크로스모달, AI, 멀티모달 임베딩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="멀티모달 임베딩 (Multimodal Embedding) — AI Wiki">
+<meta property="og:description" content="텍스트와 이미지, 오디오 등 서로 다른 형식의 데이터를 같은 벡터 공간에 표현하는 기술. &quot;이 이미지와 비슷한 설명 찾기&quot;처럼 형식을 넘나드는 검색이 가능해진다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/multimodal-embedding.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="멀티모달 임베딩 (Multimodal Embedding) — AI Wiki">
+<meta name="twitter:description" content="텍스트와 이미지, 오디오 등 서로 다른 형식의 데이터를 같은 벡터 공간에 표현하는 기술. &quot;이 이미지와 비슷한 설명 찾기&quot;처럼 형식을 넘나드는 검색이 가능해진다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/multimodal-embedding.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/multimodal-embedding.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "멀티모달 임베딩",
+  "alternateName": "Multimodal Embedding",
+  "description": "텍스트와 이미지, 오디오 등 서로 다른 형식의 데이터를 같은 벡터 공간에 표현하는 기술. \"이 이미지와 비슷한 설명 찾기\"처럼 형식을 넘나드는 검색이 가능해진다.",
+  "url": "https://aiword-wiki.github.io/k/multimodal-embedding.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">멀티모달 임베딩</div>
+  <div class="en">Multimodal Embedding</div>
+  <div class="body"><p>텍스트와 이미지, 오디오 등 서로 다른 형식의 데이터를 같은 벡터 공간에 표현하는 기술. "이 이미지와 비슷한 설명 찾기"처럼 형식을 넘나드는 검색이 가능해진다.</p><h4>개념 설명</h4><p>일반 임베딩은 텍스트를 벡터로 변환한다. 멀티모달 임베딩은 텍스트와 이미지를 같은 벡터 공간에 매핑한다. OpenAI의 CLIP 모델이 이 분야를 열었는데, "강아지 사진"이라는 텍스트와 실제 강아지 사진이 벡터 공간에서 가까운 위치에 있도록 학습된다. 서로 다른 형식 간의 의미적 연결을 만드는 것이 핵심이다.</p>
+<h4>사용 예시</h4><p>이커머스에서 사용자가 사진을 올리면 비슷한 상품을 텍스트 없이 검색하는 "이미지로 검색" 기능에 멀티모달 임베딩이 쓰인다. 개발할 때는 OpenAI CLIP, Google Vertex AI Multimodal Embeddings API를 활용하면 이미지와 텍스트를 같은 벡터 DB에 넣고 크로스모달 검색을 구현할 수 있다. RAG에서 이미지가 포함된 문서를 처리할 때 이미지 내용도 검색 대상에 포함하려면 멀티모달 임베딩이 필요하다.</p></div>
+  <div class="tags"><span>#CLIP</span><span>#이미지검색</span><span>#크로스모달</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#multimodal-embedding">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

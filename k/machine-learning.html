@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>머신러닝 (Machine Learning) — AI Wiki</title>
+<meta name="description" content="명시적 규칙 없이 데이터에서 패턴을 학습해 예측하는 AI 기술. 딥러닝과 LLM의 토대이자, 여전히 많은 실용적 문제에서 직접 쓰이는 도구다.">
+<meta name="keywords" content="ML, 지도학습, 예측모델, AI, 머신러닝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="머신러닝 (Machine Learning) — AI Wiki">
+<meta property="og:description" content="명시적 규칙 없이 데이터에서 패턴을 학습해 예측하는 AI 기술. 딥러닝과 LLM의 토대이자, 여전히 많은 실용적 문제에서 직접 쓰이는 도구다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/machine-learning.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="머신러닝 (Machine Learning) — AI Wiki">
+<meta name="twitter:description" content="명시적 규칙 없이 데이터에서 패턴을 학습해 예측하는 AI 기술. 딥러닝과 LLM의 토대이자, 여전히 많은 실용적 문제에서 직접 쓰이는 도구다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/machine-learning.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/machine-learning.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "머신러닝",
+  "alternateName": "Machine Learning",
+  "description": "명시적 규칙 없이 데이터에서 패턴을 학습해 예측하는 AI 기술. 딥러닝과 LLM의 토대이자, 여전히 많은 실용적 문제에서 직접 쓰이는 도구다.",
+  "url": "https://aiword-wiki.github.io/k/machine-learning.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">머신러닝</div>
+  <div class="en">Machine Learning</div>
+  <div class="body"><p>명시적 규칙 없이 데이터에서 패턴을 학습해 예측하는 AI 기술. 딥러닝과 LLM의 토대이자, 여전히 많은 실용적 문제에서 직접 쓰이는 도구다.</p><h4>개념 설명</h4><p>전통적 프로그래밍이 규칙을 코드로 작성하는 것이라면, 머신러닝은 데이터에서 규칙을 자동으로 학습한다. 지도학습(레이블된 데이터로 학습), 비지도학습(레이블 없이 패턴 발견), 강화학습(보상 신호로 학습) 세 가지가 주요 패러다임이다. 의사결정 트리, 랜덤 포레스트, XGBoost, SVM 같은 알고리즘은 딥러닝 이전부터 쓰여왔고 지금도 표 형식 데이터에서 강점을 보인다.</p>
+<h4>사용 예시</h4><p>고객 이탈 예측, 사기 탐지, 수요 예측처럼 정형 데이터로 된 예측 문제에는 XGBoost나 LightGBM이 LLM보다 빠르고 비용 효율적이다. scikit-learn으로 모델을 학습하고, MLflow로 실험을 추적하고, 클라우드(SageMaker, Vertex AI)로 배포하는 흐름이 일반적인 ML 파이프라인이다. LLM이 모든 걸 해결하는 건 아니어서, 레이블된 데이터가 충분하고 예측 문제가 명확하다면 클래식 ML이 여전히 최선인 경우가 많다.</p></div>
+  <div class="tags"><span>#ML</span><span>#지도학습</span><span>#예측모델</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#machine-learning">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

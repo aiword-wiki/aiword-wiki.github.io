@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데이터 증강 (Data Augmentation) — AI Wiki</title>
+<meta name="description" content="부족한 학습 데이터를 변형하거나 생성해서 늘리는 기법. LLM을 활용한 합성 데이터 생성이 최근 주류가 됐다.">
+<meta name="keywords" content="학습데이터, 데이터부족, 합성데이터, AI, 데이터 증강">
+<meta property="og:type" content="article">
+<meta property="og:title" content="데이터 증강 (Data Augmentation) — AI Wiki">
+<meta property="og:description" content="부족한 학습 데이터를 변형하거나 생성해서 늘리는 기법. LLM을 활용한 합성 데이터 생성이 최근 주류가 됐다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/data-augmentation.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="데이터 증강 (Data Augmentation) — AI Wiki">
+<meta name="twitter:description" content="부족한 학습 데이터를 변형하거나 생성해서 늘리는 기법. LLM을 활용한 합성 데이터 생성이 최근 주류가 됐다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/data-augmentation.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/data-augmentation.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "데이터 증강",
+  "alternateName": "Data Augmentation",
+  "description": "부족한 학습 데이터를 변형하거나 생성해서 늘리는 기법. LLM을 활용한 합성 데이터 생성이 최근 주류가 됐다.",
+  "url": "https://aiword-wiki.github.io/k/data-augmentation.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">데이터 증강</div>
+  <div class="en">Data Augmentation</div>
+  <div class="body"><p>부족한 학습 데이터를 변형하거나 생성해서 늘리는 기법. LLM을 활용한 합성 데이터 생성이 최근 주류가 됐다.</p><h4>개념 설명</h4><p>특정 도메인 학습 데이터가 부족하면 파인튜닝 성능이 떨어진다. <strong>데이터 증강</strong>은 기존 데이터를 변형(동의어 치환, 역번역, 순서 변경)하거나 LLM으로 유사한 새 예시를 생성해서 데이터를 불려 학습 효과를 높이는 기법이다. 이미지 분류에서 시작된 개념이지만, LLM 시대에는 텍스트 증강과 합성 데이터 생성으로 더 광범위하게 쓰인다.</p><h4>사용 예시</h4><p>의료 상담 챗봇을 파인튜닝할 때 실제 상담 데이터가 1,000건뿐이라면, Claude에게 "같은 의도이지만 표현이 다른 질문 10가지를 만들어줘"라고 요청해서 10,000건으로 늘릴 수 있다. 생성된 합성 데이터를 실제 데이터와 섞어 학습하면 다양한 표현 방식에 강건한 모델이 된다.</p></div>
+  <div class="tags"><span>#학습데이터</span><span>#데이터부족</span><span>#합성데이터</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#data-augmentation">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

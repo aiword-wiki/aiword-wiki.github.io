@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환각 (Hallucination) — AI Wiki</title>
+<meta name="description" content="AI가 사실이 아닌 정보를 확신 있게 생성하는 현상. 모델이 &quot;모른다&quot;고 하지 않고 그럴듯하게 지어내는 구조적 한계에서 비롯된다.">
+<meta name="keywords" content="신뢰성, 오류, AI, 환각">
+<meta property="og:type" content="article">
+<meta property="og:title" content="환각 (Hallucination) — AI Wiki">
+<meta property="og:description" content="AI가 사실이 아닌 정보를 확신 있게 생성하는 현상. 모델이 &quot;모른다&quot;고 하지 않고 그럴듯하게 지어내는 구조적 한계에서 비롯된다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/hallucination.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="환각 (Hallucination) — AI Wiki">
+<meta name="twitter:description" content="AI가 사실이 아닌 정보를 확신 있게 생성하는 현상. 모델이 &quot;모른다&quot;고 하지 않고 그럴듯하게 지어내는 구조적 한계에서 비롯된다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/hallucination.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/hallucination.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "환각",
+  "alternateName": "Hallucination",
+  "description": "AI가 사실이 아닌 정보를 확신 있게 생성하는 현상. 모델이 \"모른다\"고 하지 않고 그럴듯하게 지어내는 구조적 한계에서 비롯된다.",
+  "url": "https://aiword-wiki.github.io/k/hallucination.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">안전</div>
+  <div class="title">환각</div>
+  <div class="en">Hallucination</div>
+  <div class="body"><p>AI가 사실이 아닌 정보를 확신 있게 생성하는 현상. 모델이 "모른다"고 하지 않고 그럴듯하게 지어내는 구조적 한계에서 비롯된다.</p><h4>환각이란</h4><p>LLM에게 모르는 걸 물으면 "모릅니다"가 아니라 그럴듯한 답을 만들어 낸다. 존재하지 않는 논문을 인용하고, 없는 API를 코드에 쓰고, 틀린 사실을 자신 있게 말한다. 모델이 다음 토큰을 확률적으로 예측하는 방식으로 텍스트를 생성하기 때문에, 사실 여부를 실시간으로 검증하지 못하는 구조적 한계다.</p>
+<h4>사용 예시</h4><p>개발할 때 가장 흔히 마주치는 환각은 존재하지 않는 라이브러리나 함수를 쓰는 것이다. AI가 생성한 코드가 타입 에러 없이 깔끔해 보이는데, 실제로 돌리면 "module not found"가 뜬다.</p>
+<p>대응 방법은 여러 겹으로 쌓는다. RAG로 실제 문서를 참조하게 하고, 시스템 프롬프트에 "확실하지 않으면 모른다고 해"를 넣고, 가드레일로 출력을 검증하고, 중요한 정보는 사람이 최종 확인한다. 완전히 없앨 수는 없지만 발생 확률을 크게 줄일 수 있다.</p></div>
+  <div class="tags"><span>#신뢰성</span><span>#오류</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#hallucination">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

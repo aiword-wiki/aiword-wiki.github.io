@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>출력 포맷팅 (Output Formatting) — AI Wiki</title>
+<meta name="description" content="LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.">
+<meta name="keywords" content="구조화, JSON, 파싱, AI, 출력 포맷팅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="출력 포맷팅 (Output Formatting) — AI Wiki">
+<meta property="og:description" content="LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/output-formatting.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="출력 포맷팅 (Output Formatting) — AI Wiki">
+<meta name="twitter:description" content="LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/output-formatting.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/output-formatting.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "출력 포맷팅",
+  "alternateName": "Output Formatting",
+  "description": "LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.",
+  "url": "https://aiword-wiki.github.io/k/output-formatting.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">출력 포맷팅</div>
+  <div class="en">Output Formatting</div>
+  <div class="body"><p>LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.</p><h4>개념 설명</h4><p>LLM의 자유로운 텍스트 출력을 프로그램에서 사용하려면 파싱이 필요하다. <strong>출력 포맷팅</strong>은 프롬프트에 원하는 출력 형식을 명시하거나, 모델의 structured output 기능을 활용해 항상 파싱 가능한 형식으로 결과를 받는 기법이다. 불안정한 파싱 코드 없이 안정적으로 LLM 출력을 처리할 수 있게 한다.</p><h4>사용 예시</h4><p>상품 정보 추출 작업에서 <code>{"name": "", "price": 0, "category": ""}</code> JSON 스키마를 프롬프트에 포함하거나, Anthropic SDK의 <code>response_format={"type": "json_object"}</code>를 지정하면 항상 유효한 JSON이 반환된다. Pydantic 모델을 정의하고 instructor 라이브러리를 쓰면 타입 안전한 구조화 출력을 받을 수 있다.</p></div>
+  <div class="tags"><span>#구조화</span><span>#JSON</span><span>#파싱</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#output-formatting">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

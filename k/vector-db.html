@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>벡터 DB (Vector Database) — AI Wiki</title>
+<meta name="description" content="임베딩 벡터를 저장하고, 수백만 개 중에서 가장 유사한 항목을 밀리초 단위로 찾아주는 전문 데이터베이스. RAG의 검색 엔진 역할을 한다.">
+<meta name="keywords" content="벡터검색, 저장소, AI, 벡터 DB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="벡터 DB (Vector Database) — AI Wiki">
+<meta property="og:description" content="임베딩 벡터를 저장하고, 수백만 개 중에서 가장 유사한 항목을 밀리초 단위로 찾아주는 전문 데이터베이스. RAG의 검색 엔진 역할을 한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/vector-db.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="벡터 DB (Vector Database) — AI Wiki">
+<meta name="twitter:description" content="임베딩 벡터를 저장하고, 수백만 개 중에서 가장 유사한 항목을 밀리초 단위로 찾아주는 전문 데이터베이스. RAG의 검색 엔진 역할을 한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/vector-db.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/vector-db.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "벡터 DB",
+  "alternateName": "Vector Database",
+  "description": "임베딩 벡터를 저장하고, 수백만 개 중에서 가장 유사한 항목을 밀리초 단위로 찾아주는 전문 데이터베이스. RAG의 검색 엔진 역할을 한다.",
+  "url": "https://aiword-wiki.github.io/k/vector-db.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">벡터 DB</div>
+  <div class="en">Vector Database</div>
+  <div class="body"><p>임베딩 벡터를 저장하고, 수백만 개 중에서 가장 유사한 항목을 밀리초 단위로 찾아주는 전문 데이터베이스. RAG의 검색 엔진 역할을 한다.</p><h4>벡터 DB가 필요한 이유</h4><p>일반 데이터베이스는 "이름이 정확히 '홍길동'인 행"을 찾는 데 최적화되어 있다. 벡터 DB는 "이 벡터와 가장 비슷한 벡터 10개"를 찾는 데 최적화되어 있다. HNSW나 IVF 같은 근사 최근접 이웃(ANN) 알고리즘으로 수십억 벡터에서도 밀리초 안에 결과를 반환한다.</p>
+<h4>사용 예시</h4><p>RAG를 구축할 때 문서 임베딩을 저장하는 저장소로 쓴다. <strong>Pinecone</strong>은 완전 관리형으로 인프라 부담 없이 시작할 수 있고, <strong>Chroma</strong>는 로컬에서 바로 쓸 수 있어 프로토타입에 좋고, <strong>Weaviate</strong>는 키워드 검색과 벡터 검색을 결합한 하이브리드 검색이 강점이다.</p>
+<p>로컬 개발이라면 Chroma를 <code>pip install</code>로 설치해서 바로 시작할 수 있다. 프로덕션으로 갈 때 Pinecone이나 Weaviate 클라우드로 옮기는 패턴이 일반적이다.</p></div>
+  <div class="tags"><span>#벡터검색</span><span>#저장소</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#vector-db">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

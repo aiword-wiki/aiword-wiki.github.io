@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>문서 파싱 (Document Parsing) — AI Wiki</title>
+<meta name="description" content="PDF, 워드, 스캔 이미지 등 다양한 형식의 문서에서 텍스트와 구조 정보를 추출하는 전처리 기술. RAG 파이프라인의 첫 번째 단계이자 데이터 품질을 결정하는 기반이다.">
+<meta name="keywords" content="PDF, OCR, 전처리, AI, 문서 파싱">
+<meta property="og:type" content="article">
+<meta property="og:title" content="문서 파싱 (Document Parsing) — AI Wiki">
+<meta property="og:description" content="PDF, 워드, 스캔 이미지 등 다양한 형식의 문서에서 텍스트와 구조 정보를 추출하는 전처리 기술. RAG 파이프라인의 첫 번째 단계이자 데이터 품질을 결정하는 기반이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/document-parsing.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="문서 파싱 (Document Parsing) — AI Wiki">
+<meta name="twitter:description" content="PDF, 워드, 스캔 이미지 등 다양한 형식의 문서에서 텍스트와 구조 정보를 추출하는 전처리 기술. RAG 파이프라인의 첫 번째 단계이자 데이터 품질을 결정하는 기반이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/document-parsing.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/document-parsing.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "문서 파싱",
+  "alternateName": "Document Parsing",
+  "description": "PDF, 워드, 스캔 이미지 등 다양한 형식의 문서에서 텍스트와 구조 정보를 추출하는 전처리 기술. RAG 파이프라인의 첫 번째 단계이자 데이터 품질을 결정하는 기반이다.",
+  "url": "https://aiword-wiki.github.io/k/document-parsing.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">문서 파싱</div>
+  <div class="en">Document Parsing</div>
+  <div class="body"><p>PDF, 워드, 스캔 이미지 등 다양한 형식의 문서에서 텍스트와 구조 정보를 추출하는 전처리 기술. RAG 파이프라인의 첫 번째 단계이자 데이터 품질을 결정하는 기반이다.</p><h4>개념 설명</h4><p>LLM에게 문서를 이해시키려면 먼저 문서를 텍스트로 변환해야 한다. 단순히 텍스트를 추출하는 것을 넘어, 표의 행/열 구조, 헤더 계층, 페이지 번호, 각주처럼 레이아웃 정보도 보존해야 검색과 참조가 정확해진다. 스캔 이미지는 OCR로 텍스트화하고, 복잡한 PDF는 레이아웃 분석 모델이 필요하다.</p>
+<h4>사용 예시</h4><p>RAG 파이프라인을 구축할 때 문서 파싱이 첫 번째 병목이 된다. PyMuPDF, pdfplumber로 기본 PDF 텍스트 추출이 가능하고, 표와 이미지가 많은 복잡한 문서에는 LlamaParse, Unstructured.io 같은 전문 서비스가 더 낫다. Claude나 GPT-4o의 멀티모달 능력을 활용해 PDF 페이지를 이미지로 변환해서 직접 넘기는 방식도 구조 이해가 중요한 경우에 쓴다. 파싱 품질이 검색 정확도에 직결되므로 파이프라인 초기에 충분히 검증해야 한다.</p></div>
+  <div class="tags"><span>#PDF</span><span>#OCR</span><span>#전처리</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#document-parsing">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

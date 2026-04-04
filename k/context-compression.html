@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨텍스트 압축 (Context Compression) — AI Wiki</title>
+<meta name="description" content="긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.">
+<meta name="keywords" content="압축, 요약, 효율화, AI, 컨텍스트 압축">
+<meta property="og:type" content="article">
+<meta property="og:title" content="컨텍스트 압축 (Context Compression) — AI Wiki">
+<meta property="og:description" content="긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/context-compression.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="컨텍스트 압축 (Context Compression) — AI Wiki">
+<meta name="twitter:description" content="긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/context-compression.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/context-compression.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "컨텍스트 압축",
+  "alternateName": "Context Compression",
+  "description": "긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.",
+  "url": "https://aiword-wiki.github.io/k/context-compression.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">컨텍스트 압축</div>
+  <div class="en">Context Compression</div>
+  <div class="body"><p>긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.</p><h4>개념 설명</h4><p>긴 대화 이력이나 문서를 통째로 컨텍스트에 넣으면 비용이 크고 정작 중요한 정보가 묻힌다. <strong>컨텍스트 압축</strong>은 긴 컨텍스트에서 현재 질문과 관련 없는 부분을 제거하거나 요약해서, 핵심만 남긴 짧은 컨텍스트를 만드는 기법이다. LLM Lingua, Selective Context 같은 도구가 이 역할을 담당한다.</p><h4>사용 예시</h4><p>장기 대화 에이전트에서 대화가 50턴을 넘어가면, 초기 대화를 "사용자는 Python 백엔드 개발자, React 사용, Docker 환경"처럼 사실 요약으로 압축하고 최근 10턴만 전체로 유지한다. LangChain의 <code>ConversationSummaryMemory</code>가 이 패턴을 구현한 컴포넌트다.</p></div>
+  <div class="tags"><span>#압축</span><span>#요약</span><span>#효율화</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#context-compression">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

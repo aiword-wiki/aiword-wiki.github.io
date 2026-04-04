@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비용 최적화 (LLM Cost Optimization) — AI Wiki</title>
+<meta name="description" content="LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.">
+<meta name="keywords" content="토큰비용, 캐싱, 모델라우팅, AI, 비용 최적화">
+<meta property="og:type" content="article">
+<meta property="og:title" content="비용 최적화 (LLM Cost Optimization) — AI Wiki">
+<meta property="og:description" content="LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/cost-optimization.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="비용 최적화 (LLM Cost Optimization) — AI Wiki">
+<meta name="twitter:description" content="LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/cost-optimization.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/cost-optimization.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "비용 최적화",
+  "alternateName": "LLM Cost Optimization",
+  "description": "LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.",
+  "url": "https://aiword-wiki.github.io/k/cost-optimization.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <div class="title">비용 최적화</div>
+  <div class="en">LLM Cost Optimization</div>
+  <div class="body"><p>LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.</p><h4>개념 설명</h4><p>프로덕션에서 LLM을 사용하면 비용이 생각보다 빠르게 쌓인다. 입력 토큰 수, 출력 토큰 수, 호출 빈도가 모두 비용에 영향을 미친다. 주요 전략은 네 가지다. 반복되는 컨텍스트는 <strong>프롬프트 캐싱</strong>으로 재계산을 막고, 간단한 태스크는 <strong>소형 모델</strong>로 라우팅하며, 실시간이 필요 없으면 <strong>배치 API</strong>를 쓰고, 프롬프트는 간결하게 최적화한다.</p><p>모델 라우팅은 특히 효과적이다. 간단한 질문은 GPT-4o mini, 복잡한 추론만 GPT-4o로 보내면 평균 비용이 크게 줄어든다. LLM Router, RouteLLM 같은 라우팅 라이브러리가 이를 자동화한다.</p><h4>사용 예시</h4><p>Claude API에서 <code>cache_control</code>로 긴 시스템 프롬프트를 캐시하면 반복 호출 시 입력 비용이 90%까지 줄어든다. LangChain의 <code>SQLiteCache</code>로 동일한 프롬프트 결과를 캐싱하면 중복 API 호출 자체를 없앨 수 있다.</p></div>
+  <div class="tags"><span>#토큰비용</span><span>#캐싱</span><span>#모델라우팅</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#cost-optimization">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

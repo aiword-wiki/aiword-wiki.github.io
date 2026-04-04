@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LiteLLM — AI Wiki</title>
+<meta name="description" content="100개 이상의 LLM을 단일 OpenAI 호환 인터페이스로 호출할 수 있는 오픈소스 라이브러리.">
+<meta name="keywords" content="통합, 오픈소스, 프록시, AI, LiteLLM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LiteLLM — AI Wiki">
+<meta property="og:description" content="100개 이상의 LLM을 단일 OpenAI 호환 인터페이스로 호출할 수 있는 오픈소스 라이브러리.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/litellm.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LiteLLM — AI Wiki">
+<meta name="twitter:description" content="100개 이상의 LLM을 단일 OpenAI 호환 인터페이스로 호출할 수 있는 오픈소스 라이브러리.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/litellm.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/litellm.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "LiteLLM",
+  "alternateName": "LiteLLM",
+  "description": "100개 이상의 LLM을 단일 OpenAI 호환 인터페이스로 호출할 수 있는 오픈소스 라이브러리.",
+  "url": "https://aiword-wiki.github.io/k/litellm.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">LiteLLM</div>
+  <div class="en"></div>
+  <div class="body"><p>100개 이상의 LLM을 단일 OpenAI 호환 인터페이스로 호출할 수 있는 오픈소스 라이브러리.</p><h4>개념 설명</h4><p>Claude, GPT, Gemini, Llama, Mistral 등 LLM마다 API 형식이 다르다. <strong>LiteLLM</strong>은 이 모든 모델을 OpenAI SDK 형식으로 통일해서, 모델 이름만 바꾸면 어떤 모델이든 호출할 수 있게 한다. 라이브러리로 코드에 직접 임베드하거나, 프록시 서버로 띄워서 팀 전체가 공유하는 게이트웨이로 쓸 수도 있다.</p><h4>사용 예시</h4><p><code>from litellm import completion</code>을 임포트하면 <code>completion(model="claude-opus-4-5", messages=[...])</code>와 <code>completion(model="gpt-4o", messages=[...])</code>가 같은 코드 구조로 작동한다. A/B 테스트나 비용 최적화를 위해 모델을 자주 바꿔야 하는 프로젝트에 특히 유용하다.</p></div>
+  <div class="tags"><span>#통합</span><span>#오픈소스</span><span>#프록시</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#litellm">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

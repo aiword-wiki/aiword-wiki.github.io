@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오픈 웨이트 (Open Weights) — AI Wiki</title>
+<meta name="description" content="모델의 가중치를 공개해 누구나 다운로드·수정·배포할 수 있게 한 모델 배포 방식. Llama, Mistral, Gemma가 대표적이며 AI 생태계의 저변을 넓히고 있다.">
+<meta name="keywords" content="오픈소스, Llama, Mistral, AI, 오픈 웨이트">
+<meta property="og:type" content="article">
+<meta property="og:title" content="오픈 웨이트 (Open Weights) — AI Wiki">
+<meta property="og:description" content="모델의 가중치를 공개해 누구나 다운로드·수정·배포할 수 있게 한 모델 배포 방식. Llama, Mistral, Gemma가 대표적이며 AI 생태계의 저변을 넓히고 있다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/open-weights.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="오픈 웨이트 (Open Weights) — AI Wiki">
+<meta name="twitter:description" content="모델의 가중치를 공개해 누구나 다운로드·수정·배포할 수 있게 한 모델 배포 방식. Llama, Mistral, Gemma가 대표적이며 AI 생태계의 저변을 넓히고 있다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/open-weights.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/open-weights.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "오픈 웨이트",
+  "alternateName": "Open Weights",
+  "description": "모델의 가중치를 공개해 누구나 다운로드·수정·배포할 수 있게 한 모델 배포 방식. Llama, Mistral, Gemma가 대표적이며 AI 생태계의 저변을 넓히고 있다.",
+  "url": "https://aiword-wiki.github.io/k/open-weights.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">오픈 웨이트</div>
+  <div class="en">Open Weights</div>
+  <div class="body"><p>모델의 가중치를 공개해 누구나 다운로드·수정·배포할 수 있게 한 모델 배포 방식. Llama, Mistral, Gemma가 대표적이며 AI 생태계의 저변을 넓히고 있다.</p><h4>개념 설명</h4><p>오픈 웨이트 모델은 학습된 파라미터를 공개하지만, 학습 코드나 데이터까지 공개하지는 않는 경우가 많아 "오픈소스"와 구별해서 부른다. Meta의 Llama 시리즈가 이 흐름을 열었고, Mistral, Google Gemma, Alibaba Qwen이 뒤를 이었다. API 호출 대신 직접 서빙할 수 있어 비용 통제, 커스터마이징, 데이터 주권 면에서 장점이 크다.</p><h4>사용 예시</h4><p>HuggingFace에서 Llama 3를 다운받아 vLLM으로 자체 서빙하면 API 비용 없이 LLM을 운영할 수 있다. LoRA로 파인튜닝해 도메인 특화 모델을 만들거나, 양자화해서 노트북에서 실행하는 것도 가능하다. 기업이 민감 데이터를 외부로 보내지 않으면서 AI를 활용하려 할 때 오픈 웨이트가 핵심 선택지다.</p></div>
+  <div class="tags"><span>#오픈소스</span><span>#Llama</span><span>#Mistral</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#open-weights">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

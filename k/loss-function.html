@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>손실 함수 (Loss Function) — AI Wiki</title>
+<meta name="description" content="모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.">
+<meta name="keywords" content="학습, 오차측정, 최적화, AI, 손실 함수">
+<meta property="og:type" content="article">
+<meta property="og:title" content="손실 함수 (Loss Function) — AI Wiki">
+<meta property="og:description" content="모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/loss-function.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="손실 함수 (Loss Function) — AI Wiki">
+<meta name="twitter:description" content="모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/loss-function.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/loss-function.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "손실 함수",
+  "alternateName": "Loss Function",
+  "description": "모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.",
+  "url": "https://aiword-wiki.github.io/k/loss-function.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">손실 함수</div>
+  <div class="en">Loss Function</div>
+  <div class="body"><p>모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.</p><h4>개념 설명</h4><p>모델이 "고양이" 이미지를 "강아지"라고 잘못 예측했을 때, 이 실수가 얼마나 큰지를 숫자로 나타내야 수정 방향을 알 수 있다. 손실 함수가 이 역할을 한다. 손실이 클수록 예측이 틀렸다는 뜻이고, 학습은 이 손실을 줄이는 방향으로 가중치를 계속 조정하는 과정이다. 분류 문제에는 크로스 엔트로피, 회귀 문제에는 평균제곱오차(MSE)가 자주 쓰인다.</p>
+<h4>사용 예시</h4><p>파인튜닝할 때 어떤 손실 함수를 쓰는지가 모델의 목표를 정의한다. LLM을 파인튜닝할 때는 다음 토큰 예측의 크로스 엔트로피 손실이 기본이다. RLHF에서 보상 모델 학습에는 선호도 비교 손실이 쓰인다. 학습 중 손실 곡선(loss curve)을 모니터링하면 과적합, 학습률 문제, 수렴 여부를 진단할 수 있어서 MLflow나 Weights & Biases로 기록하는 게 표준 관행이다.</p></div>
+  <div class="tags"><span>#학습</span><span>#오차측정</span><span>#최적화</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#loss-function">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

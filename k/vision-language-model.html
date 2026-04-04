@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비전-언어 모델 (Vision-Language Model) — AI Wiki</title>
+<meta name="description" content="이미지와 텍스트를 함께 이해하고 생성하는 모델. 이미지를 보고 설명하거나, 이미지 속 정보를 바탕으로 질문에 답하는 등 시각과 언어를 연결한다.">
+<meta name="keywords" content="멀티모달, 이미지이해, VLM, AI, 비전-언어 모델">
+<meta property="og:type" content="article">
+<meta property="og:title" content="비전-언어 모델 (Vision-Language Model) — AI Wiki">
+<meta property="og:description" content="이미지와 텍스트를 함께 이해하고 생성하는 모델. 이미지를 보고 설명하거나, 이미지 속 정보를 바탕으로 질문에 답하는 등 시각과 언어를 연결한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/vision-language-model.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="비전-언어 모델 (Vision-Language Model) — AI Wiki">
+<meta name="twitter:description" content="이미지와 텍스트를 함께 이해하고 생성하는 모델. 이미지를 보고 설명하거나, 이미지 속 정보를 바탕으로 질문에 답하는 등 시각과 언어를 연결한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/vision-language-model.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/vision-language-model.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "비전-언어 모델",
+  "alternateName": "Vision-Language Model",
+  "description": "이미지와 텍스트를 함께 이해하고 생성하는 모델. 이미지를 보고 설명하거나, 이미지 속 정보를 바탕으로 질문에 답하는 등 시각과 언어를 연결한다.",
+  "url": "https://aiword-wiki.github.io/k/vision-language-model.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">비전-언어 모델</div>
+  <div class="en">Vision-Language Model</div>
+  <div class="body"><p>이미지와 텍스트를 함께 이해하고 생성하는 모델. 이미지를 보고 설명하거나, 이미지 속 정보를 바탕으로 질문에 답하는 등 시각과 언어를 연결한다.</p><h4>개념 설명</h4><p>텍스트만 처리하던 LLM에 시각 인식 능력을 더한 것이 VLM이다. 이미지를 패치로 분할해 Visual Encoder(주로 ViT)로 임베딩을 추출하고, 이를 언어 모델이 이해할 수 있는 토큰으로 변환해 텍스트와 함께 처리한다. CLIP(2021)이 이미지-텍스트 정렬의 기반을 만들었고, GPT-4V, Claude 3 Vision, Gemini, LLaVA가 이를 발전시켰다.</p><p>단순 이미지 설명을 넘어 UI 스크린샷 이해, 차트 분석, 의료 영상 판독, 문서 OCR 등으로 활용 범위가 넓어지고 있다.</p><h4>사용 예시</h4><p>Claude나 GPT-4o API에 이미지를 첨부하면 "이 에러 스크린샷이 왜 발생했는지 설명해줘"처럼 시각 정보를 포함한 질문이 가능하다. Figma 디자인 스크린샷을 넣고 코드 구현을 요청하거나, UI 테스트에서 스크린샷과 예상 화면을 비교하는 자동화 파이프라인도 VLM으로 구현된다.</p></div>
+  <div class="tags"><span>#멀티모달</span><span>#이미지이해</span><span>#VLM</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#vision-language-model">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

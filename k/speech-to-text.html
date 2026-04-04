@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>음성 인식 (Speech-to-Text) — AI Wiki</title>
+<meta name="description" content="사람의 말을 텍스트로 변환하는 AI 기술. OpenAI Whisper 이후 정확도가 크게 높아졌고, 다국어 지원과 잡음 처리 성능도 실용 수준에 도달했다.">
+<meta name="keywords" content="STT, Whisper, 전사, AI, 음성 인식">
+<meta property="og:type" content="article">
+<meta property="og:title" content="음성 인식 (Speech-to-Text) — AI Wiki">
+<meta property="og:description" content="사람의 말을 텍스트로 변환하는 AI 기술. OpenAI Whisper 이후 정확도가 크게 높아졌고, 다국어 지원과 잡음 처리 성능도 실용 수준에 도달했다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/speech-to-text.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="음성 인식 (Speech-to-Text) — AI Wiki">
+<meta name="twitter:description" content="사람의 말을 텍스트로 변환하는 AI 기술. OpenAI Whisper 이후 정확도가 크게 높아졌고, 다국어 지원과 잡음 처리 성능도 실용 수준에 도달했다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/speech-to-text.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/speech-to-text.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "음성 인식",
+  "alternateName": "Speech-to-Text",
+  "description": "사람의 말을 텍스트로 변환하는 AI 기술. OpenAI Whisper 이후 정확도가 크게 높아졌고, 다국어 지원과 잡음 처리 성능도 실용 수준에 도달했다.",
+  "url": "https://aiword-wiki.github.io/k/speech-to-text.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">응용</div>
+  <div class="title">음성 인식</div>
+  <div class="en">Speech-to-Text</div>
+  <div class="body"><p>사람의 말을 텍스트로 변환하는 AI 기술. OpenAI Whisper 이후 정확도가 크게 높아졌고, 다국어 지원과 잡음 처리 성능도 실용 수준에 도달했다.</p><h4>개념 설명</h4><p>음성 인식(ASR, Automatic Speech Recognition)은 오디오 신호에서 단어를 추출하는 기술이다. Transformer 아키텍처가 이 분야에도 혁명을 일으켰는데, OpenAI의 Whisper 모델은 68만 시간의 다국어 오디오 데이터로 학습해서 잡음이 많은 환경에서도 높은 정확도를 보인다. 실시간 전사와 파일 기반 일괄 처리 두 가지 모드로 쓰인다.</p>
+<h4>사용 예시</h4><p>회의 녹음을 텍스트로 변환해서 요약 AI에 넘기거나, 고객 상담 전화를 전사해서 분석하는 파이프라인을 만들 때 Whisper API나 Deepgram을 쓴다. 실시간 자막이 필요한 화상회의 앱에는 스트리밍 STT API를 쓰는데, AssemblyAI나 Google Speech-to-Text의 스트리밍 모드가 적합하다. <code>whisper-1</code> 모델은 OpenAI API에서 직접 쓸 수 있어 프로토타입에 빠르게 통합하기 좋다.</p></div>
+  <div class="tags"><span>#STT</span><span>#Whisper</span><span>#전사</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#speech-to-text">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

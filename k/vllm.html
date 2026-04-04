@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vLLM — AI Wiki</title>
+<meta name="description" content="Paged Attention 기법으로 KV 캐시를 효율적으로 관리해 LLM 서빙 처리량을 대폭 높인 오픈소스 프레임워크. 현재 사실상의 표준 LLM 서빙 엔진이다.">
+<meta name="keywords" content="서빙, PagedAttention, 고처리량, AI, vLLM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vLLM — AI Wiki">
+<meta property="og:description" content="Paged Attention 기법으로 KV 캐시를 효율적으로 관리해 LLM 서빙 처리량을 대폭 높인 오픈소스 프레임워크. 현재 사실상의 표준 LLM 서빙 엔진이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/vllm.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vLLM — AI Wiki">
+<meta name="twitter:description" content="Paged Attention 기법으로 KV 캐시를 효율적으로 관리해 LLM 서빙 처리량을 대폭 높인 오픈소스 프레임워크. 현재 사실상의 표준 LLM 서빙 엔진이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/vllm.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/vllm.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "vLLM",
+  "alternateName": "vLLM",
+  "description": "Paged Attention 기법으로 KV 캐시를 효율적으로 관리해 LLM 서빙 처리량을 대폭 높인 오픈소스 프레임워크. 현재 사실상의 표준 LLM 서빙 엔진이다.",
+  "url": "https://aiword-wiki.github.io/k/vllm.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <div class="title">vLLM</div>
+  <div class="en"></div>
+  <div class="body"><p>Paged Attention 기법으로 KV 캐시를 효율적으로 관리해 LLM 서빙 처리량을 대폭 높인 오픈소스 프레임워크. 현재 사실상의 표준 LLM 서빙 엔진이다.</p><h4>개념 설명</h4><p>KV 캐시는 많은 GPU 메모리를 차지하고, 요청마다 크기가 달라 메모리 단편화가 심했다. vLLM은 OS의 가상 메모리에서 영감을 받은 <strong>Paged Attention</strong>을 도입해 KV 캐시를 고정 크기 블록(page)으로 관리한다. 메모리 낭비가 사라지고 더 많은 요청을 동시에 처리할 수 있다. 2023년 UC 버클리 연구팀이 발표해 기존 서빙 대비 최대 24배 처리량을 달성했다.</p><p>OpenAI 호환 API를 제공하고, Llama, Mistral, Mixtral 등 대부분의 오픈소스 모델을 지원한다. 연속 배칭, 프리픽스 캐싱, 투기적 디코딩도 내장되어 있다.</p><h4>사용 예시</h4><p><code>pip install vllm</code> 후 <code>vllm serve meta-llama/Llama-3-8B-Instruct</code>로 바로 서빙 서버를 띄울 수 있다. <code>--quantization awq</code>로 AWQ 양자화 모델도 서빙된다. 기존 OpenAI SDK 코드를 base_url만 바꿔 vLLM에 연결할 수 있어 마이그레이션이 쉽다.</p></div>
+  <div class="tags"><span>#서빙</span><span>#PagedAttention</span><span>#고처리량</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#vllm">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

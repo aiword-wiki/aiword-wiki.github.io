@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>퓨샷 (Few-Shot Prompting) — AI Wiki</title>
+<meta name="description" content="프롬프트에 입출력 예시를 몇 개 보여줘서 모델이 원하는 패턴을 파악하도록 유도하는 기법. 파인튜닝 없이 빠르게 모델 행동을 조정할 수 있다.">
+<meta name="keywords" content="예시학습, AI, 퓨샷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="퓨샷 (Few-Shot Prompting) — AI Wiki">
+<meta property="og:description" content="프롬프트에 입출력 예시를 몇 개 보여줘서 모델이 원하는 패턴을 파악하도록 유도하는 기법. 파인튜닝 없이 빠르게 모델 행동을 조정할 수 있다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/few-shot.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="퓨샷 (Few-Shot Prompting) — AI Wiki">
+<meta name="twitter:description" content="프롬프트에 입출력 예시를 몇 개 보여줘서 모델이 원하는 패턴을 파악하도록 유도하는 기법. 파인튜닝 없이 빠르게 모델 행동을 조정할 수 있다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/few-shot.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/few-shot.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "퓨샷",
+  "alternateName": "Few-Shot Prompting",
+  "description": "프롬프트에 입출력 예시를 몇 개 보여줘서 모델이 원하는 패턴을 파악하도록 유도하는 기법. 파인튜닝 없이 빠르게 모델 행동을 조정할 수 있다.",
+  "url": "https://aiword-wiki.github.io/k/few-shot.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">퓨샷</div>
+  <div class="en">Few-Shot Prompting</div>
+  <div class="body"><p>프롬프트에 입출력 예시를 몇 개 보여줘서 모델이 원하는 패턴을 파악하도록 유도하는 기법. 파인튜닝 없이 빠르게 모델 행동을 조정할 수 있다.</p><h4>퓨샷이란</h4><p>"이런 형식으로 해줘"라고 말로 설명하는 것보다, 실제 예시를 2~3개 보여주는 게 모델이 훨씬 정확하게 이해한다. 퓨샷 프롬프팅은 이 "예시로 가르치기"를 체계화한 기법이다.</p>
+<h4>사용 예시</h4><p>코드 리뷰를 시킬 때 "보안 취약점을 찾아줘"라고만 하면 모호한 결과가 나온다. 대신 "입력: [코드] → 출력: [취약점 분석]" 예시를 2~3개 보여주면 원하는 형식과 깊이로 리뷰한다.</p>
+<p>CLAUDE.md에 예시를 넣는 것도 퓨샷의 활용이다. "커밋 메시지 예시: feat: 로그인 페이지 추가"처럼 원하는 패턴을 보여주면 에이전트가 그 형식을 따른다. RAG와 결합하면 더 강력해지는데, 벡터 DB에서 현재 질문과 유사한 과거 예시를 동적으로 검색해서 프롬프트에 넣는 <strong>Dynamic Few-Shot</strong> 패턴이 있다.</p></div>
+  <div class="tags"><span>#예시학습</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#few-shot">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

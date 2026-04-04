@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에이전트 프레임워크 (Agent Framework) — AI Wiki</title>
+<meta name="description" content="AI 에이전트를 만들 때 상태 관리, 도구 연동, 멀티에이전트 협업 같은 인프라를 직접 짜지 않아도 되게 해주는 프레임워크.">
+<meta name="keywords" content="SDK, 프레임워크, AI, 에이전트 프레임워크">
+<meta property="og:type" content="article">
+<meta property="og:title" content="에이전트 프레임워크 (Agent Framework) — AI Wiki">
+<meta property="og:description" content="AI 에이전트를 만들 때 상태 관리, 도구 연동, 멀티에이전트 협업 같은 인프라를 직접 짜지 않아도 되게 해주는 프레임워크.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/agent-framework.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="에이전트 프레임워크 (Agent Framework) — AI Wiki">
+<meta name="twitter:description" content="AI 에이전트를 만들 때 상태 관리, 도구 연동, 멀티에이전트 협업 같은 인프라를 직접 짜지 않아도 되게 해주는 프레임워크.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/agent-framework.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/agent-framework.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "에이전트 프레임워크",
+  "alternateName": "Agent Framework",
+  "description": "AI 에이전트를 만들 때 상태 관리, 도구 연동, 멀티에이전트 협업 같은 인프라를 직접 짜지 않아도 되게 해주는 프레임워크.",
+  "url": "https://aiword-wiki.github.io/k/agent-framework.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <div class="title">에이전트 프레임워크</div>
+  <div class="en">Agent Framework</div>
+  <div class="body"><p>AI 에이전트를 만들 때 상태 관리, 도구 연동, 멀티에이전트 협업 같은 인프라를 직접 짜지 않아도 되게 해주는 프레임워크.</p><h4>왜 프레임워크가 필요한가</h4><p>에이전트를 처음부터 직접 만들면, 정작 비즈니스 로직보다 상태 관리, 에러 처리, 도구 호출 라우팅 같은 인프라 코드가 대부분이다. 에이전트 프레임워크는 이 반복적인 부분을 추상화해서, 개발자가 에이전트의 역할과 로직에 집중할 수 있게 해준다.</p>
+<h4>사용 예시</h4><p><strong>LangGraph</strong>는 에이전트 간 흐름을 그래프로 설계한다. 노드가 각 에이전트의 행동이고 엣지가 조건부 분기라서, 복잡한 워크플로우를 시각적으로 구성할 수 있다. <strong>CrewAI</strong>는 역할 기반으로 빠르게 팀을 구성한다. "리서처", "라이터", "에디터" 같은 역할을 정의하면 프레임워크가 협업 구조를 알아서 잡아 준다.</p>
+<p><strong>Claude Agent SDK</strong>는 Claude 모델에 특화되어 도구 사용과 멀티에이전트를 통합 지원한다. Claude Code의 서브에이전트도 이 SDK 위에서 동작한다.</p>
+<p>빠르게 프로토타입을 만들 때는 CrewAI, 프로덕션에서 세밀한 제어가 필요하면 LangGraph로 가는 팀이 많다.</p></div>
+  <div class="tags"><span>#SDK</span><span>#프레임워크</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#agent-framework">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

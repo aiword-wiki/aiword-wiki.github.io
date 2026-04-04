@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데이터 레이블링 (Data Labeling) — AI Wiki</title>
+<meta name="description" content="학습 데이터에 정답이나 메타데이터를 붙이는 작업. RLHF의 선호 데이터, SFT의 응답 데이터 등 LLM 정렬과 파인튜닝의 품질을 결정하는 핵심 작업이다.">
+<meta name="keywords" content="어노테이션, RLHF, 품질, AI, 데이터 레이블링">
+<meta property="og:type" content="article">
+<meta property="og:title" content="데이터 레이블링 (Data Labeling) — AI Wiki">
+<meta property="og:description" content="학습 데이터에 정답이나 메타데이터를 붙이는 작업. RLHF의 선호 데이터, SFT의 응답 데이터 등 LLM 정렬과 파인튜닝의 품질을 결정하는 핵심 작업이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/data-labeling.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="데이터 레이블링 (Data Labeling) — AI Wiki">
+<meta name="twitter:description" content="학습 데이터에 정답이나 메타데이터를 붙이는 작업. RLHF의 선호 데이터, SFT의 응답 데이터 등 LLM 정렬과 파인튜닝의 품질을 결정하는 핵심 작업이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/data-labeling.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/data-labeling.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "데이터 레이블링",
+  "alternateName": "Data Labeling",
+  "description": "학습 데이터에 정답이나 메타데이터를 붙이는 작업. RLHF의 선호 데이터, SFT의 응답 데이터 등 LLM 정렬과 파인튜닝의 품질을 결정하는 핵심 작업이다.",
+  "url": "https://aiword-wiki.github.io/k/data-labeling.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">데이터 레이블링</div>
+  <div class="en">Data Labeling</div>
+  <div class="body"><p>학습 데이터에 정답이나 메타데이터를 붙이는 작업. RLHF의 선호 데이터, SFT의 응답 데이터 등 LLM 정렬과 파인튜닝의 품질을 결정하는 핵심 작업이다.</p><h4>개념 설명</h4><p>AI 모델이 올바르게 동작하려면 사람이 "이게 좋은 답이고, 저게 나쁜 답이다"를 가르쳐 줘야 한다. 이 과정이 데이터 레이블링이다. RLHF에서는 두 응답 중 어느 게 더 좋은지 사람이 비교 평가하고, SFT에서는 이상적인 응답을 직접 작성한다. 레이블 품질이 모델 품질을 결정한다. 고품질 소량 데이터가 저품질 대량 데이터보다 나은 경우가 많다.</p><p>Scale AI, Surge AI 같은 전문 레이블링 회사와 크라우드소싱 플랫폼이 이 역할을 맡는다. 최근에는 LLM으로 초안을 작성하고 사람이 검토·수정하는 <strong>Human-in-the-Loop</strong> 방식이 효율적인 대안으로 자리잡았다.</p><h4>사용 예시</h4><p>Label Studio 같은 오픈소스 도구로 사내 레이블링 파이프라인을 구성할 수 있다. LLM이 생성한 응답 후보 여러 개를 평가자에게 보여주고 순위를 매기게 하는 인터페이스를 만들면, 소규모로도 RLHF 선호 데이터를 수집할 수 있다.</p></div>
+  <div class="tags"><span>#어노테이션</span><span>#RLHF</span><span>#품질</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#data-labeling">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

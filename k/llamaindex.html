@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LlamaIndex — AI Wiki</title>
+<meta name="description" content="다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.">
+<meta name="keywords" content="RAG, 데이터연결, 인덱싱, AI, LlamaIndex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LlamaIndex — AI Wiki">
+<meta property="og:description" content="다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/llamaindex.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LlamaIndex — AI Wiki">
+<meta name="twitter:description" content="다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/llamaindex.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/llamaindex.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "LlamaIndex",
+  "alternateName": "LlamaIndex",
+  "description": "다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.",
+  "url": "https://aiword-wiki.github.io/k/llamaindex.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">LlamaIndex</div>
+  <div class="en"></div>
+  <div class="body"><p>다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.</p><h4>개념 설명</h4><p>PDF, 데이터베이스, API, 웹페이지 등 다양한 소스에서 데이터를 가져와 LLM이 답변에 활용할 수 있도록 준비하는 과정은 복잡하다. <strong>LlamaIndex</strong>는 이 과정을 표준화한 프레임워크로, 데이터 로딩, 청킹, 임베딩, 인덱싱, 검색까지 RAG의 전체 파이프라인을 커버한다. LangChain이 에이전트와 체인에 강점을 보인다면, LlamaIndex는 데이터 연결과 인덱싱에 더 특화되어 있다.</p><h4>사용 예시</h4><p>사내 문서 질의응답 시스템을 만들 때, <code>SimpleDirectoryReader</code>로 문서를 로드하고 <code>VectorStoreIndex</code>로 인덱싱한 뒤 <code>index.as_query_engine()</code>으로 바로 질의할 수 있다. 복잡한 RAG가 필요하다면 <code>RouterQueryEngine</code>으로 여러 인덱스 중 적합한 것을 골라 검색하도록 구성할 수 있다.</p></div>
+  <div class="tags"><span>#RAG</span><span>#데이터연결</span><span>#인덱싱</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#llamaindex">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

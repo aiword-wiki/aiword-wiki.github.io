@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>어텐션 헤드 (Attention Head) — AI Wiki</title>
+<meta name="description" content="Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.">
+<meta name="keywords" content="Transformer, 어텐션, 아키텍처, AI, 어텐션 헤드">
+<meta property="og:type" content="article">
+<meta property="og:title" content="어텐션 헤드 (Attention Head) — AI Wiki">
+<meta property="og:description" content="Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/attention-head.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="어텐션 헤드 (Attention Head) — AI Wiki">
+<meta name="twitter:description" content="Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/attention-head.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/attention-head.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "어텐션 헤드",
+  "alternateName": "Attention Head",
+  "description": "Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.",
+  "url": "https://aiword-wiki.github.io/k/attention-head.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <div class="title">어텐션 헤드</div>
+  <div class="en">Attention Head</div>
+  <div class="body"><p>Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.</p><h4>개념 설명</h4><p>"The cat sat on the mat because it was tired" — 여기서 "it"이 "cat"을 가리킨다는 걸 이해하려면 문장 내 단어 간 관계를 파악해야 한다. 어텐션 메커니즘이 이 역할을 한다. 각 어텐션 헤드는 서로 다른 종류의 관계(문법적 관계, 의미적 관계, 위치 관계 등)를 담당한다. 멀티헤드 어텐션은 이런 헤드를 여러 개 병렬로 운영해서 다양한 관점에서 관계를 학습한다.</p>
+<h4>사용 예시</h4><p>Transformer 모델의 헤드 수는 하이퍼파라미터로, GPT-4 같은 대형 모델은 수십 개 헤드를 사용한다. 어텐션 맵을 시각화하면 모델이 특정 단어를 예측할 때 어떤 단어에 집중하는지 볼 수 있어서 설명가능성 연구에 활용된다. 파인튜닝 시 어텐션 레이어만 학습하고 나머지를 동결하는 방식(Adapter, LoRA)으로 학습 비용을 크게 줄일 수 있다.</p></div>
+  <div class="tags"><span>#Transformer</span><span>#어텐션</span><span>#아키텍처</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#attention-head">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

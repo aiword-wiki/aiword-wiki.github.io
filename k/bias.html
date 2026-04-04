@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>편향 (AI Bias) — AI Wiki</title>
+<meta name="description" content="AI 모델이 훈련 데이터나 설계 방식의 영향으로 특정 집단에 대해 불공정하거나 왜곡된 결과를 내는 현상. 의도치 않더라도 차별적 결과를 낳을 수 있어 배포 전 검증이 중요하다.">
+<meta name="keywords" content="공정성, 데이터 편향, 윤리, AI, 편향">
+<meta property="og:type" content="article">
+<meta property="og:title" content="편향 (AI Bias) — AI Wiki">
+<meta property="og:description" content="AI 모델이 훈련 데이터나 설계 방식의 영향으로 특정 집단에 대해 불공정하거나 왜곡된 결과를 내는 현상. 의도치 않더라도 차별적 결과를 낳을 수 있어 배포 전 검증이 중요하다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/bias.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="편향 (AI Bias) — AI Wiki">
+<meta name="twitter:description" content="AI 모델이 훈련 데이터나 설계 방식의 영향으로 특정 집단에 대해 불공정하거나 왜곡된 결과를 내는 현상. 의도치 않더라도 차별적 결과를 낳을 수 있어 배포 전 검증이 중요하다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/bias.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/bias.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "편향",
+  "alternateName": "AI Bias",
+  "description": "AI 모델이 훈련 데이터나 설계 방식의 영향으로 특정 집단에 대해 불공정하거나 왜곡된 결과를 내는 현상. 의도치 않더라도 차별적 결과를 낳을 수 있어 배포 전 검증이 중요하다.",
+  "url": "https://aiword-wiki.github.io/k/bias.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">안전</div>
+  <div class="title">편향</div>
+  <div class="en">AI Bias</div>
+  <div class="body"><p>AI 모델이 훈련 데이터나 설계 방식의 영향으로 특정 집단에 대해 불공정하거나 왜곡된 결과를 내는 현상. 의도치 않더라도 차별적 결과를 낳을 수 있어 배포 전 검증이 중요하다.</p><h4>개념 설명</h4><p>AI는 데이터에서 패턴을 학습하는데, 그 데이터 자체가 이미 사회적 편견을 담고 있다면 모델도 그 편견을 그대로 학습한다. 예를 들어 채용 모델이 과거 채용 기록으로 훈련됐다면 특정 성별이나 인종에 불리하게 작동할 수 있다. 이는 개발자의 의도와 무관하게 데이터에서 자동으로 흡수되는 문제라 더 까다롭다.</p><h4>사용 예시</h4><p>모델을 배포하기 전에 성별, 연령, 인종 등 민감한 속성별로 출력이 어떻게 달라지는지 <strong>Eval</strong>을 통해 측정한다. 편향이 발견되면 데이터 재샘플링, <strong>파인튜닝</strong>, 또는 후처리 필터로 완화한다. 이미지 생성 모델에서는 특정 직업이나 역할에 어떤 외모가 생성되는지 정기적으로 감사하는 것이 좋은 관행이다.</p></div>
+  <div class="tags"><span>#공정성</span><span>#데이터 편향</span><span>#윤리</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#bias">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

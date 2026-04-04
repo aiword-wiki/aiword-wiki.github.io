@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>출력 필터링 (Output Filtering) — AI Wiki</title>
+<meta name="description" content="AI가 생성한 응답을 외부로 내보내기 전에 검사해서 유해 콘텐츠, 개인정보, 형식 오류 등을 제거하거나 차단하는 처리 단계. 모델 자체의 안전성을 보완하는 마지막 방어선이다.">
+<meta name="keywords" content="안전장치, 후처리, 가드레일, AI, 출력 필터링">
+<meta property="og:type" content="article">
+<meta property="og:title" content="출력 필터링 (Output Filtering) — AI Wiki">
+<meta property="og:description" content="AI가 생성한 응답을 외부로 내보내기 전에 검사해서 유해 콘텐츠, 개인정보, 형식 오류 등을 제거하거나 차단하는 처리 단계. 모델 자체의 안전성을 보완하는 마지막 방어선이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/output-filtering.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="출력 필터링 (Output Filtering) — AI Wiki">
+<meta name="twitter:description" content="AI가 생성한 응답을 외부로 내보내기 전에 검사해서 유해 콘텐츠, 개인정보, 형식 오류 등을 제거하거나 차단하는 처리 단계. 모델 자체의 안전성을 보완하는 마지막 방어선이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/output-filtering.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/output-filtering.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "출력 필터링",
+  "alternateName": "Output Filtering",
+  "description": "AI가 생성한 응답을 외부로 내보내기 전에 검사해서 유해 콘텐츠, 개인정보, 형식 오류 등을 제거하거나 차단하는 처리 단계. 모델 자체의 안전성을 보완하는 마지막 방어선이다.",
+  "url": "https://aiword-wiki.github.io/k/output-filtering.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">안전</div>
+  <div class="title">출력 필터링</div>
+  <div class="en">Output Filtering</div>
+  <div class="body"><p>AI가 생성한 응답을 외부로 내보내기 전에 검사해서 유해 콘텐츠, 개인정보, 형식 오류 등을 제거하거나 차단하는 처리 단계. 모델 자체의 안전성을 보완하는 마지막 방어선이다.</p><h4>개념 설명</h4><p>모델이 시스템 프롬프트를 잘 따른다 해도 예상치 못한 응답이 나올 수 있다. 출력 필터링은 AI 응답이 사용자에게 도달하기 직전에 독립적으로 동작하는 검사 레이어다. 정규식으로 전화번호·이메일 패턴을 제거하거나, 별도 분류 모델로 유해성을 점수화하거나, 구조화된 출력(JSON 스키마)의 유효성을 검증하는 방식으로 동작한다.</p>
+<h4>사용 예시</h4><p>Claude Code에서 훅은 출력 필터링의 구체적인 구현이다. <code>PostToolUse</code> 훅으로 AI가 실행하려는 명령의 결과를 가로채 검사할 수 있다. API 서버 레벨에서는 응답 스트리밍 도중에도 필터링이 가능한데, SSE 스트림을 중간에 잘라내거나 특정 패턴을 실시간으로 마스킹하는 방식으로 구현한다. 가드레일 프레임워크(NeMo Guardrails, Guardrails AI)를 쓰면 이런 필터링 파이프라인을 선언적으로 정의할 수 있다.</p></div>
+  <div class="tags"><span>#안전장치</span><span>#후처리</span><span>#가드레일</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#output-filtering">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>도구 사용 (Tool Use / Function Calling) — AI Wiki</title>
+<meta name="description" content="AI 모델이 텍스트 생성을 넘어 외부 함수를 직접 호출해 실제 작업을 수행하게 하는 메커니즘. 에이전트가 &quot;손&quot;을 가질 수 있게 해주는 핵심 기능이다.">
+<meta name="keywords" content="API, 함수호출, AI, 도구 사용">
+<meta property="og:type" content="article">
+<meta property="og:title" content="도구 사용 (Tool Use / Function Calling) — AI Wiki">
+<meta property="og:description" content="AI 모델이 텍스트 생성을 넘어 외부 함수를 직접 호출해 실제 작업을 수행하게 하는 메커니즘. 에이전트가 &quot;손&quot;을 가질 수 있게 해주는 핵심 기능이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/tool-use.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="도구 사용 (Tool Use / Function Calling) — AI Wiki">
+<meta name="twitter:description" content="AI 모델이 텍스트 생성을 넘어 외부 함수를 직접 호출해 실제 작업을 수행하게 하는 메커니즘. 에이전트가 &quot;손&quot;을 가질 수 있게 해주는 핵심 기능이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/tool-use.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/tool-use.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "도구 사용",
+  "alternateName": "Tool Use / Function Calling",
+  "description": "AI 모델이 텍스트 생성을 넘어 외부 함수를 직접 호출해 실제 작업을 수행하게 하는 메커니즘. 에이전트가 \"손\"을 가질 수 있게 해주는 핵심 기능이다.",
+  "url": "https://aiword-wiki.github.io/k/tool-use.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">도구 사용</div>
+  <div class="en">Tool Use / Function Calling</div>
+  <div class="body"><p>AI 모델이 텍스트 생성을 넘어 외부 함수를 직접 호출해 실제 작업을 수행하게 하는 메커니즘. 에이전트가 "손"을 가질 수 있게 해주는 핵심 기능이다.</p><h4>도구 사용이란</h4><p>LLM은 기본적으로 텍스트만 생성한다. "날씨 알려줘"라고 해도 실제로 날씨를 조회하지 못하고 학습 데이터에서 답을 만들어 낸다. Tool Use는 모델이 "이 함수를 이 인자로 호출해야겠다"고 판단하면 실제로 외부 함수를 실행할 수 있게 해주는 메커니즘이다. 모델이 JSON으로 호출할 도구와 인자를 반환하면, 개발자 코드가 실제 실행을 담당한다.</p>
+<h4>사용 예시</h4><p>Claude API에서 도구를 정의할 때 이름, 설명, 입력 스키마를 JSON으로 전달한다. 모델이 사용자 요청을 보고 적절한 도구를 골라 호출하면, 개발자 코드가 실행 결과를 다시 모델에 전달하는 루프를 반복한다.</p>
+<p>예를 들어 웹 검색, DB 조회, 코드 실행 도구를 묶어 두면 "지난달 매출 추이를 분석해줘"라는 요청에 모델이 DB 조회 → 데이터 정리 → 분석 코드 실행을 스스로 이어간다. Claude Code에서 파일 읽기, 편집, 셸 실행, 검색이 모두 도구로 구현되어 있어서, 에이전트가 코드베이스를 자율적으로 다룰 수 있는 것도 이 메커니즘 덕분이다.</p>
+<p>MCP는 이 도구 연결을 표준화한 것이다. 도구를 하나하나 코드로 정의하는 대신, MCP 서버를 연결하면 해당 서비스의 기능이 도구로 자동 등록된다.</p></div>
+  <div class="tags"><span>#API</span><span>#함수호출</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#tool-use">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

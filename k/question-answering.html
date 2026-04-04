@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>질의응답 (Question Answering) — AI Wiki</title>
+<meta name="description" content="주어진 맥락이나 지식베이스를 바탕으로 자연어 질문에 정확한 답을 찾아내는 AI 기능. RAG 시스템의 가장 핵심적인 응용 패턴이다.">
+<meta name="keywords" content="QA, 검색, NLP, AI, 질의응답">
+<meta property="og:type" content="article">
+<meta property="og:title" content="질의응답 (Question Answering) — AI Wiki">
+<meta property="og:description" content="주어진 맥락이나 지식베이스를 바탕으로 자연어 질문에 정확한 답을 찾아내는 AI 기능. RAG 시스템의 가장 핵심적인 응용 패턴이다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/question-answering.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="질의응답 (Question Answering) — AI Wiki">
+<meta name="twitter:description" content="주어진 맥락이나 지식베이스를 바탕으로 자연어 질문에 정확한 답을 찾아내는 AI 기능. RAG 시스템의 가장 핵심적인 응용 패턴이다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/question-answering.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/question-answering.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "질의응답",
+  "alternateName": "Question Answering",
+  "description": "주어진 맥락이나 지식베이스를 바탕으로 자연어 질문에 정확한 답을 찾아내는 AI 기능. RAG 시스템의 가장 핵심적인 응용 패턴이다.",
+  "url": "https://aiword-wiki.github.io/k/question-answering.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">응용</div>
+  <div class="title">질의응답</div>
+  <div class="en">Question Answering</div>
+  <div class="body"><p>주어진 맥락이나 지식베이스를 바탕으로 자연어 질문에 정확한 답을 찾아내는 AI 기능. RAG 시스템의 가장 핵심적인 응용 패턴이다.</p><h4>개념 설명</h4><p>질의응답(QA)은 AI가 특정 문서나 데이터베이스를 참조해서 질문에 답하는 능력이다. 단순 키워드 검색과 다른 점은 자연어 질문의 의미를 이해하고, 여러 문서에서 관련 정보를 종합해 답변을 생성한다는 것이다. "오픈 도메인 QA"는 전체 인터넷에서, "클로즈드 도메인 QA"는 특정 문서 세트에서 답을 찾는다.</p>
+<h4>사용 예시</h4><p>RAG 파이프라인이 QA의 가장 일반적인 구현 방식이다. 사용자 질문 → 임베딩으로 변환 → 벡터 DB에서 유사 문서 검색 → 검색된 문서와 질문을 LLM에 전달 → 답변 생성의 흐름이다. 법률 문서 검색 시스템, 내부 정책 QA 봇, 기술 지원 자동화에 많이 쓰인다. 답변 품질은 검색 정확도(어떤 문서를 가져오는지)와 LLM의 이해력 두 가지에 모두 달려 있다.</p></div>
+  <div class="tags"><span>#QA</span><span>#검색</span><span>#NLP</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#question-answering">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

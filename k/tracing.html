@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>트레이싱 (LLM Tracing) — AI Wiki</title>
+<meta name="description" content="LLM 앱의 각 실행 단계를 기록해서 어떤 일이 일어났는지 추적하는 것. 복잡한 에이전트 파이프라인 디버깅에 필수다.">
+<meta name="keywords" content="관측성, 디버깅, 로깅, AI, 트레이싱">
+<meta property="og:type" content="article">
+<meta property="og:title" content="트레이싱 (LLM Tracing) — AI Wiki">
+<meta property="og:description" content="LLM 앱의 각 실행 단계를 기록해서 어떤 일이 일어났는지 추적하는 것. 복잡한 에이전트 파이프라인 디버깅에 필수다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/tracing.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="트레이싱 (LLM Tracing) — AI Wiki">
+<meta name="twitter:description" content="LLM 앱의 각 실행 단계를 기록해서 어떤 일이 일어났는지 추적하는 것. 복잡한 에이전트 파이프라인 디버깅에 필수다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/tracing.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/tracing.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "트레이싱",
+  "alternateName": "LLM Tracing",
+  "description": "LLM 앱의 각 실행 단계를 기록해서 어떤 일이 일어났는지 추적하는 것. 복잡한 에이전트 파이프라인 디버깅에 필수다.",
+  "url": "https://aiword-wiki.github.io/k/tracing.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">트레이싱</div>
+  <div class="en">LLM Tracing</div>
+  <div class="body"><p>LLM 앱의 각 실행 단계를 기록해서 어떤 일이 일어났는지 추적하는 것. 복잡한 에이전트 파이프라인 디버깅에 필수다.</p><h4>개념 설명</h4><p>LLM 앱이 여러 단계를 거치면 최종 출력이 왜 그렇게 나왔는지 파악하기 어렵다. <strong>트레이싱</strong>은 분산 시스템 디버깅에서 가져온 개념으로, 각 LLM 호출, 툴 실행, 에이전트 단계를 "스팬"으로 기록하고 전체 실행 흐름을 트리 구조로 시각화한다. 지연 시간, 토큰 비용, 오류 위치를 한눈에 파악할 수 있다.</p><h4>사용 예시</h4><p>에이전트가 5단계를 거쳐 답변을 만드는데 결과가 이상하다면, 트레이싱 대시보드에서 각 단계의 입출력을 펼쳐보면 어느 단계에서 잘못됐는지 바로 알 수 있다. OpenTelemetry 표준을 쓰거나 Langfuse, LangSmith, Helicone 같은 서비스를 붙이면 된다.</p></div>
+  <div class="tags"><span>#관측성</span><span>#디버깅</span><span>#로깅</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#tracing">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

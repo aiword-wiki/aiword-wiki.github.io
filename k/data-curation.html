@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데이터 큐레이션 (Data Curation) — AI Wiki</title>
+<meta name="description" content="모델 학습이나 RAG에 쓸 데이터를 수집하고 정제하고 선별하는 과정. 데이터 품질이 모델 성능을 결정한다.">
+<meta name="keywords" content="데이터품질, 필터링, 학습데이터, AI, 데이터 큐레이션">
+<meta property="og:type" content="article">
+<meta property="og:title" content="데이터 큐레이션 (Data Curation) — AI Wiki">
+<meta property="og:description" content="모델 학습이나 RAG에 쓸 데이터를 수집하고 정제하고 선별하는 과정. 데이터 품질이 모델 성능을 결정한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/data-curation.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="데이터 큐레이션 (Data Curation) — AI Wiki">
+<meta name="twitter:description" content="모델 학습이나 RAG에 쓸 데이터를 수집하고 정제하고 선별하는 과정. 데이터 품질이 모델 성능을 결정한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/data-curation.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/data-curation.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "데이터 큐레이션",
+  "alternateName": "Data Curation",
+  "description": "모델 학습이나 RAG에 쓸 데이터를 수집하고 정제하고 선별하는 과정. 데이터 품질이 모델 성능을 결정한다.",
+  "url": "https://aiword-wiki.github.io/k/data-curation.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">데이터 큐레이션</div>
+  <div class="en">Data Curation</div>
+  <div class="body"><p>모델 학습이나 RAG에 쓸 데이터를 수집하고 정제하고 선별하는 과정. 데이터 품질이 모델 성능을 결정한다.</p><h4>개념 설명</h4><p>"쓰레기를 넣으면 쓰레기가 나온다"는 말이 AI에서 가장 잘 맞는 분야가 데이터다. <strong>데이터 큐레이션</strong>은 원시 데이터에서 노이즈, 중복, 편향, 부정확한 레이블을 걸러내고 고품질 데이터만 남기는 과정이다. 파인튜닝용 학습 데이터든, RAG용 문서든, 데이터 품질이 최종 성능을 좌우한다.</p><h4>사용 예시</h4><p>고객 지원 로그로 챗봇을 파인튜닝할 때, 전체 로그를 그대로 쓰면 잘못된 답변, 불완전한 대화, 개인정보가 섞인다. 먼저 해결 완료된 케이스만 필터링하고, 답변 품질을 점수로 평가해서 상위 20%만 선별하고, PII를 제거하는 큐레이션 파이프라인을 거쳐야 유효한 학습 데이터가 만들어진다.</p></div>
+  <div class="tags"><span>#데이터품질</span><span>#필터링</span><span>#학습데이터</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#data-curation">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

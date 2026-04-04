@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에이전트 평가 (Agent Evaluation) — AI Wiki</title>
+<meta name="description" content="AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.">
+<meta name="keywords" content="평가, 벤치마크, 품질, AI, 에이전트 평가">
+<meta property="og:type" content="article">
+<meta property="og:title" content="에이전트 평가 (Agent Evaluation) — AI Wiki">
+<meta property="og:description" content="AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/agent-eval.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="에이전트 평가 (Agent Evaluation) — AI Wiki">
+<meta name="twitter:description" content="AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/agent-eval.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/agent-eval.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "에이전트 평가",
+  "alternateName": "Agent Evaluation",
+  "description": "AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.",
+  "url": "https://aiword-wiki.github.io/k/agent-eval.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <div class="title">에이전트 평가</div>
+  <div class="en">Agent Evaluation</div>
+  <div class="body"><p>AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.</p><h4>개념 설명</h4><p>에이전트 평가는 단순히 답변이 맞는지 보는 것보다 훨씬 복잡하다. 에이전트가 올바른 도구를 선택했는지, 불필요한 단계를 거치지 않았는지, 중간에 잘못된 방향으로 흘렀다가 수정했는지, 최종 목표를 실제로 달성했는지를 모두 평가해야 한다. 에이전트가 올바른 결과를 내더라도 비효율적인 경로로 갔다면 개선이 필요하다.</p><h4>사용 예시</h4><p>코드 작성 에이전트를 평가할 때 LangSmith나 Langfuse로 각 실행의 전체 트레이스를 기록하고, 도구 호출 횟수, 총 토큰 사용량, 태스크 성공률, 평균 완료 시간을 지표로 삼는다. 실패 케이스를 모아 <strong>실패 분석</strong>을 하면 에이전트 프롬프트나 도구 설계의 개선점을 찾을 수 있다.</p></div>
+  <div class="tags"><span>#평가</span><span>#벤치마크</span><span>#품질</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#agent-eval">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

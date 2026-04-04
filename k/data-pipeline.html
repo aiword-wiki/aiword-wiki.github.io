@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데이터 파이프라인 (Data Pipeline) — AI Wiki</title>
+<meta name="description" content="데이터를 수집, 변환, 저장, 배포하는 일련의 자동화된 처리 흐름. AI 시스템에서는 학습 데이터 준비부터 실시간 추론 데이터 공급까지 AI의 품질을 결정하는 인프라다.">
+<meta name="keywords" content="ETL, 데이터처리, 자동화, AI, 데이터 파이프라인">
+<meta property="og:type" content="article">
+<meta property="og:title" content="데이터 파이프라인 (Data Pipeline) — AI Wiki">
+<meta property="og:description" content="데이터를 수집, 변환, 저장, 배포하는 일련의 자동화된 처리 흐름. AI 시스템에서는 학습 데이터 준비부터 실시간 추론 데이터 공급까지 AI의 품질을 결정하는 인프라다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/data-pipeline.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="데이터 파이프라인 (Data Pipeline) — AI Wiki">
+<meta name="twitter:description" content="데이터를 수집, 변환, 저장, 배포하는 일련의 자동화된 처리 흐름. AI 시스템에서는 학습 데이터 준비부터 실시간 추론 데이터 공급까지 AI의 품질을 결정하는 인프라다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/data-pipeline.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/data-pipeline.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "데이터 파이프라인",
+  "alternateName": "Data Pipeline",
+  "description": "데이터를 수집, 변환, 저장, 배포하는 일련의 자동화된 처리 흐름. AI 시스템에서는 학습 데이터 준비부터 실시간 추론 데이터 공급까지 AI의 품질을 결정하는 인프라다.",
+  "url": "https://aiword-wiki.github.io/k/data-pipeline.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">데이터 파이프라인</div>
+  <div class="en">Data Pipeline</div>
+  <div class="body"><p>데이터를 수집, 변환, 저장, 배포하는 일련의 자동화된 처리 흐름. AI 시스템에서는 학습 데이터 준비부터 실시간 추론 데이터 공급까지 AI의 품질을 결정하는 인프라다.</p><h4>개념 설명</h4><p>AI 시스템은 데이터를 지속적으로 공급받아야 한다. 데이터 파이프라인은 원천 데이터(DB, API, 파일)에서 데이터를 가져와 정제·변환·검증한 뒤 목적지(벡터 DB, 학습용 저장소, 모델 서빙 레이어)로 보내는 자동화된 흐름이다. RAG 시스템에서는 문서 파싱 → 청킹 → 임베딩 → 벡터 DB 저장의 흐름이 데이터 파이프라인이다.</p>
+<h4>사용 예시</h4><p>RAG 지식 베이스를 최신 상태로 유지하려면 원천 문서가 업데이트될 때 파이프라인이 자동으로 재인덱싱해야 한다. Airflow, Prefect, Dagster 같은 파이프라인 오케스트레이션 도구로 이 흐름을 스케줄링하고 모니터링한다. LlamaIndex, LangChain의 Document Loader는 이 파이프라인 구축을 단순화하는 도구다. 파이프라인 어딘가에서 데이터 품질이 나빠지면 모델 성능에 직접 영향을 미치므로 각 단계의 검증 로직이 중요하다.</p></div>
+  <div class="tags"><span>#ETL</span><span>#데이터처리</span><span>#자동화</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#data-pipeline">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

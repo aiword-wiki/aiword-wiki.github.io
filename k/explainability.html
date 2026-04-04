@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>설명가능성 (Explainability) — AI Wiki</title>
+<meta name="description" content="AI 모델이 왜 그런 결정을 내렸는지 인간이 이해할 수 있는 형태로 설명하는 능력. 의료, 금융, 법률처럼 근거가 중요한 분야에서는 설명가능성이 신뢰와 규제 준수의 기반이 된다.">
+<meta name="keywords" content="XAI, 해석가능성, 투명성, AI, 설명가능성">
+<meta property="og:type" content="article">
+<meta property="og:title" content="설명가능성 (Explainability) — AI Wiki">
+<meta property="og:description" content="AI 모델이 왜 그런 결정을 내렸는지 인간이 이해할 수 있는 형태로 설명하는 능력. 의료, 금융, 법률처럼 근거가 중요한 분야에서는 설명가능성이 신뢰와 규제 준수의 기반이 된다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/explainability.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="설명가능성 (Explainability) — AI Wiki">
+<meta name="twitter:description" content="AI 모델이 왜 그런 결정을 내렸는지 인간이 이해할 수 있는 형태로 설명하는 능력. 의료, 금융, 법률처럼 근거가 중요한 분야에서는 설명가능성이 신뢰와 규제 준수의 기반이 된다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/explainability.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/explainability.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "설명가능성",
+  "alternateName": "Explainability",
+  "description": "AI 모델이 왜 그런 결정을 내렸는지 인간이 이해할 수 있는 형태로 설명하는 능력. 의료, 금융, 법률처럼 근거가 중요한 분야에서는 설명가능성이 신뢰와 규제 준수의 기반이 된다.",
+  "url": "https://aiword-wiki.github.io/k/explainability.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">안전</div>
+  <div class="title">설명가능성</div>
+  <div class="en">Explainability</div>
+  <div class="body"><p>AI 모델이 왜 그런 결정을 내렸는지 인간이 이해할 수 있는 형태로 설명하는 능력. 의료, 금융, 법률처럼 근거가 중요한 분야에서는 설명가능성이 신뢰와 규제 준수의 기반이 된다.</p><h4>개념 설명</h4><p>딥러닝 모델은 성능이 뛰어나지만 내부에서 어떤 과정으로 결론에 도달하는지 알기 어렵다. 이를 "블랙박스 문제"라 한다. 설명가능성 연구는 모델이 어떤 입력 특성에 주목했는지, 왜 A 대신 B를 선택했는지 시각화하거나 자연어로 설명하는 방법을 다룬다. 단순히 정확도가 높은 것으로는 충분하지 않고, 결정 근거를 보여줄 수 있어야 한다는 요구에서 나온 분야다.</p><h4>사용 예시</h4><p>LLM 기반 애플리케이션에서는 모델의 응답과 함께 근거 문서나 출처를 함께 표시하는 것이 설명가능성을 높이는 가장 쉬운 방법이다. <strong>RAG</strong>를 사용하면 모델이 어떤 문서를 참조했는지 추적할 수 있어 결과 신뢰도가 높아진다. 의료 진단 보조 도구라면 AI의 판단과 함께 판단 근거로 사용된 증상이나 수치를 명시하는 것이 요구될 수 있다.</p></div>
+  <div class="tags"><span>#XAI</span><span>#해석가능성</span><span>#투명성</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#explainability">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

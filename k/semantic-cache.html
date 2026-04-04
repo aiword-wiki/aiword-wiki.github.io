@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시맨틱 캐시 (Semantic Cache) — AI Wiki</title>
+<meta name="description" content="이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.">
+<meta name="keywords" content="캐싱, 유사도검색, 비용절감, AI, 시맨틱 캐시">
+<meta property="og:type" content="article">
+<meta property="og:title" content="시맨틱 캐시 (Semantic Cache) — AI Wiki">
+<meta property="og:description" content="이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/semantic-cache.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="시맨틱 캐시 (Semantic Cache) — AI Wiki">
+<meta name="twitter:description" content="이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/semantic-cache.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/semantic-cache.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "시맨틱 캐시",
+  "alternateName": "Semantic Cache",
+  "description": "이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.",
+  "url": "https://aiword-wiki.github.io/k/semantic-cache.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <div class="title">시맨틱 캐시</div>
+  <div class="en">Semantic Cache</div>
+  <div class="body"><p>이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.</p><h4>개념 설명</h4><p>일반 캐시는 완전히 동일한 입력에만 적용된다. 하지만 "오늘 날씨 어때?"와 "오늘 날씨가 어떻습니까?"는 다른 문자열이지만 같은 질문이다. <strong>시맨틱 캐시</strong>는 쿼리를 임베딩으로 변환해서 벡터 유사도를 측정하고, 충분히 유사한 과거 쿼리가 있으면 LLM 호출 없이 캐시된 답변을 반환한다. 반복 질문이 많은 서비스에서 비용을 크게 줄일 수 있다.</p><h4>사용 예시</h4><p>FAQ 기반 고객 지원 챗봇은 비슷한 질문이 반복되므로 시맨틱 캐시 효과가 크다. GPTCache나 Redis의 시맨틱 캐시 기능을 붙이면, 임베딩 유사도가 0.95 이상인 쿼리에 대해서는 LLM을 호출하지 않고 캐시에서 바로 응답한다. 코사인 유사도 임계값을 조정해 캐시 히트율과 정확도를 균형 잡는다.</p></div>
+  <div class="tags"><span>#캐싱</span><span>#유사도검색</span><span>#비용절감</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#semantic-cache">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

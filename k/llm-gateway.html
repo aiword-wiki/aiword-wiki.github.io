@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM 게이트웨이 (LLM Gateway) — AI Wiki</title>
+<meta name="description" content="여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.">
+<meta name="keywords" content="프록시, 라우팅, 통합, AI, LLM 게이트웨이">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LLM 게이트웨이 (LLM Gateway) — AI Wiki">
+<meta property="og:description" content="여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/llm-gateway.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LLM 게이트웨이 (LLM Gateway) — AI Wiki">
+<meta name="twitter:description" content="여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/llm-gateway.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/llm-gateway.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "LLM 게이트웨이",
+  "alternateName": "LLM Gateway",
+  "description": "여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.",
+  "url": "https://aiword-wiki.github.io/k/llm-gateway.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <div class="title">LLM 게이트웨이</div>
+  <div class="en">LLM Gateway</div>
+  <div class="body"><p>여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.</p><h4>개념 설명</h4><p>Claude, GPT-4, Gemini를 상황에 따라 골라 쓰고 싶은데, 각각 API 형식이 다르면 코드를 계속 수정해야 한다. <strong>LLM 게이트웨이</strong>는 모든 모델 호출을 단일 엔드포인트로 받아서 적절한 모델에 중계하는 프록시다. 로드밸런싱, 폴백, 비용 추적, 속도 제한 같은 기능도 함께 제공한다.</p><h4>사용 예시</h4><p>LiteLLM을 게이트웨이로 구성하면 <code>model="claude-opus-4-5"</code>와 <code>model="gpt-4o"</code>를 같은 코드 구조로 호출할 수 있다. Portkey나 Helicone 같은 서비스형 게이트웨이를 쓰면 설정 없이 대시보드에서 비용과 지연 시간을 모니터링할 수 있다.</p></div>
+  <div class="tags"><span>#프록시</span><span>#라우팅</span><span>#통합</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#llm-gateway">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

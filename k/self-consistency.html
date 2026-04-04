@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>셀프 컨시스턴시 (Self-Consistency) — AI Wiki</title>
+<meta name="description" content="같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.">
+<meta name="keywords" content="앙상블, 정확도향상, 다수결, AI, 셀프 컨시스턴시">
+<meta property="og:type" content="article">
+<meta property="og:title" content="셀프 컨시스턴시 (Self-Consistency) — AI Wiki">
+<meta property="og:description" content="같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/self-consistency.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="셀프 컨시스턴시 (Self-Consistency) — AI Wiki">
+<meta name="twitter:description" content="같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/self-consistency.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/self-consistency.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "셀프 컨시스턴시",
+  "alternateName": "Self-Consistency",
+  "description": "같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.",
+  "url": "https://aiword-wiki.github.io/k/self-consistency.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <div class="title">셀프 컨시스턴시</div>
+  <div class="en">Self-Consistency</div>
+  <div class="body"><p>같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.</p><h4>개념 설명</h4><p>사람도 어려운 문제를 여러 방법으로 풀어보고 같은 답이 나오면 확신을 갖는다. <strong>셀프 컨시스턴시</strong>는 같은 프롬프트를 temperature를 높여 여러 번 실행하고, 각각 다른 추론 경로로 도달한 답 중 가장 빈번하게 나온 것을 최종 답으로 채택하는 방식이다. 단일 생성보다 비용이 들지만 수학, 논리 추론 문제에서 정확도가 크게 올라간다.</p><h4>사용 예시</h4><p>중요한 분류 작업이나 수학 계산을 할 때 같은 프롬프트를 5번 실행하고 다수결로 답을 정하면 오답률이 줄어든다. 코드로 구현할 때는 <code>temperature=0.7</code>로 설정하고 N번 호출한 뒤 답을 집계하면 된다. reasoning-model처럼 단일 호출이 이미 다양한 경로를 탐색한다면 셀프 컨시스턴시의 추가 효과는 줄어든다.</p></div>
+  <div class="tags"><span>#앙상블</span><span>#정확도향상</span><span>#다수결</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#self-consistency">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>

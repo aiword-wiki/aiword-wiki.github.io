@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에이전트 메모리 (Agent Memory) — AI Wiki</title>
+<meta name="description" content="AI 에이전트가 대화와 작업 경험을 기억하고, 다음 세션에서 그 기억을 꺼내 쓸 수 있게 하는 기술. 일회성 챗봇을 개인화되고 자기 개선하는 시스템으로 바꾸는 핵심 요소다.">
+<meta name="keywords" content="장기기억, Mem0, 세션유지, AI, 에이전트 메모리">
+<meta property="og:type" content="article">
+<meta property="og:title" content="에이전트 메모리 (Agent Memory) — AI Wiki">
+<meta property="og:description" content="AI 에이전트가 대화와 작업 경험을 기억하고, 다음 세션에서 그 기억을 꺼내 쓸 수 있게 하는 기술. 일회성 챗봇을 개인화되고 자기 개선하는 시스템으로 바꾸는 핵심 요소다.">
+<meta property="og:url" content="https://aiword-wiki.github.io/k/agent-memory.html">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="에이전트 메모리 (Agent Memory) — AI Wiki">
+<meta name="twitter:description" content="AI 에이전트가 대화와 작업 경험을 기억하고, 다음 세션에서 그 기억을 꺼내 쓸 수 있게 하는 기술. 일회성 챗봇을 개인화되고 자기 개선하는 시스템으로 바꾸는 핵심 요소다.">
+<link rel="canonical" href="https://aiword-wiki.github.io/k/agent-memory.html">
+<link rel="alternate" hreflang="ko" href="https://aiword-wiki.github.io/k/agent-memory.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "에이전트 메모리",
+  "alternateName": "Agent Memory",
+  "description": "AI 에이전트가 대화와 작업 경험을 기억하고, 다음 세션에서 그 기억을 꺼내 쓸 수 있게 하는 기술. 일회성 챗봇을 개인화되고 자기 개선하는 시스템으로 바꾸는 핵심 요소다.",
+  "url": "https://aiword-wiki.github.io/k/agent-memory.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiword-wiki.github.io/"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  .title{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <div class="title">에이전트 메모리</div>
+  <div class="en">Agent Memory</div>
+  <div class="body"><p>AI 에이전트가 대화와 작업 경험을 기억하고, 다음 세션에서 그 기억을 꺼내 쓸 수 있게 하는 기술. 일회성 챗봇을 개인화되고 자기 개선하는 시스템으로 바꾸는 핵심 요소다.</p><h4>왜 에이전트에게 기억이 필요한가</h4><p>LLM은 기본적으로 기억력이 없다. 대화가 끝나면 모든 걸 잊는다. 어제 "Python으로 작성해 줘"라고 했던 것도, 지난주에 함께 디버깅했던 프로젝트 구조도 매번 처음부터 다시 설명해야 한다. 에이전트 메모리는 이 문제를 해결한다.</p><p>사람의 기억처럼 에이전트 메모리도 여러 종류가 있다. <strong>단기 메모리</strong>는 지금 진행 중인 대화의 맥락으로, 컨텍스트 윈도우가 이 역할을 한다. <strong>장기 메모리</strong>는 세션이 끝나도 사라지지 않는 기억이다. "이 사용자는 TypeScript를 선호한다" 같은 의미 메모리, "지난번 배포에서 환경 변수 빠뜨려서 롤백했다" 같은 에피소드 메모리가 있다.</p><h4>사용 예시</h4><p>Claude Code에서는 <code>CLAUDE.md</code>가 가장 기본적인 메모리 역할을 한다. 프로젝트 규칙, 코딩 컨벤션, 아키텍처 결정을 적어 두면 매 세션 시작 시 자동으로 읽는다. Mem0는 코드 한 줄로 에이전트에 장기 기억을 추가할 수 있는 오픈소스 인프라로, 대화에서 자동으로 중요한 정보를 추출해서 벡터 DB + 그래프 메모리에 저장한다.</p><p>Hermes Agent는 여기서 한 발 더 나아간다. 복잡한 문제를 풀면 그 과정을 자동으로 스킬 문서로 만들어 저장한다. 다음에 비슷한 문제가 생기면 기억 속 스킬을 꺼내 쓰는 식이다. 쓸수록 똑똑해지는 에이전트를 만드는 것이 에이전트 메모리의 궁극적인 목표다.</p><h4>주의할 점</h4><p>기억이 많다고 좋은 건 아니다. 오래되거나 틀린 기억을 꺼내 쓰면 오히려 성능이 떨어진다. 어떤 정보를 저장할지, 언제 업데이트하거나 삭제할지를 판단하는 메모리 관리 전략이 메모리 저장 자체보다 더 어려운 문제다.</p></div>
+  <div class="tags"><span>#장기기억</span><span>#Mem0</span><span>#세션유지</span></div>
+  <a class="back" href="https://aiword-wiki.github.io/#agent-memory">← AI Wiki에서 더 보기</a>
+</div>
+</body>
+</html>
