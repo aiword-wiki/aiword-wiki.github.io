@@ -61,7 +61,7 @@
   /* Grid */
   .grid {
     max-width: 1400px;
-    margin: 32px auto;
+    margin: 8px auto 32px;
     padding: 0 32px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -121,6 +121,41 @@
     color: #a09888;
     font-size: 15px;
   }
+
+  /* Grid Header */
+  .grid-header {
+    max-width: 1400px;
+    margin: 24px auto 0;
+    padding: 0 32px;
+  }
+  .sort-label {
+    font-size: 12px;
+    color: #a09888;
+  }
+
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 32px 0 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .pg {
+    background: none;
+    border: none;
+    color: #a09888;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  .pg:hover { color: #C4613A; }
+  .pg.on { color: #C4613A; font-weight: 700; }
+  .pg.dot { cursor: default; }
+  .pg.dot:hover { color: #a09888; }
 
   /* Modal */
   .overlay {
@@ -200,7 +235,8 @@
     header { flex-wrap:wrap; padding:12px 16px; }
     input { max-width:100%; order:10; flex-basis:100%; }
     .filters { order:11; width:100%; }
-    .grid { padding:0 12px; margin:16px auto; grid-template-columns:1fr; }
+    .grid-header { padding:0 12px; margin:12px auto 0; }
+    .grid { padding:0 12px; margin:8px auto; grid-template-columns:1fr; }
     .card { min-height:160px; padding:24px 20px; }
     .card-keyword { font-size:22px; }
     .modal { padding:24px 20px; }
@@ -215,7 +251,11 @@
   <div class="filters" id="filters"></div>
 </header>
 
+<div class="grid-header">
+  <span class="sort-label" id="sort-label"></span>
+</div>
 <div class="grid" id="grid"></div>
+<div class="pagination" id="pagination"></div>
 
 <div class="overlay" id="ov">
   <div class="modal" id="modal"></div>
@@ -229,25 +269,25 @@ document.documentElement.lang = LANG;
 
 const I18N = {
   ko: {
-    search:'검색...', all:'전체', noResults:'검색 결과 없음',
+    search:'검색...', all:'전체', noResults:'검색 결과 없음', loadMore:'더 보기', newest:'최신순',
     refs:'레퍼런스', videos:'영상', related:'관련 키워드',
     born:(y,m)=> m&&+m ? y+'년 '+(+m)+'월 등장' : y+'년 등장',
     cats:{prompting:'프롬프팅',model:'모델',tooling:'도구',data:'데이터',agent:'에이전트',infra:'인프라',safety:'안전',application:'응용'}
   },
   en: {
-    search:'Search...', all:'All', noResults:'No results found',
+    search:'Search...', all:'All', noResults:'No results found', loadMore:'Load more', newest:'Newest',
     refs:'References', videos:'Videos', related:'Related',
     born:(y,m)=> m&&+m ? `Appeared ${y}-${String(+m).padStart(2,'0')}` : `Appeared ${y}`,
     cats:{prompting:'Prompting',model:'Model',tooling:'Tooling',data:'Data',agent:'Agent',infra:'Infra',safety:'Safety',application:'Application'}
   },
   zh: {
-    search:'搜索...', all:'全部', noResults:'未找到结果',
+    search:'搜索...', all:'全部', noResults:'未找到结果', loadMore:'加载更多', newest:'最新',
     refs:'参考资料', videos:'视频', related:'相关关键词',
     born:(y,m)=> m&&+m ? `${y}年${+m}月出现` : `${y}年出现`,
     cats:{prompting:'提示工程',model:'模型',tooling:'工具',data:'数据',agent:'智能体',infra:'基础设施',safety:'安全',application:'应用'}
   },
   ja: {
-    search:'検索...', all:'すべて', noResults:'結果が見つかりません',
+    search:'検索...', all:'すべて', noResults:'結果が見つかりません', loadMore:'もっと見る', newest:'新しい順',
     refs:'参考資料', videos:'動画', related:'関連キーワード',
     born:(y,m)=> m&&+m ? `${y}年${+m}月登場` : `${y}年登場`,
     cats:{prompting:'プロンプト',model:'モデル',tooling:'ツール',data:'データ',agent:'エージェント',infra:'インフラ',safety:'安全性',application:'応用'}
@@ -2629,7 +2669,8 @@ const I18N_CONTENT = {en:{
 }};
 
 // State
-let cat = 'all', q = '';
+const PAGE_SIZE = 20;
+let cat = 'all', q = '', page = 1;
 
 function render() {
   let list = D.filter(e => {
@@ -2642,10 +2683,18 @@ function render() {
   });
 
   const g = document.getElementById('grid');
-  if (!list.length) { g.innerHTML = `<div class="empty">${L.noResults}</div>`; return; }
+  const pg = document.getElementById('pagination');
+  document.getElementById('sort-label').textContent = L.newest;
+  if (!list.length) { g.innerHTML = `<div class="empty">${L.noResults}</div>`; pg.innerHTML = ''; return; }
+
+  const total = list.length;
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  if (page > totalPages) page = totalPages;
+  const start = (page - 1) * PAGE_SIZE;
+  const visible = list.slice(start, start + PAGE_SIZE);
 
   const now = new Date(), m3 = new Date(now.getFullYear(), now.getMonth()-3, 1), cutoff = m3.getFullYear()+'-'+String(m3.getMonth()+1).padStart(2,'0');
-  g.innerHTML = list.map(e => {
+  g.innerHTML = visible.map(e => {
     const primary = LANG==='ko' ? e.t : (e.en||e.t);
     const secondary = LANG==='ko' ? e.en : (!/[\uAC00-\uD7AF]/.test(e.t)&&e.t!==primary ? e.t : '');
     const sub = secondary ? `<div class="card-sub">${secondary}</div>` : '';
@@ -2657,6 +2706,26 @@ function render() {
       ${sub}
     </div>`;
   }).join('');
+
+  if (totalPages <= 1) { pg.innerHTML = ''; return; }
+
+  let btns = [];
+  const add = (n) => btns.push(`<button class="pg${n===page?' on':''}" onclick="goPage(${n})">${n}</button>`);
+  const dot = () => btns.push('<span class="pg dot">…</span>');
+
+  add(1);
+  if (page > 4) dot();
+  for (let i = Math.max(2, page-2); i <= Math.min(totalPages-1, page+2); i++) add(i);
+  if (page < totalPages-3) dot();
+  if (totalPages > 1) add(totalPages);
+
+  pg.innerHTML = btns.join('');
+}
+
+function goPage(n) {
+  page = n;
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Filters
@@ -2670,13 +2739,14 @@ function render() {
     f.querySelectorAll('.f').forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
     cat = b.dataset.c;
+    page = 1;
     render();
   });
 })();
 
 
 // Search
-document.getElementById('q').addEventListener('input', e => { q = e.target.value.trim(); render(); });
+document.getElementById('q').addEventListener('input', e => { q = e.target.value.trim(); page = 1; render(); });
 
 // Modal
 function open_m(id, pushState) {
