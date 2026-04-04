@@ -213,3 +213,5 @@
 | 2026-04-04 | CLAUDE.md 업데이트 (HOT 표식 섹션, prompts/ 디렉토리) |
 | 2026-04-05 | self-scheduling 첫 실행: 트렌드 수집 → HOT_IDS 9개 설정 |
 | 2026-04-05 | HOT 필터 UI: 최신순 | HOT 토글 버튼 (grid-header) |
+| 2026-04-05 | 깨진 한글 글자 12개소 수정 |
+| 2026-04-05 | data.js 분리: index.html(2824행→454행) + data.js(2372행) |

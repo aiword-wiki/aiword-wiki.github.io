@@ -2,7 +2,7 @@
 
 ## 프로젝트 개요
 AI 기술 키워드들을 **심플한 카드 UI**로 격자 배열하여 한눈에 파악할 수 있는 위키 사이트.
-단일 HTML 파일(정적), 서버 불필요.
+정적 파일(index.html + data.js), 서버 불필요.
 
 - 위치: `~/Desktop/ai-wiki/`
 - 진입점: `index.html`
@@ -297,13 +297,13 @@ JS 배열 `D`의 각 항목:
 
 - Vanilla HTML/CSS/JS (프레임워크 없음)
 - 폰트: Noto Sans KR (Google Fonts CDN)
-- 단일 `index.html` 파일
+- `index.html` (UI/로직) + `data.js` (HOT_IDS, D배열, I18N_CONTENT)
 
 ---
 
 ## 작업 규칙
 
-- 단일 HTML 파일 유지
+- 정적 파일 구조 유지 (index.html + data.js)
 - 외부 라이브러리 쓰지 않음 (CDN 폰트만 허용)
 - 한국어 중심, 영문명은 모달에서만
 - 디자인은 **심플** — 요소 최소화, 모션 최소화
