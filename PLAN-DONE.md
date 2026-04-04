@@ -262,3 +262,39 @@
 | 2026-04-05 | 배포 완료: https://hanjaegyeong.github.io/ai-wiki/ |
 | 2026-04-05 | 동작 확인: index.html, data.js 정상 로드 |
 | 2026-04-05 | 도메인 가용성 16개 확인 (aimap.com, aipedia.kr 등 미등록) |
+
+---
+
+## 단일 HTML 유지 vs 빌드 스크립트 도입 + SEO 기본 대응 (2026-04-05 완료)
+
+- [x] 구조 결정 — 단일 HTML 유지 + build.js로 키워드 페이지 생성
+- [x] meta description 태그 추가
+- [x] OG 태그 추가 (og:title, og:description, og:url, og:site_name, og:locale)
+- [x] Twitter Card 태그 추가
+- [x] canonical URL 추가
+- [x] hreflang 태그 추가 (ko, en, zh, ja)
+- [x] JSON-LD 구조화 데이터 (WebSite + DefinedTermSet)
+- [x] robots.txt 생성
+- [x] sitemap.xml 생성 (223 URLs)
+- [x] 키워드 독립 페이지 222개 생성 (build.js → /k/{id}.html)
+- [x] Google Search Console 인증 메타태그 추가
+- [x] favicon 추가
+- [x] GitHub Organization(aiword-wiki) 이전 → aiword-wiki.github.io
+- [x] 배포 동작 확인
+
+### 결과
+- SEO 태그 완비: meta, OG, Twitter Card, hreflang, JSON-LD, canonical
+- 222개 키워드별 독립 페이지로 롱테일 검색 노출 가능
+- sitemap.xml에 223개 URL 등록
+- URL: https://aiword-wiki.github.io/
+- Google Search Console 인증 완료
+
+### 진행 로그
+| 시간 | 작업 내용 |
+|------|----------|
+| 2026-04-05 | 플랜 시작, 단일 HTML 유지 결정 |
+| 2026-04-05 | meta/OG/Twitter Card/hreflang/JSON-LD 태그 추가 |
+| 2026-04-05 | robots.txt, sitemap.xml 생성 |
+| 2026-04-05 | build.js로 키워드 독립 페이지 222개 생성 |
+| 2026-04-05 | GitHub Org(aiword-wiki) 이전, URL 일괄 변경 |
+| 2026-04-05 | Search Console 인증 + favicon 추가 |
