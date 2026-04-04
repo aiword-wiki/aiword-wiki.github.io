@@ -206,6 +206,20 @@ JS 배열 `D`의 각 항목:
 
 ---
 
+## 콘텐츠 작업 규칙
+
+키워드 추가·수정·조사 등 모든 콘텐츠 작업 시 `.claude/agents/`의 서브에이전트 3개를 **반드시 병렬 실행**한다. 직접 처리 금지.
+
+| 작업 | 사용 에이전트 |
+|------|-------------|
+| 키워드 추가 | researcher + reference-collector + trend-analyst |
+| 기존 항목 수정 | researcher(검증) + reference-collector(최신 자료) |
+| 트렌드 조사 | trend-analyst + researcher |
+
+에이전트 실행 후 메인에서 결과를 종합·검증하고 index.html에 반영한다.
+
+---
+
 ## 자동화 구조 (스킬 + 에이전트 + 훅)
 
 ### 파일 구조
