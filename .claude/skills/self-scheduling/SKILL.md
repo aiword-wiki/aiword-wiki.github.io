@@ -40,4 +40,6 @@ AI Wiki 키워드 일일 자동 업데이트. `.claude/prompts/daily-keyword.md`
    - 새로 추가된 키워드 + 기존 키워드 중 이번 수집에서 화제였던 것 모두 포함
    - 예: `const HOT_IDS = ['mcp','ai-agent','rag'];`
 
-5. /commit 실행
+5. `node build.js` 실행하여 키워드 독립 페이지(/k/)와 sitemap.xml 재생성
+
+6. /commit 실행

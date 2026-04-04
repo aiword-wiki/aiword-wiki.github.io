@@ -65,5 +65,8 @@ I18N_CONTENT.zh['new-keyword-id'] = {sum: '...', det: '...'};
 I18N_CONTENT.ja['new-keyword-id'] = {sum: '...', det: '...'};
 ```
 
-### 7단계: 사용자에게 결과 요약 보고
+### 7단계: SEO 페이지 빌드
+- `node build.js` 실행하여 키워드 독립 페이지(/k/)와 sitemap.xml 재생성
+
+### 8단계: 사용자에게 결과 요약 보고
 - 추가된 키워드, 카테고리, Heat, 레퍼런스 수, 영상 수, 번역 완료 여부를 간단히 보고
