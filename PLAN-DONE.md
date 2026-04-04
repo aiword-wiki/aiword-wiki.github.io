@@ -190,3 +190,26 @@
 | 2026-04-04 | 플랜 시작 |
 | 2026-04-04 | 페이지 번호 페이지네이션 구현 (20개씩, CSS/HTML/JS) |
 | 2026-04-04 | 그리드 좌상단 "최신순" 라벨 추가, 모바일 레이아웃 수정 |
+
+---
+
+## HOT 키워드 표식 (2026-04-05 완료)
+
+- [x] 데이터 구조 결정: `HOT_IDS` 별도 배열
+- [x] CSS: `.card-hot` 스타일 (우측상단)
+- [x] JS: 카드 렌더링에 hot 표식 로직 추가
+- [x] 스케줄러 배치 시 hot 표식 초기화+재설정 로직
+- [x] `batch-add` → `self-scheduling` 스킬 리네임 + daily-keyword.md와 동일화
+- [x] CLAUDE.md에 HOT 표식 섹션 + prompts/ 디렉토리 명시
+- [x] daily-keyword.md에 HOT_IDS 갱신 단계 추가
+- [x] HOT 필터 UI: 최신순 | HOT 토글 버튼
+- [x] self-scheduling 첫 실행 (HOT_IDS 9개 갱신)
+
+### 진행 로그
+| 시간 | 작업 내용 |
+|------|----------|
+| 2026-04-04 | 플랜 시작, `HOT_IDS` 배열 + `.card-hot` CSS + 렌더링 로직 구현 |
+| 2026-04-04 | batch-add → self-scheduling 리네임, daily-keyword.md HOT 단계 추가 |
+| 2026-04-04 | CLAUDE.md 업데이트 (HOT 표식 섹션, prompts/ 디렉토리) |
+| 2026-04-05 | self-scheduling 첫 실행: 트렌드 수집 → HOT_IDS 9개 설정 |
+| 2026-04-05 | HOT 필터 UI: 최신순 | HOT 토글 버튼 (grid-header) |
