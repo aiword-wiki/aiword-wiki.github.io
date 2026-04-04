@@ -1,17 +1,15 @@
 ---
 name: start-phase
-description: PLAN.md에서 특정 항목을 꺼내 PLAN-CURRENT.md로 이동하고 작업 시작
+description: PLAN.md 최상단 플랜을 PLAN-CURRENT.md로 이동하고 작업 시작
 ---
 
 # /start-phase
 
-PLAN.md의 특정 Phase 또는 항목을 PLAN-CURRENT.md로 옮기고 작업을 시작한다.
+PLAN.md의 가장 상단 플랜 항목을 PLAN-CURRENT.md로 옮기고 작업을 시작한다.
 
 ## 사용법
 ```
-/start-phase Phase 1
-/start-phase 2-1
-/start-phase 우선순위 1~3
+/start-phase
 ```
 
 ## 워크플로우
@@ -24,8 +22,7 @@ PLAN.md의 특정 Phase 또는 항목을 PLAN-CURRENT.md로 옮기고 작업을 
 
 ### 2단계: PLAN.md에서 추출
 1. `PLAN.md`를 읽는다
-2. 사용자가 지정한 Phase/항목 번호에 해당하는 섹션을 찾는다
-3. 해당 섹션의 내용을 추출한다
+2. 나열된 플랜 중 최상단 플랜을 추출한다.
 
 ### 3단계: PLAN-CURRENT.md 작성
 아래 형식으로 `PLAN-CURRENT.md`를 작성한다:
