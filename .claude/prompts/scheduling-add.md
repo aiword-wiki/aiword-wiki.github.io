@@ -33,7 +33,7 @@ AI Wiki 키워드 일일 자동 업데이트를 실행하라.
 5. node build.js 실행하여 키워드 독립 페이지(/k/)와 sitemap.xml 재생성
 
 6. log.md에 아래 형식으로 추가 (파일 없으면 생성):
-   ## YYYY-MM-DD
+   ## YYYY-MM-DD HH:MM
    - 추가: keyword-id-1, keyword-id-2, ...
    - HOT: hot-id-1, hot-id-2, ...
    - 보강: (보강한 키워드가 있으면 기재, 없으면 없음)
