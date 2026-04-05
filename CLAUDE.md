@@ -231,7 +231,7 @@ JS 배열 `D`의 각 항목:
 
 ### 로컬 스케줄러 (launchd)
 
-- **스케줄**: 매일 14:00 KST
+- **스케줄**: 매일 09:00 KST
 - **방식**: macOS launchd (crontab 대체 — Desktop 폴더 TCC 권한 문제로 전환)
 - **plist**: `~/Library/LaunchAgents/com.aiwiki.daily.plist`
 - **스크립트**: `~/run-daily.sh` (홈 디렉토리에 위치 — Desktop 접근 전 실행 가능해야 함)
