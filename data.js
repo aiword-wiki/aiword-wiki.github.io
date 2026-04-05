@@ -1,4 +1,5 @@
 const HOT_IDS = ['mechanistic-interpretability','ai-vulnerability-discovery','emotion-prompting','goose','harness-engineering','multi-agent','ai-supply-chain-attack','gemma','copilot-sdk'];
+const LAST_UPDATED = '2026-04-05T07:09:00Z';
 
 const D = [
   {id:'harness-engineering',t:'하네스 엔지니어링',en:'Harness Engineering',c:'prompting',h:4,born:'2026-02',tags:['시스템설계','오케스트레이션'],
@@ -10,7 +11,7 @@ const D = [
    rel:['system-prompt','mcp','tool-use','agent-framework'],
    refs:[{"title": "Harness engineering – OpenAI", "url": "https://openai.com/index/harness-engineering/", "type": "blog"}, {"title": "Harness Engineering – Martin Fowler", "url": "https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html", "type": "blog"}, {"title": "Effective harnesses for long-running agents – Anthropic", "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents", "type": "official"}],
    videos:[{"title": "How We Build Effective Agents – Barry Zhang, Anthropic", "id": "D7_ipDqhtwk", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'mcp',t:'MCP',en:'Model Context Protocol',c:'tooling',h:5,born:'2024-11',tags:['프로토콜','Anthropic','도구연결'],
    sum:'AI 모델이 외부 도구와 데이터에 접근하기 위한 표준 프로토콜. USB-C가 기기를 하나의 규격으로 연결하듯, MCP는 AI와 외부 시스템을 하나의 방식으로 연결한다.',
@@ -20,7 +21,7 @@ const D = [
    rel:['tool-use','harness-engineering','claude-code'],
    refs:[{"title": "Introducing the Model Context Protocol – Anthropic", "url": "https://www.anthropic.com/news/model-context-protocol", "type": "official"}, {"title": "MCP Specification", "url": "https://modelcontextprotocol.io/specification/2025-11-25", "type": "official"}, {"title": "Code execution with MCP – Anthropic Engineering", "url": "https://www.anthropic.com/engineering/code-execution-with-mcp", "type": "official"}],
    videos:[{"title": "Model Context Protocol explained – Fireship", "id": "HyzlYwjoXOQ", "lang": "en"}, {"title": "MCP Workshop – Mahesh Murag, Anthropic", "id": "kQmXtrmQ5Zg", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'claude-code',t:'Claude Code',en:'Claude Code CLI',c:'tooling',h:4,born:'2025-02',tags:['CLI','Anthropic','코딩에이전트'],
    sum:'터미널에서 자연어로 코드베이스를 이해하고, 파일을 편집하고, Git 워크플로우 전체를 자율적으로 수행하는 AI 코딩 에이전트.',
@@ -30,7 +31,7 @@ const D = [
    rel:['mcp','skills','hooks','claude-md'],
    refs:[{"title": "Claude Code Overview – Official Docs", "url": "https://code.claude.com/docs/en/overview", "type": "official"}, {"title": "Claude Code Best Practices", "url": "https://code.claude.com/docs/en/best-practices", "type": "official"}, {"title": "Claude Code in Action – Anthropic Courses", "url": "https://anthropic.skilljar.com/claude-code-in-action", "type": "tutorial"}],
    videos:[{"title": "Claude Code Tutorial – Peter Yang", "id": "GepHGs_CZdk", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'ai-agent',t:'AI 에이전트',en:'AI Agent',c:'agent',h:5,born:'2023-04',tags:['자율','계획','도구활용'],
    sum:'목표를 주면 스스로 계획을 세우고, 도구를 사용하고, 결과를 보고 다음 행동을 조정하는 자율적 AI 시스템.',
@@ -40,7 +41,7 @@ const D = [
    rel:['multi-agent','agent-framework','tool-use'],
    refs:[{"title": "Building Effective Agents – Anthropic Research", "url": "https://www.anthropic.com/research/building-effective-agents", "type": "official"}, {"title": "A Practical Guide to Building Agents – OpenAI", "url": "https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf", "type": "official"}, {"title": "Introduction to AI Agents – Prompt Engineering Guide", "url": "https://www.promptingguide.ai/agents/introduction", "type": "tutorial"}],
    videos:[{"title": "How We Build Effective Agents – Barry Zhang, Anthropic", "id": "D7_ipDqhtwk", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'multi-agent',t:'멀티 에이전트',en:'Multi-Agent System',c:'agent',h:4,born:'2023-08',tags:['협업','에이전트팀','오케스트레이션'],
    sum:'여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.',
@@ -55,7 +56,7 @@ const D = [
    rel:['ai-agent','agent-framework','harness-engineering','claude-code','mcp','a2a'],
    refs:[{"title":"Minions: Stripe's one-shot coding agents","url":"https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents","type":"blog"},{"title":"Orchestrate teams of Claude Code sessions – Anthropic","url":"https://code.claude.com/docs/en/agent-teams","type":"official"},{"title":"Multiagent Systems in Enterprise AI – Gartner","url":"https://www.gartner.com/en/articles/multiagent-systems","type":"official"},{"title":"How Stripe's Minions Ship 1,300 PRs a Week – ByteByteGo","url":"https://blog.bytebytego.com/p/how-stripes-minions-ship-1300-prs","type":"blog"}],
    videos:[{"title":"LangGraph 멀티에이전트 – 테디노트","id":"G8jrAA2bPnA","lang":"ko"},{"title":"LangGraph Multi-Agent Workflows","id":"hvAPnpSfSGo","lang":"en"}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'ai-coding',t:'AI 코딩 어시스턴트',en:'AI Coding Assistant',c:'application',h:4,born:'2021-06',tags:['코딩','IDE','개발도구'],
    sum:'코드 자동 완성, 리뷰, 디버깅을 AI가 실시간으로 지원하는 개발 도구. 자동 완성에서 시작해 코드베이스 전체를 다루는 에이전트형으로 진화하고 있다.',
@@ -66,7 +67,7 @@ const D = [
    rel:['claude-code','ai-agent','tool-use'],
    refs:[{"title": "Vibe Coding Explained – Google Cloud", "url": "https://cloud.google.com/discover/what-is-vibe-coding", "type": "official"}, {"title": "AI code generation: Best practices – DX", "url": "https://getdx.com/blog/ai-code-enterprise-adoption/", "type": "blog"}],
    videos:[{"title": "Claude Code Tutorial – Peter Yang", "id": "GepHGs_CZdk", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'skills',t:'스킬',en:'Skills / Slash Commands',c:'tooling',h:2,born:'2025-10',tags:['자동화','Claude Code'],
    sum:'Claude Code에서 슬래시(/)로 호출하는 재사용 가능한 자동화 워크플로우. 마크다운으로 정의하면 복잡한 작업을 명령 한 줄로 실행할 수 있다.',
@@ -76,7 +77,7 @@ const D = [
    rel:['claude-code','hooks','claude-md'],
    refs:[{"title": "Extend Claude with skills – Official Docs", "url": "https://code.claude.com/docs/en/skills", "type": "official"}, {"title": "Claude Code Customization Guide – alexop.dev", "url": "https://alexop.dev/posts/claude-code-customization-guide-claudemd-skills-subagents/", "type": "blog"}],
    videos:[{"title": "Claude Code Tutorial – Peter Yang", "id": "GepHGs_CZdk", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'hooks',t:'훅',en:'Hooks',c:'tooling',h:2,born:'2025-06',tags:['이벤트','트리거','자동화'],
    sum:'Claude Code에서 특정 이벤트 전후에 자동으로 실행되는 셸 명령. 프롬프트가 아니라 운영체제가 직접 실행하므로 100% 확실하게 동작한다.',
@@ -86,7 +87,7 @@ const D = [
    rel:['claude-code','skills'],
    refs:[{"title": "Hooks reference – Claude Code Docs", "url": "https://code.claude.com/docs/en/hooks", "type": "official"}, {"title": "Claude Code Hooks: Workflow Automation – DataCamp", "url": "https://www.datacamp.com/tutorial/claude-code-hooks", "type": "tutorial"}],
    videos:[{"title": "How We Build Effective Agents – Barry Zhang, Anthropic", "id": "D7_ipDqhtwk", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'claude-md',t:'CLAUDE.md',en:'CLAUDE.md',c:'tooling',h:2,born:'2025-02',tags:['설정','프로젝트'],
    sum:'Claude Code가 세션 시작 시 자동으로 읽는 프로젝트 설정 파일. 코드만으로는 알 수 없는 규칙 — 빌드 명령, 코딩 컨벤션, 아키텍처 결정 — 을 담는다.',
@@ -96,7 +97,7 @@ const D = [
    rel:['claude-code','skills','hooks'],
    refs:[{"title": "Memory (CLAUDE.md) – Anthropic Docs", "url": "https://docs.anthropic.com/en/docs/claude-code/memory", "type": "official"}, {"title": "How Claude remembers your project – Claude Code Docs", "url": "https://code.claude.com/docs/en/memory", "type": "official"}, {"title": "Guide to AI Agent Memory Files – Medium", "url": "https://medium.com/data-science-collective/the-complete-guide-to-ai-agent-memory-files-claude-md-agents-md-and-beyond-49ea0df5c5a9", "type": "blog"}],
    videos:[{"title": "Claude Code Tutorial – Peter Yang", "id": "GepHGs_CZdk", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'tool-use',t:'도구 사용',en:'Tool Use / Function Calling',c:'tooling',h:4,born:'2023-06',tags:['API','함수호출'],
    sum:'AI 모델이 텍스트 생성을 넘어 외부 함수를 직접 호출해 실제 작업을 수행하게 하는 메커니즘. 에이전트가 "손"을 가질 수 있게 해주는 핵심 기능이다.',
@@ -107,7 +108,7 @@ const D = [
    rel:['mcp','agent-framework','harness-engineering'],
    refs:[{"title": "Tool use with Claude – API Docs", "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview", "type": "official"}, {"title": "Advanced tool use – Anthropic Engineering", "url": "https://www.anthropic.com/engineering/advanced-tool-use", "type": "official"}, {"title": "Writing effective tools for AI agents – Anthropic", "url": "https://www.anthropic.com/engineering/writing-tools-for-agents", "type": "official"}],
    videos:[{"title": "MCP Workshop – Mahesh Murag, Anthropic", "id": "kQmXtrmQ5Zg", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'rag',t:'RAG',en:'Retrieval-Augmented Generation',c:'data',h:4,born:'2020-05',tags:['검색','지식베이스','벡터DB'],
    sum:'LLM이 응답을 만들기 전에 외부 문서나 DB에서 관련 정보를 검색해 컨텍스트에 넣어 주는 기술. 모델이 모르는 정보도 정확하게 답할 수 있게 해준다.',
@@ -118,7 +119,7 @@ const D = [
    rel:['embedding','vector-db','chunking'],
    refs:[{"title": "What is RAG? – Google Cloud", "url": "https://cloud.google.com/use-cases/retrieval-augmented-generation", "type": "official"}, {"title": "RAG in Azure AI Search – Microsoft", "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview", "type": "official"}, {"title": "RAG – Cohere Docs", "url": "https://docs.cohere.com/docs/retrieval-augmented-generation-rag", "type": "official"}],
    videos:[{"title": "Learn RAG From Scratch – freeCodeCamp", "id": "sVcwVQRHIc8", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'context-window',t:'컨텍스트 윈도우',en:'Context Window',c:'infra',h:3,born:'2017-06',tags:['토큰','제한'],
    sum:'LLM이 한 번에 처리할 수 있는 최대 토큰 수. 모델이 동시에 볼 수 있는 정보량의 상한선으로, 이 범위를 벗어난 내용은 참조할 수 없다.',
@@ -129,7 +130,7 @@ const D = [
    rel:['tokenization','llm','rag'],
    refs:[{"title": "What is a context window? – IBM", "url": "https://www.ibm.com/think/topics/context-window", "type": "blog"}, {"title": "LLM Context Windows Explained – Unstructured", "url": "https://unstructured.io/insights/llm-context-windows-explained-a-developer-s-guide", "type": "tutorial"}],
    videos:[{"title": "Intro to Large Language Models – Andrej Karpathy", "id": "zjkBMFhNj_g", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'agent-framework',t:'에이전트 프레임워크',en:'Agent Framework',c:'agent',h:3,born:'2022-10',tags:['SDK','프레임워크'],
    sum:'AI 에이전트를 만들 때 상태 관리, 도구 연동, 멀티에이전트 협업 같은 인프라를 직접 짜지 않아도 되게 해주는 프레임워크.',
@@ -140,7 +141,7 @@ const D = [
    rel:['ai-agent','mcp','multi-agent'],
    refs:[{"title": "LangGraph – LangChain", "url": "https://www.langchain.com/langgraph", "type": "official"}, {"title": "AutoGen – Microsoft", "url": "https://microsoft.github.io/autogen/stable//index.html", "type": "official"}, {"title": "LangChain & LangGraph 1.0 – Blog", "url": "https://blog.langchain.com/langchain-langgraph-1dot0/", "type": "blog"}],
    videos:[{"title": "LangGraph 멀티에이전트 – 테디노트", "id": "G8jrAA2bPnA", "lang": "ko"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'ai-workflow',t:'AI 워크플로우',en:'AI Workflow Automation',c:'application',h:3,born:'2023-05',tags:['자동화','파이프라인'],
    sum:'LLM과 외부 서비스를 연결해 반복 업무를 자동으로 처리하는 파이프라인. 규칙 기반 자동화와 달리 비정형 입력을 AI가 이해하고 상황에 맞게 분기한다.',
@@ -150,7 +151,7 @@ const D = [
    rel:['ai-agent','mcp','tool-use'],
    refs:[{"title": "Build an AI Workflow in n8n – Official Docs", "url": "https://docs.n8n.io/advanced-ai/intro-tutorial/", "type": "official"}, {"title": "AI Workflow Automation 2025 – orq.ai", "url": "https://orq.ai/blog/ai-workflow-automation", "type": "blog"}, {"title": "Agent Workflows – LlamaIndex", "url": "https://www.llamaindex.ai/workflows", "type": "official"}],
    videos:[{"title": "n8n & AI Integration – freeCodeCamp", "id": "1MwSoB0gnM4", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'prompt-engineering',t:'프롬프트 엔지니어링',en:'Prompt Engineering',c:'prompting',h:3,born:'2020-05',tags:['프롬프트','입력설계'],
    sum:'AI 모델에서 원하는 결과를 안정적으로 얻기 위해 입력 텍스트를 체계적으로 설계하는 기술. 같은 모델이라도 프롬프트를 어떻게 짜느냐에 따라 결과가 크게 달라진다.',
@@ -160,7 +161,7 @@ const D = [
    rel:['few-shot','chain-of-thought','system-prompt'],
    refs:[{"title": "Prompt Engineering Guide – OpenAI", "url": "https://platform.openai.com/docs/guides/prompt-engineering", "type": "official"}, {"title": "Prompt Engineering – Anthropic", "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview", "type": "official"}, {"title": "Interactive Prompt Engineering Tutorial – Anthropic GitHub", "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial", "type": "tutorial"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'system-prompt',t:'시스템 프롬프트',en:'System Prompt',c:'prompting',h:3,born:'2023-03',tags:['설정','역할부여'],
    sum:'AI에게 대화가 시작되기 전 역할, 규칙, 제약을 미리 알려주는 특수 지시문. 모든 사용자 메시지에 일관되게 적용되는 보이지 않는 규칙서다.',
@@ -170,7 +171,7 @@ const D = [
    rel:['prompt-engineering','harness-engineering'],
    refs:[{"title": "시스템 프롬프트 – Anthropic 한국어 문서", "url": "https://docs.anthropic.com/ko/docs/build-with-claude/prompt-engineering/system-prompts", "type": "official"}, {"title": "Prompt Engineering – OpenAI", "url": "https://platform.openai.com/docs/guides/prompt-engineering", "type": "official"}],
    videos:[{"title": "Intro to Large Language Models – Andrej Karpathy", "id": "zjkBMFhNj_g", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'chain-of-thought',t:'사고의 사슬',en:'Chain-of-Thought',c:'prompting',h:3,born:'2022-01',tags:['추론','단계적사고'],
    sum:'"답부터 말하지 말고 과정을 보여줘"라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.',
@@ -180,7 +181,7 @@ const D = [
    rel:['prompt-engineering','few-shot','reasoning-model'],
    refs:[{"title": "Chain-of-Thought Prompting (원 논문) – arXiv", "url": "https://arxiv.org/abs/2201.11903", "type": "paper"}, {"title": "What is Chain of Thought? – IBM", "url": "https://www.ibm.com/think/topics/chain-of-thoughts", "type": "blog"}, {"title": "Chain-of-Thought Prompting – Learn Prompting", "url": "https://learnprompting.org/docs/intermediate/chain_of_thought", "type": "tutorial"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'llm',t:'대규모 언어 모델',en:'Large Language Model',c:'model',h:5,born:'2020-05',tags:['GPT','Claude','Transformer'],
    sum:'수백억 개의 파라미터로 학습한 딥러닝 모델. 텍스트 이해, 생성, 추론, 코드 작성 등 광범위한 작업을 수행하는 현재 AI 기술의 핵심이다.',
@@ -190,7 +191,7 @@ const D = [
    rel:['transformer','fine-tuning','tokenization','moe','reasoning-model'],
    refs:[{"title": "Large Language Models: A Survey – arXiv", "url": "https://arxiv.org/abs/2402.06196", "type": "paper"}, {"title": "LLM – Google ML Crash Course", "url": "https://developers.google.com/machine-learning/crash-course/llm", "type": "official"}],
    videos:[{"title": "Intro to Large Language Models – Andrej Karpathy", "id": "zjkBMFhNj_g", "lang": "en"}, {"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'fine-tuning',t:'파인튜닝',en:'Fine-Tuning',c:'model',h:3,born:'2018-10',tags:['학습','LoRA','맞춤화'],
    sum:'사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.',
@@ -201,7 +202,7 @@ const D = [
    rel:['llm','rlhf'],
    refs:[{"title": "Ultimate Guide to Fine-Tuning LLMs – arXiv", "url": "https://arxiv.org/html/2408.13296v1", "type": "paper"}, {"title": "Fine-Tune Open LLMs in 2025 – philschmid.de", "url": "https://www.philschmid.de/fine-tune-llms-in-2025", "type": "tutorial"}, {"title": "Fine-Tuning an LLM – Google ML Crash Course", "url": "https://developers.google.com/machine-learning/crash-course/llm/tuning", "type": "official"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'multimodal',t:'멀티모달',en:'Multimodal AI',c:'model',h:4,born:'2023-09',tags:['비전','음성','영상'],
    sum:'텍스트뿐 아니라 이미지, 음성, 영상 등 여러 형태의 데이터를 하나의 모델이 동시에 이해하고 처리하는 AI.',
@@ -211,7 +212,7 @@ const D = [
    rel:['llm','embedding'],
    refs:[{"title": "Multimodal AI: Complete Guide 2025 – Shaip", "url": "https://www.shaip.com/blog/multimodal-ai-the-complete-guide-to-training-data/", "type": "blog"}, {"title": "Building Multimodal Search and RAG – DeepLearning.AI", "url": "https://www.deeplearning.ai/short-courses/building-multimodal-search-and-rag/", "type": "tutorial"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'embedding',t:'임베딩',en:'Embedding',c:'data',h:3,born:'2013-01',tags:['벡터','유사도'],
    sum:'텍스트, 이미지, 코드 등을 의미를 담은 숫자 벡터로 변환하는 기술. "자동차"와 "automobile"이 벡터 공간에서 가까이 놓여, 의미 기반 검색과 비교가 가능해진다.',
@@ -221,7 +222,7 @@ const D = [
    rel:['rag','vector-db'],
    refs:[{"title": "OpenAI Embeddings Guide", "url": "https://platform.openai.com/docs/guides/embeddings", "type": "official"}, {"title": "Google Gemini API – Embeddings", "url": "https://ai.google.dev/gemini-api/docs/embeddings", "type": "official"}, {"title": "What are embeddings? – Cloudflare", "url": "https://www.cloudflare.com/learning/ai/what-are-embeddings/", "type": "tutorial"}],
    videos:[{"title": "Attention in Transformers – 3Blue1Brown", "id": "eMlx5fFNoYc", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'vector-db',t:'벡터 DB',en:'Vector Database',c:'data',h:3,born:'2021-01',tags:['벡터검색','저장소'],
    sum:'임베딩 벡터를 저장하고, 수백만 개 중에서 가장 유사한 항목을 밀리초 단위로 찾아주는 전문 데이터베이스. RAG의 검색 엔진 역할을 한다.',
@@ -231,7 +232,7 @@ const D = [
    rel:['embedding','rag','chunking'],
    refs:[{"title": "Milvus – High-Performance Vector Database", "url": "https://milvus.io/", "type": "official"}, {"title": "Qdrant Vector Database", "url": "https://qdrant.tech/qdrant-vector-database/", "type": "official"}, {"title": "Vector Databases Guide: RAG 2025 – DEV", "url": "https://dev.to/klement_gunndu_e16216829c/vector-databases-guide-rag-applications-2025-55oj", "type": "tutorial"}],
    videos:[{"title": "RAG Fundamentals – freeCodeCamp", "id": "ea2W8IogX80", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'chunking',t:'청킹',en:'Chunking',c:'data',h:2,born:'2020-05',tags:['전처리','문서분할'],
    sum:'대용량 문서를 벡터 DB에 넣기 좋은 작은 단위로 쪼개는 전처리 과정. 쪼개는 방식에 따라 RAG 검색 정확도가 크게 달라진다.',
@@ -241,7 +242,7 @@ const D = [
    rel:['rag','embedding'],
    refs:[{"title": "Best Chunking Strategies for RAG 2025 – Firecrawl", "url": "https://www.firecrawl.dev/blog/best-chunking-strategies-rag", "type": "blog"}, {"title": "Chunking Strategies for RAG – Weaviate", "url": "https://weaviate.io/blog/chunking-strategies-for-rag", "type": "blog"}, {"title": "Chunking in RAG – Stack Overflow Blog", "url": "https://stackoverflow.blog/2024/12/27/breaking-up-is-hard-to-do-chunking-in-rag-applications/", "type": "blog"}],
    videos:[{"title": "Learn RAG From Scratch – freeCodeCamp", "id": "sVcwVQRHIc8", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'langchain',t:'랭체인',en:'LangChain',c:'tooling',h:3,born:'2022-10',tags:['프레임워크','Python'],
    sum:'LLM 호출, 메모리 관리, 도구 연동, 에이전트 오케스트레이션을 하나의 인터페이스로 묶어주는 오픈소스 프레임워크. Python AI 에이전트 개발의 사실상 표준이다.',
@@ -251,7 +252,7 @@ const D = [
    rel:['agent-framework','rag'],
    refs:[{"title": "LangChain Documentation", "url": "https://docs.langchain.com/", "type": "official"}, {"title": "LangChain & LangGraph 1.0 – Blog", "url": "https://blog.langchain.com/langchain-langgraph-1dot0/", "type": "blog"}],
    videos:[{"title": "테디노트 LangChain 한국어 튜토리얼", "id": "MM9x42gTBag", "lang": "ko"}, {"title": "Learn RAG From Scratch – freeCodeCamp", "id": "sVcwVQRHIc8", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'eval',t:'AI 평가',en:'Evaluation',c:'infra',h:4,born:'2022-11',tags:['벤치마크','품질측정'],
    sum:'AI 모델이나 시스템의 성능과 품질을 체계적으로 측정하는 프로세스. "잘 되는 것 같다"가 아니라 수치로 증명하기 위한 과정이다.',
@@ -261,7 +262,7 @@ const D = [
    rel:['llm','guardrail'],
    refs:[{"title": "DeepEval – LLM Evaluation Framework", "url": "https://deepeval.com/docs/getting-started", "type": "official"}, {"title": "OpenAI Evals API", "url": "https://developers.openai.com/api/docs/guides/evals", "type": "official"}, {"title": "LangSmith Evaluation", "url": "https://www.langchain.com/langsmith/evaluation", "type": "official"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'hallucination',t:'환각',en:'Hallucination',c:'safety',h:4,born:'2022-02',tags:['신뢰성','오류'],
    sum:'AI가 사실이 아닌 정보를 확신 있게 생성하는 현상. 모델이 "모른다"고 하지 않고 그럴듯하게 지어내는 구조적 한계에서 비롯된다.',
@@ -271,7 +272,7 @@ const D = [
    rel:['rag','guardrail'],
    refs:[{"title": "What Are AI Hallucinations? – IBM", "url": "https://www.ibm.com/think/topics/ai-hallucinations", "type": "official"}, {"title": "Hallucination Detection in LLMs – arXiv", "url": "https://arxiv.org/html/2601.09929v1", "type": "paper"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'guardrail',t:'가드레일',en:'Guardrail',c:'safety',h:3,born:'2023-04',tags:['안전장치','필터링'],
    sum:'AI의 입출력을 실시간으로 검사해서 유해 콘텐츠, 개인정보 유출, 형식 오류 등을 차단하는 안전 장치. 모델 자체의 안전성에 의존하지 않는 독립적인 방어 레이어다.',
@@ -282,7 +283,7 @@ const D = [
    rel:['hallucination','prompt-injection'],
    refs:[{"title": "NVIDIA NeMo Guardrails", "url": "https://developer.nvidia.com/nemo-guardrails", "type": "official"}, {"title": "Guardrails AI", "url": "https://guardrailsai.com/", "type": "official"}, {"title": "LLM Guardrails Best Practices 2025 – Leanware", "url": "https://www.leanware.co/insights/llm-guardrails", "type": "blog"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'prompt-injection',t:'프롬프트 인젝션',en:'Prompt Injection',c:'safety',h:3,born:'2022-09',tags:['보안','공격'],
    sum:'AI의 시스템 지시를 무력화하는 공격 기법. LLM이 시스템 프롬프트와 사용자 입력을 같은 텍스트로 처리하는 구조적 특성을 악용한다.',
@@ -292,7 +293,7 @@ const D = [
    rel:['guardrail','system-prompt','ai-supply-chain-attack'],
    refs:[{"title": "OWASP LLM01:2025 Prompt Injection", "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/", "type": "official"}, {"title": "Guide to Prompt Injection – Lakera", "url": "https://www.lakera.ai/blog/guide-to-prompt-injection", "type": "blog"}],
    videos:[{"title": "Prompt Injection Explained – Simon Willison", "id": "FgxwCaL6UTA", "lang": "en"}, {"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'chatbot',t:'챗봇',en:'Conversational AI',c:'application',h:2,born:'2022-11',tags:['대화','고객응대'],
    sum:'자연어로 사용자와 대화하며 질문에 답하고 업무를 처리하는 AI 인터페이스. LLM 기반으로 바뀌면서 스크립트 답변이 아닌 맥락을 이해하는 대화가 가능해졌다.',
@@ -302,7 +303,7 @@ const D = [
    rel:['rag','system-prompt'],
    refs:[{"title": "Build an LLM RAG Chatbot – Real Python", "url": "https://realpython.com/build-llm-rag-chatbot-with-langchain/", "type": "tutorial"}, {"title": "Build a RAG Agent – LangChain Docs", "url": "https://docs.langchain.com/oss/python/langchain/rag", "type": "official"}],
    videos:[{"title": "테디노트 LangChain RAG 챗봇 한국어", "id": "MM9x42gTBag", "lang": "ko"}, {"title": "RAG Fundamentals – freeCodeCamp", "id": "ea2W8IogX80", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'ai-search',t:'AI 검색',en:'AI-Powered Search',c:'application',h:3,born:'2022-12',tags:['의미검색'],
    sum:'키워드 매칭이 아니라 의미를 이해해서 검색하고, 링크 목록 대신 직접 답변을 생성해주는 검색 기술.',
@@ -312,7 +313,7 @@ const D = [
    rel:['rag','embedding'],
    refs:[{"title": "RAG in Azure AI Search – Microsoft", "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview", "type": "official"}, {"title": "What is RAG? – AWS", "url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/", "type": "official"}],
    videos:[{"title": "Learn RAG From Scratch – freeCodeCamp", "id": "sVcwVQRHIc8", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'structured-output',t:'구조화된 출력',en:'Structured Output',c:'application',h:3,born:'2024-08',tags:['JSON','스키마'],
    sum:'AI가 JSON 스키마 같은 정해진 형식을 100% 지켜서 응답하도록 강제하는 기술. AI를 기존 코드 파이프라인에 안정적으로 연결하기 위한 핵심 요소다.',
@@ -322,7 +323,7 @@ const D = [
    rel:['tool-use','prompt-engineering'],
    refs:[{"title": "Structured Outputs – OpenAI Docs", "url": "https://platform.openai.com/docs/guides/structured-outputs", "type": "official"}, {"title": "Introducing Structured Outputs – OpenAI Blog", "url": "https://openai.com/index/introducing-structured-outputs-in-the-api/", "type": "official"}, {"title": "Structured Outputs Intro – OpenAI Cookbook", "url": "https://developers.openai.com/cookbook/examples/structured_outputs_intro", "type": "tutorial"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'react-pattern',t:'ReAct 패턴',en:'ReAct',c:'agent',h:3,born:'2022-10',tags:['추론','행동루프'],
    sum:'"생각 → 행동 → 관찰"을 반복하면서 도구를 사용해 문제를 단계별로 해결하는 에이전트 설계 패턴. 대부분의 AI 에이전트가 이 구조로 동작한다.',
@@ -332,7 +333,7 @@ const D = [
    rel:['ai-agent','chain-of-thought'],
    refs:[{"title": "ReAct: Synergizing Reasoning and Acting (원 논문) – arXiv", "url": "https://arxiv.org/abs/2210.03629", "type": "paper"}, {"title": "ReAct Prompting – Prompt Engineering Guide", "url": "https://www.promptingguide.ai/techniques/react", "type": "tutorial"}, {"title": "What is a ReAct Agent? – IBM", "url": "https://www.ibm.com/think/topics/react-agent", "type": "blog"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'few-shot',t:'퓨샷',en:'Few-Shot Prompting',c:'prompting',h:3,born:'2020-05',tags:['예시학습'],
    sum:'프롬프트에 입출력 예시를 몇 개 보여줘서 모델이 원하는 패턴을 파악하도록 유도하는 기법. 파인튜닝 없이 빠르게 모델 행동을 조정할 수 있다.',
@@ -342,7 +343,7 @@ const D = [
    rel:['prompt-engineering','chain-of-thought'],
    refs:[{"title": "Few-Shot Prompting – Prompt Engineering Guide", "url": "https://www.promptingguide.ai/techniques/fewshot", "type": "tutorial"}, {"title": "퓨샷 프롬프팅 – Learn Prompting (한국어)", "url": "https://learnprompting.org/ko/docs/basics/few_shot", "type": "tutorial"}, {"title": "What is Few-Shot Prompting? – IBM", "url": "https://www.ibm.com/think/topics/few-shot-prompting", "type": "blog"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'transformer',t:'트랜스포머',en:'Transformer',c:'model',h:4,born:'2017-06',tags:['아키텍처','attention'],
    sum:'2017년 구글이 발표한 셀프 어텐션 기반 신경망 아키텍처. 현재 GPT, Claude, Gemini 등 모든 LLM의 근간이다.',
@@ -351,7 +352,7 @@ const D = [
    refs:[{"title": "Attention Is All You Need (원 논문) – arXiv", "url": "https://arxiv.org/abs/1706.03762", "type": "paper"}, {"title": "The Illustrated Transformer – Jay Alammar", "url": "https://jalammar.github.io/illustrated-transformer/", "type": "blog"}, {"title": "Transformer – Google Research Blog", "url": "https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/", "type": "official"}],
    rel:['llm','embedding','moe'],
    videos:[{"title": "Transformers – 3Blue1Brown", "id": "wjZofJX0v4M", "lang": "en"}, {"title": "Attention in Transformers – 3Blue1Brown", "id": "eMlx5fFNoYc", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'tokenization',t:'토큰화',en:'Tokenization',c:'model',h:3,born:'2016-08',tags:['전처리','BPE'],
    sum:'텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.',
@@ -361,7 +362,7 @@ const D = [
    rel:['llm','context-window'],
    refs:[{"title": "LLM Tokenization – Prompt Engineering Guide", "url": "https://www.promptingguide.ai/research/llm-tokenization", "type": "tutorial"}, {"title": "토큰화 – WikiDocs (한국어)", "url": "https://wikidocs.net/21698", "type": "tutorial"}],
    videos:[{"title": "Let's build the GPT Tokenizer – Andrej Karpathy", "id": "zduSFxRajkE", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'rlhf',t:'RLHF',en:'RL from Human Feedback',c:'model',h:4,born:'2022-01',tags:['강화학습','정렬'],
    sum:'인간의 선호도 피드백으로 LLM을 "유용하고 무해하게" 정렬하는 학습 기법. ChatGPT가 그냥 텍스트 생성기가 아니라 도움이 되는 어시스턴트인 이유다.',
@@ -371,7 +372,7 @@ const D = [
    rel:['fine-tuning','llm'],
    refs:[{"title": "Illustrating RLHF – Hugging Face Blog", "url": "https://huggingface.co/blog/rlhf", "type": "blog"}, {"title": "A Survey of RLHF – arXiv", "url": "https://arxiv.org/abs/2312.14925", "type": "paper"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'in-context-learning',t:'인컨텍스트 러닝',en:'In-Context Learning',c:'model',h:3,born:'2020-05',tags:['추론시학습'],
    sum:'모델 가중치를 수정하지 않고 프롬프트 안에 예시와 지시만 제공해 LLM이 새 작업을 즉시 수행하게 하는 능력으로, 파인튜닝 없이 다양한 용도에 적용하는 핵심 기법이다.',
@@ -379,7 +380,7 @@ const D = [
    rel:['few-shot','llm'],
    refs:[{"title": "A Survey on In-context Learning – EMNLP 2024", "url": "https://aclanthology.org/2024.emnlp-main.64/", "type": "paper"}, {"title": "ICL – AI·ML 사전 (WikiDocs, 한국어)", "url": "https://wikidocs.net/237982", "type": "tutorial"}],
    videos:[{"title": "Deep Dive into LLMs – Andrej Karpathy", "id": "7xTGNNLPyMI", "lang": "en"}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'api-gateway',t:'AI API 게이트웨이',en:'AI API Gateway',c:'infra',h:2,born:'2023-09',tags:['라우팅','비용관리'],
    sum:'여러 LLM 공급자에 대한 요청을 중앙에서 관리하며 라우팅, 폴백, 비용 통제를 단일 레이어로 처리하는 인프라 컴포넌트다.',
@@ -387,7 +388,7 @@ const D = [
    rel:['llm','eval'],
    refs:[{"title": "Kong AI Gateway – Official Docs", "url": "https://docs.konghq.com/gateway/latest/ai-gateway/", "type": "official"}, {"title": "LiteLLM Proxy – Official Docs", "url": "https://docs.litellm.ai/docs/simple_proxy", "type": "official"}, {"title": "API Gateway vs AI Gateway – Kong Blog", "url": "https://konghq.com/blog/learning-center/api-gateway-vs--ai-gateway", "type": "blog"}],
    videos:[],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'vibe-coding',t:'바이브 코딩',en:'Vibe Coding',c:'application',h:3,born:'2025-02',tags:['자연어코딩','프로토타이핑','비개발자'],
    sum:'자연어로 원하는 걸 설명하면 AI가 코드를 통째로 만들어주는 개발 방식. "코드를 짜는" 게 아니라 "분위기를 전달하면 결과물이 나오는" 패러다임이다.',
@@ -395,7 +396,7 @@ const D = [
    rel:['ai-coding','claude-code','prompt-engineering'],
    refs:[{title:'Karpathy 원문 트윗 (2025.02)',url:'https://x.com/karpathy/status/1886192184808149383',type:'official'},{title:'Vibe Coding - Wikipedia',url:'https://en.wikipedia.org/wiki/Vibe_coding',type:'official'},{title:'What is Vibe Coding? - Google Cloud',url:'https://cloud.google.com/discover/what-is-vibe-coding',type:'official'},{title:'What is Vibe Coding? - IBM',url:'https://www.ibm.com/think/topics/vibe-coding',type:'official'},{title:'A Survey of Vibe Coding with LLMs - arXiv',url:'https://arxiv.org/abs/2510.12399',type:'paper'}],
    videos:[{title:'Vibe Coding Mind Virus Explained - Fireship',id:'Tw18-4U7mts',lang:'en'}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'open-source-llm',t:'오픈소스 LLM',en:'Open Source LLM',c:'model',h:4,born:'2023-02',tags:['Llama','DeepSeek','Qwen','Ollama'],
    sum:'모델 가중치가 공개되어 누구나 다운로드해서 로컬에서 실행하고 수정할 수 있는 대규모 언어 모델. 상용 API에 의존하지 않고 자체 인프라에서 AI를 운영할 수 있게 해준다.',
@@ -403,7 +404,7 @@ const D = [
    rel:['llm','fine-tuning','inference-optimization'],
    refs:[{title:'Ollama - Official Site',url:'https://ollama.ai',type:'official'},{title:'Meta Llama - Official',url:'https://llama.meta.com',type:'official'},{title:'DeepSeek - Official',url:'https://www.deepseek.com',type:'official'},{title:'Best Open Source LLMs 2026 - BentoML',url:'https://www.bentoml.com/blog/navigating-the-world-of-open-source-large-language-models',type:'blog'}],
    videos:[],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'agent-memory',t:'에이전트 메모리',en:'Agent Memory',c:'agent',h:3,born:'2024-04',tags:['장기기억','Mem0','세션유지'],
    sum:'AI 에이전트가 대화와 작업 경험을 기억하고, 다음 세션에서 그 기억을 꺼내 쓸 수 있게 하는 기술. 일회성 챗봇을 개인화되고 자기 개선하는 시스템으로 바꾸는 핵심 요소다.',
@@ -411,7 +412,7 @@ const D = [
    rel:['ai-agent','context-window','rag','vector-db','claude-md'],
    refs:[{title:'What Is AI Agent Memory? - IBM',url:'https://www.ibm.com/think/topics/ai-agent-memory',type:'official'},{title:'Memory in the Age of AI Agents - arXiv',url:'https://arxiv.org/abs/2512.13564',type:'paper'},{title:'State of AI Agent Memory 2026 - Mem0',url:'https://mem0.ai/blog/state-of-ai-agent-memory-2026',type:'blog'},{title:'LLMs as Operating Systems: Agent Memory - DeepLearning.AI',url:'https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/',type:'tutorial'}],
    videos:[],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'distillation',t:'모델 증류',en:'Model Distillation',c:'model',h:3,born:'2015-03',tags:['경량화','Teacher-Student','비용절감'],
    sum:'큰 모델(Teacher)의 지식을 작은 모델(Student)에게 전달해서, 훨씬 가볍고 저렴하면서도 비슷한 성능을 내는 모델을 만드는 기법.',
@@ -419,7 +420,7 @@ const D = [
    rel:['fine-tuning','llm','synthetic-data','open-source-llm'],
    refs:[{title:'Distilling the Knowledge in a Neural Network - Hinton et al.',url:'https://arxiv.org/abs/1503.02531',type:'paper'},{title:'Model Distillation in the API - OpenAI',url:'https://openai.com/index/api-model-distillation/',type:'official'},{title:'Amazon Bedrock Model Distillation - AWS',url:'https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html',type:'official'},{title:'Knowledge Distillation - Hugging Face',url:'https://huggingface.co/blog/Kseniase/kd',type:'tutorial'}],
    videos:[],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'synthetic-data',t:'합성 데이터',en:'Synthetic Data',c:'data',h:3,born:'2023-06',tags:['데이터생성','프라이버시','LLM학습'],
    sum:'실제 데이터 대신 AI나 알고리즘으로 만든 인공 데이터. 개인정보 걱정 없이 학습 데이터를 대량 생산할 수 있어서, 최근 LLM 학습의 핵심 재료가 되고 있다.',
@@ -427,7 +428,7 @@ const D = [
    rel:['distillation','fine-tuning','rlhf','llm'],
    refs:[{title:'What is Synthetic Data? - IBM',url:'https://www.ibm.com/think/topics/synthetic-data',type:'official'},{title:'Synthetic Data Generation - NVIDIA',url:'https://www.nvidia.com/en-us/glossary/synthetic-data-generation/',type:'official'},{title:'Synthetic Data & Distillation - RLHF Book',url:'https://rlhfbook.com/c/15-synthetic',type:'tutorial'},{title:'합성 데이터란? - NVIDIA Blog Korea',url:'https://blogs.nvidia.co.kr/blog/what-is-synthetic-data-2/',type:'blog'},{title:'Synthetic Data란? - 카카오클라우드',url:'https://blog.kakaocloud.com/120',type:'blog'}],
    videos:[{title:'Synthetic Data란 무엇인가요? - IBM Technology',id:'bkOGmFl-LRw',lang:'ko'}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
 
   {id:'inference-optimization',t:'추론 최적화',en:'Inference Optimization',c:'infra',h:3,born:'2023-06',tags:['양자화','vLLM','추론속도'],
    sum:'학습된 LLM이 실제로 답변을 생성할 때 속도를 높이고 비용을 줄이는 기술들의 총칭. 양자화, 추측적 디코딩, KV 캐시 최적화 등을 조합하면 모델을 바꾸지 않고도 3~10배 빠른 응답이 가능하다.',
@@ -435,21 +436,21 @@ const D = [
    rel:['llm','open-source-llm','context-window','distillation','moe'],
    refs:[{title:'LLM 추론 최적화 - Hugging Face Docs',url:'https://huggingface.co/docs/transformers/ko/llm_optims',type:'official'},{title:'Mastering LLM Inference Optimization - NVIDIA',url:'https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/',type:'official'},{title:'vLLM - GitHub',url:'https://github.com/vllm-project/vllm',type:'official'},{title:"A Hitchhiker's Guide to Speculative Decoding - PyTorch",url:'https://pytorch.org/blog/hitchhikers-guide-speculative-decoding/',type:'tutorial'}],
    videos:[{title:'LLM Inference Optimization - Umar Jamil',id:'TnTnAFpIkUo',lang:'en'}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
   {id:'moe',t:'MoE',en:'Mixture of Experts',c:'model',h:4,born:'1991-01',tags:['아키텍처','희소 활성화','스케일링','LLM'],
    sum:'하나의 큰 모델 대신 여러 개의 전문가(expert) 네트워크를 두고, 입력에 따라 일부만 활성화하는 아키텍처. 전체 파라미터 수를 늘리면서도 실제 연산량은 줄여 효율적으로 모델을 스케일업할 수 있다.',
    det:`<h4>개념 설명</h4><p>모델이 커질수록 모든 파라미터를 매번 계산하는 건 비효율적이다. <strong>MoE(Mixture of Experts)</strong>는 이 문제를 '전문가 분업'으로 해결한다. 모델 내부에 여러 개의 독립적인 전문가 네트워크를 두고, 입력 토큰마다 라우터(router)가 어떤 전문가를 쓸지 선택한다. 예를 들어 총 8명의 전문가가 있더라도, 각 토큰은 그 중 2명의 전문가만 거친다. 덕분에 파라미터 수는 8배로 늘어나도 실제 연산량은 2배 수준에 그친다.</p><p>이 구조는 트랜스포머의 피드포워드 레이어(FFN)를 MoE 레이어로 교체하는 방식으로 구현된다. 각 전문가는 구조상 일반 FFN과 동일하지만, 학습 과정에서 서로 다른 유형의 토큰에 자연스럽게 특화된다.</p><h4>사용 예시</h4><p>오늘날 주요 프런티어 모델 대부분이 MoE를 채택하고 있다. Mistral AI의 Mixtral 8×7B는 총 467억 개의 파라미터를 갖지만, 토큰당 실제 활성화 파라미터는 129억 개에 불과하다. 훨씬 적은 연산으로 더 큰 모델과 동등한 성능을 낸다. DeepSeek-V3는 이를 극단까지 밀어붙여 총 6,710억 개의 파라미터에 256개의 전문가를 두되, 토큰당 370억 개만 활성화한다. 이 덕분에 경쟁 모델 대비 훨씬 적은 GPU 시간으로 학습을 완료했다. Google의 Gemini 1.5도 MoE 아키텍처를 적용한 것으로 알려져 있다.</p><p>개발자 입장에서는 MoE 모델을 API로 쓸 때 특별히 달라지는 것은 없다. 다만 오픈소스 MoE 모델을 로컬에서 운용할 때는 총 파라미터 수만큼 VRAM이 필요하다는 점을 주의해야 한다. Mixtral 8×7B를 풀 정밀도로 로드하려면 전문가 전체를 메모리에 올려야 하기 때문이다.</p><h4>심화 내용</h4><p>라우팅 방식은 크게 세 가지로 나뉜다. 토큰이 전문가를 선택하는 방식(token-choice), 전문가가 토큰을 선택하는 방식(expert-choice), 그리고 전역 매칭 방식이다. 가장 일반적인 token-choice는 라우터가 각 토큰에 대해 점수를 계산하고 상위 k개의 전문가를 선택해 출력을 가중합산한다.</p><h4>주의할 점</h4><p>MoE의 가장 큰 약점은 <strong>전문가 붕괴(expert collapse)</strong>다. 학습 초기에 특정 전문가가 더 많은 토큰을 받으면, 그 전문가가 더 잘 학습되고, 라우터는 그 전문가를 더 선호하는 악순환이 생긴다. 결국 몇몇 전문가만 일하고 나머지는 유휴 상태가 되어, MoE의 장점이 사라진다. 이를 막기 위한 보조 손실 함수(auxiliary loss)나 손실 없는 밸런싱(loss-free balancing) 기법이 함께 사용된다. DeepSeek-V3는 보조 손실 없이 밸런싱을 달성한 방식으로 주목받았다.</p>`,
    rel:['transformer','llm','inference-optimization','distillation','fine-tuning','open-source-llm'],
    refs:[{title:'Mixture of Experts Explained',url:'https://huggingface.co/blog/moe',type:'blog'},{title:'Applying Mixture of Experts in LLM Architectures',url:'https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/',type:'blog'},{title:'A Visual Guide to Mixture of Experts (MoE)',url:'https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mixture-of-experts',type:'tutorial'},{title:'Mixtral of Experts (arXiv:2401.04088)',url:'https://arxiv.org/abs/2401.04088',type:'paper'},{title:'A Survey on Mixture of Experts in LLMs (arXiv:2407.06204)',url:'https://arxiv.org/abs/2407.06204',type:'paper'}],
    videos:[{title:'A Visual Guide to Mixture of Experts (MoE)',id:'sOPDGQjFcuM',lang:'en'},{title:'Mistral / Mixtral Explained: Sparse Mixture of Experts',id:'UiX8K-xBUpE',lang:'en'}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
   {id:'reasoning-model',t:'추론 모델',en:'Reasoning Model',c:'model',h:5,born:'2024-09',tags:['test-time compute','OpenAI o1','extended thinking'],
    sum:'최종 답변을 내놓기 전에 내부적으로 긴 사고 과정을 거치는 LLM. 수학 증명, 복잡한 코딩 문제처럼 단번에 답하기 어려운 과제에서 일반 모델보다 훨씬 높은 정확도를 보인다.',
    det:`<h4>개념 설명</h4><p>일반 LLM은 프롬프트를 받으면 곧바로 토큰을 생성하기 시작한다. 추론 모델은 다르다. 답을 쓰기 전에 먼저 <strong>내부 사고 토큰(thinking tokens)</strong>을 대량으로 생성하며 문제를 단계별로 분해하고, 중간에 스스로 오류를 발견하면 되돌아가 수정하고, 여러 풀이 경로를 탐색한 뒤 최선의 답을 출력한다. 이 과정은 사용자에게 보이지 않거나 별도 블록으로 공개된다.</p><p>핵심 원리는 <strong>추론 시 컴퓨팅 확장(test-time compute scaling)</strong>이다. 학습 데이터나 파라미터를 늘리는 대신, 답을 내놓는 순간에 더 많은 연산을 투입해 성능을 끌어올린다. OpenAI가 2024년 9월 o1을 공개하며 이 패러다임을 처음 대중화했고, DeepSeek-R1, Claude Extended Thinking, Gemini Deep Think 등이 뒤를 이었다.</p><p>일반 모델에서 프롬프트로 단계적 추론을 유도하는 <strong>Chain-of-Thought(CoT)</strong>와 근본적으로 다르다. CoT는 프롬프트 기법이지만, 추론 모델은 강화학습(RL)으로 모델 자체에 사고 능력이 내재화되어 있다. 별도 프롬프트 없이도 스스로 탐색하고 검증한다.</p><h4>사용 예시</h4><p>Anthropic API에서 Claude의 Extended Thinking을 사용할 때는 <code>thinking</code> 파라미터에 <code>budget_tokens</code>를 설정한다. 복잡한 알고리즘 설계라면 <code>budget_tokens: 10000</code>처럼 높게 잡으면 모델이 더 긴 내부 추론을 거쳐 답을 낸다. 단순 요약이라면 예산을 낮추거나 일반 모드를 쓰는 것이 비용과 속도 면에서 유리하다.</p><p>실무에서 추론 모델이 빛을 발하는 장면은 코드 디버깅, 수학 증명, 다단계 계획 수립처럼 한 번에 답하기 어려운 과제다. 멀티에이전트 워크플로우에서는 오케스트레이터 역할에 추론 모델을 두고, 실제 실행 단계는 빠른 일반 모델에 위임하면 비용과 품질 모두를 챙길 수 있다.</p><h4>심화 내용</h4><p>DeepSeek-R1은 순수 강화학습만으로 추론 능력을 획득한 사례로 주목받았다. 별도의 CoT 정답 데이터 없이 모델이 스스로 사고 패턴을 발전시켰고, 이 과정에서 자연스럽게 <code>&lt;think&gt;</code> 태그 안에 중간 추론을 담는 구조가 등장했다. 또한 대형 추론 모델을 교사로 삼아 소형 모델을 <strong>지식 증류(distillation)</strong>하는 방식도 빠르게 확산되어, 저비용 추론 모델 생태계가 형성되고 있다.</p><h4>주의할 점</h4><p>추론 모델은 응답 지연이 크다. 사고 과정에서 토큰을 대량 소비해 API 비용이 일반 모델보다 수 배~수십 배에 달할 수 있다. 단순한 질문에 과도한 추론 예산을 주면 오히려 불필요한 경로를 탐색해 답변이 장황해지는 <strong>과잉 추론(overthinking)</strong> 현상이 나타날 수 있다. 과제의 복잡도에 맞게 적절한 추론 예산을 설정하는 것이 중요하다.</p>`,
    rel:['chain-of-thought','llm','rlhf','distillation','inference-optimization','context-window','eval','multi-agent'],
    refs:[{title:'Learning to Reason with LLMs',url:'https://openai.com/index/learning-to-reason-with-llms/',type:'official'},{title:'Introducing OpenAI o1',url:'https://openai.com/index/introducing-openai-o1-preview/',type:'official'},{title:'Extended Thinking – Anthropic Docs',url:'https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking',type:'official'},{title:'Reasoning Models Guide – OpenAI API',url:'https://platform.openai.com/docs/guides/reasoning',type:'official'},{title:'DeepSeek-R1: Incentivizing Reasoning Capability via RL (arXiv:2501.12948)',url:'https://arxiv.org/abs/2501.12948',type:'paper'},{title:'Scaling LLM Test-Time Compute (arXiv:2408.03314)',url:'https://arxiv.org/abs/2408.03314',type:'paper'}],
    videos:[{title:'Deep Dive into LLMs like ChatGPT – Andrej Karpathy',id:'7xTGNNLPyMI',lang:'en'}],
-   updated:'2025-12-01'},
+   added:'2026-03-30',updated:'2025-12-01'},
   {id:'flash-attention',t:'플래시 어텐션',en:'Flash Attention',c:'model',h:3,born:'2022-06',tags:['메모리효율','GPU','속도최적화'],
 sum:'어텐션 계산을 GPU 메모리 구조에 맞게 재설계해 속도와 메모리 효율을 동시에 높인 알고리즘. 긴 컨텍스트 처리를 실용적으로 만든 핵심 기술이다.',
 det:`<h4>개념 설명</h4><p>어텐션 연산은 시퀀스 길이의 제곱에 비례하는 메모리를 쓰기 때문에, 긴 문서를 처리하면 GPU 메모리가 금방 바닥난다. <strong>Flash Attention</strong>은 큰 행렬을 통째로 GPU 메모리에 올리는 대신, 작은 블록 단위로 쪼개서 캐시 효율을 극대화한다. 결과는 동일하지만 메모리 사용량은 최대 10배 줄고, 속도는 수 배 빨라진다.</p><h4>사용 예시</h4><p>Hugging Face Transformers나 vLLM 같은 추론 서버에서 <code>flash_attention_2</code>를 활성화하면 동일한 GPU에서 더 긴 컨텍스트를 처리하거나 더 높은 처리량을 낼 수 있다. 128K 이상의 롱 컨텍스트 모델이 실용적으로 운영되는 것도 Flash Attention 덕분이다.</p>`,
@@ -1569,7 +1570,7 @@ refs:[
 ],videos:[
   {title:'Ontology-driven end-to-end GraphRAG — Neo4j Going Meta',id:'UmP0pFFsMsE',lang:'en'},
   {title:'KG+LLMs: Ontology Driven RAG Patterns — Neo4j',id:'5_WXr0GtVas',lang:'en'}
-],updated:'2026-04-05'},
+],added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'agentic-engineering',t:'에이전틱 엔지니어링',en:'Agentic Engineering',c:'application',h:0,tags:['에이전트코딩','구조적감독','바이브코딩진화'],
    sum:'AI 에이전트가 코드를 짜고, 사람은 설계·검증·품질을 책임지는 소프트웨어 개발 방법론. 바이브 코딩의 \'일단 돌아가면 OK\' 방식에서 벗어나, 테스트와 구조적 감독을 핵심에 둔다.',
@@ -1583,7 +1584,7 @@ refs:[
    rel:['vibe-coding','ai-agent','multi-agent','harness-engineering','ai-coding'],
    refs:[{"title":"Agentic Engineering – Addy Osmani","url":"https://addyosmani.com/blog/agentic-engineering/","type":"blog"},{"title":"Agentic Engineering Patterns – Simon Willison","url":"https://simonwillison.net/guides/agentic-engineering-patterns/","type":"blog"},{"title":"What is Agentic Engineering? – IBM","url":"https://www.ibm.com/think/topics/agentic-engineering","type":"official"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'deepseek',t:'DeepSeek',en:'DeepSeek',c:'model',h:0,tags:['오픈소스','MoE','중국AI','추론모델'],
    sum:'중국 AI 스타트업이 만든 오픈소스 대규모 언어 모델. Mixture of Experts 아키텍처로 GPT-4 대비 1/10 수준의 비용으로 학습하면서도 최상위 모델들과 대등한 추론 성능을 달성해, 오픈소스 LLM의 가능성을 증명했다.',
@@ -1596,7 +1597,7 @@ refs:[
    rel:['open-source-llm','moe','reasoning-model','grpo','distillation','llm'],
    refs:[{"title":"DeepSeek-R1 — GitHub","url":"https://github.com/deepseek-ai/DeepSeek-R1","type":"official"},{"title":"DeepSeek API Docs","url":"https://api-docs.deepseek.com/","type":"official"},{"title":"DeepSeek-V3 Technical Report — arXiv","url":"https://arxiv.org/abs/2412.19437","type":"paper"},{"title":"DeepSeek-R1: Incentivizing Reasoning via RL — arXiv","url":"https://arxiv.org/abs/2501.12948","type":"paper"}],
    videos:[{"title":"I built a DeepSeek R1 powered VS Code extension — Fireship","id":"clJCDHml2cA","lang":"en"}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'n8n',t:'n8n',en:'n8n (nodemation)',c:'tooling',h:0,tags:['워크플로우자동화','노코드','오픈소스','AI에이전트'],
    sum:'코드 없이 AI 에이전트와 자동화 워크플로우를 시각적으로 구축할 수 있는 오픈소스 플랫폼. 400개 이상의 통합과 LangChain 기반 AI 노드를 제공하며, 셀프호스팅으로 데이터 통제권을 유지할 수 있다.',
@@ -1607,7 +1608,7 @@ refs:[
    rel:['ai-workflow','ai-agent','langchain','mcp','multi-agent'],
    refs:[{"title":"n8n 공식 사이트","url":"https://n8n.io/","type":"official"},{"title":"n8n Documentation","url":"https://docs.n8n.io/","type":"official"},{"title":"n8n AI Agent 공식 문서","url":"https://n8n.io/ai-agents/","type":"official"},{"title":"n8n GitHub Repository","url":"https://github.com/n8n-io/n8n","type":"official"}],
    videos:[{"title":"N8N Full Tutorial: Building AI Agents — 2025","id":"ZbIVOy_GPyQ","lang":"en"}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'token-economics',t:'토큰 경제학',en:'Token Economics',c:'infra',h:0,tags:['토큰비용','FinOps','추론비용'],
    sum:'AI 모델이 처리하는 토큰을 비용·생산성의 기본 단위로 보고, 소비량을 추적·최적화·예산화하는 경제적 프레임워크. 토큰 단가는 2년간 280배 떨어졌지만 에이전트 시대의 사용량 폭증으로 전체 비용은 오히려 급증하면서, 토큰을 어떻게 쓰느냐가 엔지니어링의 핵심 제약이 되고 있다.',
@@ -1620,7 +1621,7 @@ refs:[
    rel:['cost-optimization','prompt-caching','token-budget','inference-optimization','context-window','ai-agent'],
    refs:[{"title":"AI tokens: Navigate AI spend dynamics – Deloitte","url":"https://www.deloitte.com/us/en/insights/topics/emerging-technologies/ai-tokens-how-to-navigate-spend-dynamics.html","type":"official"},{"title":"Nvidia's Huang pitches AI tokens on salary – CNBC","url":"https://www.cnbc.com/2026/03/20/nvidia-ai-agents-tokens-human-workers-engineer-jobs-unemployment-jensen-huang.html","type":"blog"},{"title":"Software Survival 3.0 – Steve Yegge","url":"https://steve-yegge.medium.com/software-survival-3-0-97a2a6255f7b","type":"blog"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'12-factor-agents',t:'12-Factor Agents',en:'Twelve-Factor Agents',c:'agent',h:0,tags:['설계원칙','프로덕션','HumanLayer'],
    sum:'프로덕션에서 실제로 동작하는 LLM 에이전트를 만들기 위한 12가지 설계 원칙. Heroku의 Twelve-Factor App에서 영감을 받아, 에이전트도 결국 잘 만든 소프트웨어여야 한다는 관점에서 출발한다.',
@@ -1632,7 +1633,7 @@ refs:[
    rel:['ai-agent','agent-framework','harness-engineering','context-engineering'],
    refs:[{"title":"12 Factor Agents — HumanLayer","url":"https://www.humanlayer.dev/12-factor-agents","type":"official"},{"title":"GitHub — humanlayer/12-factor-agents","url":"https://github.com/humanlayer/12-factor-agents","type":"official"}],
    videos:[{"title":"12-Factor Agents: Patterns of reliable LLM apps — Dex Horthy","id":"8kMaTybvDUw","lang":"en"}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'pydantic-ai',t:'Pydantic AI',en:'Pydantic AI',c:'agent',h:0,tags:['Python','타입안전','Pydantic'],
    sum:'Python의 타입 시스템을 활용해 AI 에이전트를 안전하고 예측 가능하게 만드는 프레임워크. Pydantic 팀이 직접 만들었고, FastAPI처럼 깔끔한 개발 경험을 에이전트 개발에 가져온다.',
@@ -1643,7 +1644,7 @@ refs:[
    rel:['agent-framework','structured-output','ai-agent','langchain'],
    refs:[{"title":"Pydantic AI — 공식 문서","url":"https://ai.pydantic.dev/","type":"official"},{"title":"GitHub — pydantic/pydantic-ai","url":"https://github.com/pydantic/pydantic-ai","type":"official"},{"title":"Building your own CLI Coding Agent with Pydantic-AI — Martin Fowler","url":"https://martinfowler.com/articles/build-own-coding-agent.html","type":"tutorial"}],
    videos:[{"title":"Why we built PydanticAI — Samuel Colvin","id":"YRYxsb_VLhI","lang":"en"}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'background-agent',t:'백그라운드 에이전트',en:'Background Agent',c:'agent',h:0,tags:['비동기','클라우드샌드박스','병렬실행'],
    sum:'클라우드 샌드박스에서 비동기로 실행되는 코딩 에이전트. 작업을 던져 놓고 다른 일을 하다가, 끝나면 PR을 리뷰하는 방식으로 개발 생산성을 근본적으로 바꾸는 패턴이다.',
@@ -1654,7 +1655,7 @@ refs:[
    rel:['ai-coding','claude-code','cursor','multi-agent','subagent'],
    refs:[{"title":"Background Agents — Cursor 공식 문서","url":"https://docs.cursor.com/en/background-agent","type":"official"},{"title":"Cloud Agents — Cursor Blog","url":"https://cursor.com/blog/cloud-agents","type":"official"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'spec-driven-dev',t:'스펙 기반 개발',en:'Spec-Driven Development',c:'application',h:0,tags:['SDD','명세','AI코딩'],
    sum:'코드를 바로 짜는 대신 스펙(명세)을 먼저 정의하고, AI 에이전트가 그 스펙을 기반으로 구현하는 개발 방식. 에이전트가 마음을 읽지 못하는 문제를 구조로 해결한다.',
@@ -1665,7 +1666,7 @@ refs:[
    rel:['ai-coding','vibe-coding','harness-engineering','ai-agent'],
    refs:[{"title":"Spec-driven development – Thoughtworks","url":"https://www.thoughtworks.com/en-us/insights/blog/agile-engineering-practices/spec-driven-development-unpacking-2025-new-engineering-practices","type":"blog"},{"title":"Spec-driven development with AI – GitHub Blog","url":"https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/","type":"official"},{"title":"GitHub Spec Kit","url":"https://github.com/github/spec-kit","type":"official"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'agent-friendly-cli',t:'에이전트 CLI',en:'Agent-Friendly CLI',c:'tooling',h:0,tags:['CLI','에이전트인터페이스','Unix철학'],
    sum:'AI 에이전트가 GUI 대신 CLI를 선호하는 현상, 그리고 에이전트가 쓰기 좋게 CLI를 재설계하는 움직임. 구조화된 출력과 조합성이 에이전트 시대에 CLI를 다시 부활시켰다.',
@@ -1677,7 +1678,7 @@ refs:[
    rel:['claude-code','mcp','tool-use','structured-output'],
    refs:[{"title":"Why CLI is the New MCP for AI Agents – OneUptime","url":"https://oneuptime.com/blog/post/2026-02-03-cli-is-the-new-mcp/view","type":"blog"},{"title":"AI를 위한 CLI 설계 – Dale Seo","url":"https://daleseo.com/cli-for-ai-agents/","type":"blog"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'mastra',t:'Mastra',en:'Mastra',c:'agent',h:0,tags:['TypeScript','에이전트프레임워크','MCP'],
    sum:'TypeScript로 AI 에이전트를 만드는 오픈소스 프레임워크. Gatsby 팀이 만들었으며, 에이전트·워크플로우·RAG·MCP를 하나의 스택으로 제공한다.',
@@ -1688,7 +1689,7 @@ refs:[
    rel:['agent-framework','mcp','langchain','multi-agent'],
    refs:[{"title":"Mastra – Official Site","url":"https://mastra.ai/","type":"official"},{"title":"Mastra GitHub Repository","url":"https://github.com/mastra-ai/mastra","type":"official"},{"title":"Build Your First Agent in TypeScript – Mastra Course","url":"https://mastra.ai/course","type":"tutorial"}],
    videos:[{"title":"Mastra – Build Your First AI Agent in TypeScript","id":"yR5CYEn6Moo","lang":"en"}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'llamafile',t:'llamafile',en:'llamafile',c:'infra',h:0,tags:['로컬AI','Mozilla','단일실행파일'],
    sum:'LLM 모델과 실행 엔진을 하나의 파일로 패키징해서, 설치 없이 더블클릭만으로 로컬에서 AI를 돌릴 수 있게 만든 Mozilla의 오픈소스 도구.',
@@ -1700,7 +1701,7 @@ refs:[
    rel:['ollama','on-device-ai','open-source-llm','llama'],
    refs:[{"title":"llamafile GitHub — mozilla-ai","url":"https://github.com/mozilla-ai/llamafile","type":"official"},{"title":"Introducing llamafile — Mozilla Hacks","url":"https://hacks.mozilla.org/2023/11/introducing-llamafile/","type":"blog"},{"title":"llamafile is the new best way to run an LLM — Simon Willison","url":"https://simonwillison.net/2023/Nov/29/llamafile/","type":"blog"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'hermes-agent',t:'Hermes Agent',en:'Hermes Agent',c:'agent',h:0,tags:['자기학습','NousResearch','자율에이전트'],
    sum:'경험에서 스킬을 자동으로 만들고, 세션을 넘어 기억하며, 쓸수록 더 똑똑해지는 Nous Research의 오픈소스 자율 에이전트.',
@@ -1712,7 +1713,7 @@ refs:[
    rel:['self-improving-agent','ai-agent','agent-framework','agent-memory','multi-agent'],
    refs:[{"title":"Hermes Agent — Official Site","url":"https://hermes-agent.nousresearch.com/","type":"official"},{"title":"Hermes Agent GitHub — NousResearch","url":"https://github.com/nousresearch/hermes-agent","type":"official"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'protocol-wars',t:'프로토콜 전쟁',en:'AI Protocol Wars',c:'infra',h:0,tags:['MCP','A2A','표준화','프로토콜'],
    sum:'AI 에이전트가 도구와 연결되고 서로 대화하는 방식을 두고, MCP·A2A·ACP 세 프로토콜이 표준 자리를 놓고 벌이는 경쟁과 수렴의 과정.',
@@ -1724,7 +1725,7 @@ refs:[
    rel:['mcp','agent-protocol','multi-agent','ai-agent','orchestration'],
    refs:[{"title":"MCP vs A2A: Complete Guide 2026 — DEV Community","url":"https://dev.to/pockit_tools/mcp-vs-a2a-the-complete-guide-to-ai-agent-protocols-in-2026-30li","type":"blog"},{"title":"A developer's guide to AI protocols — InfoWorld","url":"https://www.infoworld.com/article/4007686/a-developers-guide-to-ai-protocols-mcp-a2a-and-acp.html","type":"blog"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'kokoro-tts',t:'Kokoro TTS',en:'Kokoro Text-to-Speech',c:'model',h:0,tags:['TTS','온디바이스','오픈소스'],
    sum:'82M 파라미터만으로 대형 모델 수준의 자연스러운 음성을 합성하는 초경량 오픈소스 TTS 모델. 로컬 환경에서도 실시간보다 빠르게 돌아가서, 온디바이스 음성 합성의 가능성을 열었다.',
@@ -1735,7 +1736,7 @@ refs:[
    rel:['text-to-speech','on-device-ai','open-source-llm'],
    refs:[{"title":"Kokoro-82M Model Card – Hugging Face","url":"https://huggingface.co/hexgrad/Kokoro-82M","type":"official"},{"title":"Kokoro GitHub Repository","url":"https://github.com/hexgrad/kokoro","type":"official"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'open-webui',t:'Open WebUI',en:'Open WebUI',c:'tooling',h:0,tags:['로컬AI','Ollama','셀프호스팅'],
    sum:'로컬 LLM을 ChatGPT처럼 쓸 수 있게 해주는 오픈소스 웹 인터페이스. Ollama와 함께 로컬 AI 스택의 사실상 표준 프론트엔드로 자리잡았다.',
@@ -1747,7 +1748,7 @@ refs:[
    rel:['ollama','rag','on-device-ai','chatbot'],
    refs:[{"title":"Open WebUI GitHub Repository","url":"https://github.com/open-webui/open-webui","type":"official"},{"title":"Open WebUI Official Documentation","url":"https://docs.openwebui.com/","type":"official"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'time-series-fm',t:'시계열 파운데이션 모델',en:'Time-Series Foundation Model',c:'model',h:0,tags:['시계열','예측','Google'],
    sum:'대규모 시계열 데이터로 사전 학습해, 별도 훈련 없이 다양한 도메인의 미래 값을 예측하는 특화 파운데이션 모델. LLM이 언어를 범용으로 이해하듯, 시계열의 패턴을 범용으로 이해한다.',
@@ -1760,7 +1761,7 @@ refs:[
    rel:['foundation-model','deep-learning','transformer'],
    refs:[{"title":"A Decoder-Only Foundation Model for Time-Series – Google Research","url":"https://research.google/blog/a-decoder-only-foundation-model-for-time-series-forecasting/","type":"official"},{"title":"TimesFM GitHub Repository","url":"https://github.com/google-research/timesfm","type":"official"},{"title":"TimesFM — arXiv","url":"https://arxiv.org/abs/2310.10688","type":"paper"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'goose',t:'Goose',en:'Goose (Block AI Agent)',c:'tooling',h:3,born:'2025-01',tags:['오픈소스','Block','MCP','로컬에이전트'],
    sum:'Block이 만든 오픈소스 AI 에이전트로, 로컬 머신에서 실행되며 어떤 LLM이든 연결해 코드 작성부터 디버깅, 배포까지 자율적으로 수행한다.',
@@ -1768,7 +1769,7 @@ refs:[
    rel:['ai-agent','mcp','claude-code','ai-coding','ollama','agent-framework','tool-use','open-source-llm'],
    refs:[{"title":"block/goose - GitHub","url":"https://github.com/block/goose","type":"official"},{"title":"Goose 공식 문서","url":"https://block.github.io/goose/","type":"official"},{"title":"Block Open Source Introduces codename goose","url":"https://block.xyz/inside/block-open-source-introduces-codename-goose","type":"blog"},{"title":"Goose Quickstart Guide","url":"https://block.github.io/goose/docs/quickstart/","type":"tutorial"},{"title":"Goose 사용법 - Dale Seo","url":"https://daleseo.com/goose/","type":"tutorial"}],
    videos:[{"title":"Coding With Goose, An AI Agent","id":"NPuxzX5rdjk","lang":"en"},{"title":"Codename Goose: Build Your AI Agents Using This","id":"7NmEKaX44L4","lang":"en"}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'emotion-prompting',t:'감정 프롬프팅',en:'Emotion Prompting',c:'prompting',h:2,born:'2023-07',tags:['EmotionPrompt','프롬프트기법','심리학'],
    sum:'프롬프트에 감정적 표현을 덧붙여 LLM의 응답 품질을 높이는 기법. "이건 내 커리어에 정말 중요해"처럼 감정을 실은 문장을 추가하면 모델이 더 신중하고 정확한 답변을 생성하는 경향이 있다.',
@@ -1776,7 +1777,7 @@ refs:[
    rel:['prompt-engineering','chain-of-thought','system-prompt','role-prompting','few-shot','zero-shot'],
    refs:[{"title":"Large Language Models Understand and Can be Enhanced by Emotional Stimuli","url":"https://arxiv.org/abs/2307.11760","type":"paper"},{"title":"Do Emotions in Prompts Matter?","url":"https://arxiv.org/abs/2604.02236","type":"paper"},{"title":"Emotion Prompting - Learn Prompting","url":"https://learnprompting.org/docs/advanced/zero_shot/emotion_prompting","type":"tutorial"},{"title":"Emotional prompts enhance LLMs - TechTalks","url":"https://bdtechtalks.com/2023/11/06/llm-emotion-prompting/","type":"blog"},{"title":"감정 프롬프트를 소개합니다 - Disquiet","url":"https://disquiet.io/@agilegrowth/makerlog/llm-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%8C%80%EC%9E%A5%EC%9D%80-%EB%88%84%EA%B5%AC-%EA%B0%90%EC%A0%95-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EB%A5%BC-%EC%86%8C%EA%B0%9C%ED%95%A9%EB%8B%88%EB%8B%A4","type":"blog"}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'mechanistic-interpretability',t:'메커니스틱 해석 가능성',en:'Mechanistic Interpretability',c:'safety',h:4,born:'2022-01',tags:['회로분석','XAI','Anthropic','특징추출'],
    sum:'AI 모델 내부에서 실제로 어떤 계산이 일어나는지를 회로와 특징 수준에서 추적하는 연구 분야. "왜 이런 답을 냈는가"를 통계적 상관이 아니라 인과적 메커니즘으로 설명하려 한다.',
@@ -1784,7 +1785,7 @@ refs:[
    rel:['explainability','alignment','constitutional-ai','red-teaming'],
    refs:[{title:'Emotion concepts and their function in a large language model',url:'https://transformer-circuits.pub/2026/emotions/index.html',type:'paper'},{title:'On the Biology of a Large Language Model',url:'https://transformer-circuits.pub/2025/attribution-graphs/biology.html',type:'paper'},{title:'Transformer Circuits Thread',url:'https://transformer-circuits.pub/',type:'official'},{title:'Decomposing Language Models Into Understandable Components',url:'https://www.anthropic.com/news/decomposing-language-models-into-understandable-components',type:'official'}],
    videos:[{title:'What is Mechanistic Interpretability? (Neel Nanda)',id:'sISodZSxNvc',lang:'en'},{title:'Intro to Mechanistic Interpretability (Rational Animations)',id:'jGCvY4gNnA8',lang:'en'}],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
   {id:'ai-vulnerability-discovery',t:'AI 취약점 발견',en:'AI Vulnerability Discovery',c:'safety',h:4,born:'2024-06',tags:['보안','코드분석','취약점','zero-day'],
    sum:'AI가 방대한 코드베이스를 직접 분석해 사람이 놓쳤던 보안 취약점을 능동적으로 찾아내는 기술. 기존 정적 분석 도구가 패턴 매칭에 의존하는 것과 달리, AI는 코드의 맥락과 동작 방식을 이해해 실제로 악용 가능한 버그를 식별한다.',
@@ -1792,7 +1793,7 @@ refs:[
    rel:['red-teaming','ai-code-review','ai-coding','code-generation'],
    refs:[{title:'Claude Code Found a Linux Vulnerability Hidden for 23 Years',url:'https://mtlynch.io/claude-code-found-linux-vulnerability/',type:'blog'},{title:'From Naptime to Big Sleep: Using Large Language Models To Catch Vulnerabilities In Real-World Code',url:'https://projectzero.google/2024/10/from-naptime-to-big-sleep.html',type:'blog'}],
    videos:[],
-   updated:'2026-04-05'},
+   added:'2026-03-30',updated:'2026-04-05'},
 
 ];
 

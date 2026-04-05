@@ -160,6 +160,7 @@ JS 배열 `D`의 각 항목:
   videos: [                            // YouTube 영상 (reference-collector)
     {title: '영상 제목', id: 'youtube_id', lang: 'ko|en'}
   ],
+  added: '2026-04-01',                  // 위키 추가 날짜
   updated: '2026-04-01'               // 마지막 업데이트 날짜
 }
 ```
