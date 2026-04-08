@@ -594,7 +594,7 @@ function shareKakao(id,btn){
   if(window.Kakao&&Kakao.isInitialized()){
     Kakao.Share.sendDefault({
       objectType:'feed',
-      content:{title:name+' - AI Wiki',description:e.sum||'',imageUrl:'https://aiword-wiki.github.io/og-thumbnail.png',link:{mobileWebUrl:url,webUrl:url}}
+      content:{title:name+' - AI Wiki',description:e.sum||'',imageUrl:'https://aiword-wiki.github.io/og-thumbnail.png',imageWidth:1200,imageHeight:630,link:{mobileWebUrl:url,webUrl:url}}
     });
   } else {
     navigator.clipboard.writeText(name+' - AI Wiki\n'+url).then(()=>_shareFb(btn));
