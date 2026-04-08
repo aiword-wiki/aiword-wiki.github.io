@@ -18,11 +18,15 @@
 <meta property="og:url" content="https://aiword-wiki.github.io/">
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://aiword-wiki.github.io/og-thumbnail.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Wiki — AI 기술 키워드 사전">
 <meta name="twitter:description" content="복잡한 AI 기술을 쉽게 이해할 수 있는 키워드 위키. 200개 이상의 AI 용어를 카드로 한눈에 파악하세요.">
+<meta name="twitter:image" content="https://aiword-wiki.github.io/og-thumbnail.png">
 
 <link rel="canonical" href="https://aiword-wiki.github.io/">
 
@@ -574,7 +578,7 @@ function close_m(pushState) {
 document.addEventListener('keydown', e => { if(e.key==='Escape'&&document.getElementById('detail').classList.contains('open')) close_m(); });
 
 const BASE_URL='https://aiword-wiki.github.io/';
-const KAKAO_KEY=location.hostname==='localhost'||location.hostname==='127.0.0.1'?'c5d123be2f7b4ebcf0373e1866870893':'c8a3dc3ebc83691e6d7878d2ce7ee764';
+const KAKAO_KEY=location.hostname==='localhost'||location.hostname==='127.0.0.1'?'c5d123be2f7b4ebcf0373e1866870893':'ef7fa3e76c33651598db26d7ab7990ec';
 if(window.Kakao&&KAKAO_KEY&&!Kakao.isInitialized()) Kakao.init(KAKAO_KEY);
 
 function _shareFb(btn){
@@ -590,7 +594,7 @@ function shareKakao(id,btn){
   if(window.Kakao&&Kakao.isInitialized()){
     Kakao.Share.sendDefault({
       objectType:'feed',
-      content:{title:name+' - AI Wiki',description:e.sum||'',imageUrl:'https://aiword-wiki.github.io/favicon.svg',link:{mobileWebUrl:url,webUrl:url}}
+      content:{title:name+' - AI Wiki',description:e.sum||'',imageUrl:'https://aiword-wiki.github.io/og-thumbnail.png',link:{mobileWebUrl:url,webUrl:url}}
     });
   } else {
     navigator.clipboard.writeText(name+' - AI Wiki\n'+url).then(()=>_shareFb(btn));

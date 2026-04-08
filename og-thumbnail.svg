@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#F3F0EB"/>
+  <rect x="1" y="1" width="798" height="398" rx="0" fill="none" stroke="#e4dfd8" stroke-width="2"/>
+  <text x="400" y="185" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="900" fill="#C4613A" text-anchor="middle">AI Wiki</text>
+  <text x="400" y="245" font-family="system-ui,-apple-system,sans-serif" font-size="26" fill="#a09888" text-anchor="middle">AI Keywords at a Glance</text>
+  <line x1="320" y1="270" x2="480" y2="270" stroke="#e4dfd8" stroke-width="2"/>
+  <g transform="translate(310, 295)" fill="none" stroke="#a09888" stroke-width="1.5">
+    <rect width="50" height="35" rx="6"/>
+    <text x="25" y="23" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#2d2a26" text-anchor="middle" stroke="none">LLM</text>
+  </g>
+  <g transform="translate(375, 295)" fill="none" stroke="#a09888" stroke-width="1.5">
+    <rect width="50" height="35" rx="6"/>
+    <text x="25" y="23" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#2d2a26" text-anchor="middle" stroke="none">RAG</text>
+  </g>
+  <g transform="translate(440, 295)" fill="none" stroke="#a09888" stroke-width="1.5">
+    <rect width="50" height="35" rx="6"/>
+    <text x="25" y="23" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#2d2a26" text-anchor="middle" stroke="none">MCP</text>
+  </g>
+</svg>
