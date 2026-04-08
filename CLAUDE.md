@@ -4,7 +4,7 @@
 AI 기술 키워드들을 **심플한 카드 UI**로 격자 배열하여 한눈에 파악할 수 있는 위키 사이트.
 정적 파일(index.html + data.js), 서버 불필요.
 
-- 위치: `~/Desktop/ai-wiki/`
+- 위치: `~/dev/ai-wiki/`
 - 진입점: `index.html`
 
 ---
