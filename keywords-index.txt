@@ -1,0 +1,244 @@
+harness-engineering	하네스 엔지니어링	Harness Engineering	prompting
+mcp	MCP	Model Context Protocol	tooling
+claude-code	Claude Code	Claude Code CLI	tooling
+ai-agent	AI 에이전트	AI Agent	agent
+multi-agent	멀티 에이전트	Multi-Agent System	agent
+ai-coding	AI 코딩 어시스턴트	AI Coding Assistant	application
+skills	스킬	Skills / Slash Commands	tooling
+hooks	훅	Hooks	tooling
+claude-md	CLAUDE.md	CLAUDE.md	tooling
+tool-use	도구 사용	Tool Use / Function Calling	tooling
+rag	RAG	Retrieval-Augmented Generation	data
+context-window	컨텍스트 윈도우	Context Window	infra
+agent-framework	에이전트 프레임워크	Agent Framework	agent
+ai-workflow	AI 워크플로우	AI Workflow Automation	application
+prompt-engineering	프롬프트 엔지니어링	Prompt Engineering	prompting
+system-prompt	시스템 프롬프트	System Prompt	prompting
+chain-of-thought	사고의 사슬	Chain-of-Thought	prompting
+llm	대규모 언어 모델	Large Language Model	model
+fine-tuning	파인튜닝	Fine-Tuning	model
+multimodal	멀티모달	Multimodal AI	model
+embedding	임베딩	Embedding	data
+vector-db	벡터 DB	Vector Database	data
+chunking	청킹	Chunking	data
+langchain	랭체인	LangChain	tooling
+eval	AI 평가	Evaluation	infra
+hallucination	환각	Hallucination	safety
+guardrail	가드레일	Guardrail	safety
+prompt-injection	프롬프트 인젝션	Prompt Injection	safety
+chatbot	챗봇	Conversational AI	application
+ai-search	AI 검색	AI-Powered Search	application
+structured-output	구조화된 출력	Structured Output	application
+react-pattern	ReAct 패턴	ReAct	agent
+few-shot	퓨샷	Few-Shot Prompting	prompting
+transformer	트랜스포머	Transformer	model
+tokenization	토큰화	Tokenization	model
+rlhf	RLHF	RL from Human Feedback	model
+in-context-learning	인컨텍스트 러닝	In-Context Learning	model
+api-gateway	AI API 게이트웨이	AI API Gateway	infra
+vibe-coding	바이브 코딩	Vibe Coding	application
+open-source-llm	오픈소스 LLM	Open Source LLM	model
+agent-memory	에이전트 메모리	Agent Memory	agent
+distillation	모델 증류	Model Distillation	model
+synthetic-data	합성 데이터	Synthetic Data	data
+inference-optimization	추론 최적화	Inference Optimization	infra
+moe	MoE	Mixture of Experts	model
+reasoning-model	추론 모델	Reasoning Model	model
+flash-attention	플래시 어텐션	Flash Attention	model
+kv-cache	KV 캐시	KV Cache	model
+gpt	GPT	Generative Pre-trained Transformer	model
+bert	BERT	Bidirectional Encoder Representations from Transformers	model
+diffusion-model	디퓨전 모델	Diffusion Model	model
+long-context	롱 컨텍스트	Long Context	model
+speculative-decoding	추측적 디코딩	Speculative Decoding	model
+model-merging	모델 병합	Model Merging	model
+pretraining	사전학습	Pretraining	model
+instruction-tuning	인스트럭션 튜닝	Instruction Tuning	model
+dpo	DPO	Direct Preference Optimization	model
+lora	LoRA	Low-Rank Adaptation	model
+qlora	QLoRA	Quantized LoRA	model
+attention-mechanism	어텐션 메커니즘	Attention Mechanism	model
+emergent-ability	창발적 능력	Emergent Ability	model
+transfer-learning	전이 학습	Transfer Learning	model
+self-supervised-learning	자기 지도 학습	Self-Supervised Learning	model
+reinforcement-learning	강화학습	Reinforcement Learning	model
+reward-model	보상 모델	Reward Model	model
+grpo	GRPO	Group Relative Policy Optimization	model
+quantization	양자화	Quantization	model
+pruning	프루닝	Pruning	model
+sft	SFT	Supervised Fine-Tuning	model
+foundation-model	파운데이션 모델	Foundation Model	model
+small-language-model	소형 언어 모델	Small Language Model	model
+ssm	상태 공간 모델	State Space Model	model
+temperature	온도	Temperature	model
+frontier-model	프론티어 모델	Frontier Model	model
+vision-language-model	비전-언어 모델	Vision-Language Model	model
+benchmark	벤치마크	Benchmark	infra
+model-serving	모델 서빙	Model Serving	infra
+continuous-batching	연속 배칭	Continuous Batching	infra
+gpu-cluster	GPU 클러스터	GPU Cluster	infra
+tensor-parallelism	텐서 병렬화	Tensor Parallelism	infra
+vllm	vLLM	vLLM	infra
+mlops	MLOps	MLOps	infra
+llmops	LLMOps	LLMOps	infra
+streaming	스트리밍	Token Streaming	infra
+latency-optimization	레이턴시 최적화	Latency Optimization	infra
+batch-inference	배치 추론	Batch Inference	infra
+observability	옵저버빌리티	LLM Observability	infra
+cost-optimization	비용 최적화	LLM Cost Optimization	infra
+prompt-caching	프롬프트 캐싱	Prompt Caching	infra
+token-budget	토큰 예산	Token Budget	infra
+data-flywheel	데이터 플라이휠	Data Flywheel	data
+data-labeling	데이터 레이블링	Data Labeling	data
+knowledge-graph	지식 그래프	Knowledge Graph	data
+hybrid-search	하이브리드 검색	Hybrid Search	data
+reranking	리랭킹	Reranking	data
+graph-rag	그래프 RAG	Graph RAG	data
+multimodal-rag	멀티모달 RAG	Multimodal RAG	data
+agent-protocol	에이전트 프로토콜	Agent Protocol	agent
+a2a	A2A	Agent-to-Agent Protocol	agent
+orchestration	오케스트레이션	Agent Orchestration	agent
+subagent	서브에이전트	Subagent	agent
+agentic-rag	에이전틱 RAG	Agentic RAG	agent
+computer-use	컴퓨터 사용	Computer Use	agent
+browser-agent	브라우저 에이전트	Browser Agent	agent
+task-decomposition	태스크 분해	Task Decomposition	agent
+autonomous-agent	자율 에이전트	Autonomous Agent	agent
+human-in-the-loop	휴먼 인 더 루프	Human-in-the-Loop	agent
+tool-calling	툴 콜링	Tool Calling	agent
+agent-eval	에이전트 평가	Agent Evaluation	agent
+reflection-pattern	리플렉션 패턴	Reflection Pattern	agent
+swarm	스웜	Agent Swarm	agent
+langgraph	랭그래프	LangGraph	agent
+crewai	CrewAI	CrewAI	agent
+sandboxing	샌드박싱	Code Sandboxing	agent
+planning	플래닝	LLM Planning	agent
+code-interpreter	코드 인터프리터	Code Interpreter	agent
+ai-ide	AI IDE	AI-Powered IDE	tooling
+cursor	Cursor	Cursor	tooling
+windsurf	Windsurf	Windsurf	tooling
+copilot	GitHub Copilot	GitHub Copilot	tooling
+anthropic-sdk	Anthropic SDK	Anthropic SDK	tooling
+openai-sdk	OpenAI SDK	OpenAI SDK	tooling
+llm-gateway	LLM 게이트웨이	LLM Gateway	tooling
+litellm	LiteLLM	LiteLLM	tooling
+dspy	DSPy	DSPy	tooling
+llamaindex	LlamaIndex	LlamaIndex	tooling
+langfuse	Langfuse	Langfuse	tooling
+langsmith	LangSmith	LangSmith	tooling
+tracing	트레이싱	LLM Tracing	tooling
+playground	플레이그라운드	AI Playground	tooling
+model-router	모델 라우터	Model Router	tooling
+context-caching	컨텍스트 캐싱	Context Caching	tooling
+agents-md	AGENTS.md	AGENTS.md	tooling
+prompt-management	프롬프트 관리	Prompt Management	tooling
+zero-shot	제로샷	Zero-Shot Prompting	prompting
+tree-of-thought	트리 오브 쏘트	Tree of Thought	prompting
+self-consistency	셀프 컨시스턴시	Self-Consistency	prompting
+meta-prompt	메타 프롬프트	Meta-Prompt	prompting
+prompt-chaining	프롬프트 체이닝	Prompt Chaining	prompting
+role-prompting	역할 프롬프팅	Role Prompting	prompting
+xml-prompting	XML 프롬프팅	XML Prompting	prompting
+context-stuffing	컨텍스트 스터핑	Context Stuffing	prompting
+auto-prompt	자동 프롬프트 최적화	Automatic Prompt Optimization	prompting
+output-formatting	출력 포맷팅	Output Formatting	prompting
+data-curation	데이터 큐레이션	Data Curation	data
+data-augmentation	데이터 증강	Data Augmentation	data
+context-compression	컨텍스트 압축	Context Compression	data
+semantic-cache	시맨틱 캐시	Semantic Cache	data
+red-teaming	레드팀	Red Teaming	safety
+alignment	AI 정렬	AI Alignment	safety
+constitutional-ai	헌법적 AI	Constitutional AI	safety
+jailbreak	탈옥	Jailbreak	safety
+bias	편향	AI Bias	safety
+watermarking	워터마킹	AI Watermarking	safety
+explainability	설명가능성	Explainability	safety
+ai-regulation	AI 규제	AI Regulation	safety
+privacy-preserving	프라이버시 보호 AI	Privacy-Preserving AI	safety
+adversarial-attack	적대적 공격	Adversarial Attack	safety
+deepfake-detection	딥페이크 탐지	Deepfake Detection	safety
+ai-copyright	AI 저작권	AI Copyright	safety
+content-moderation	콘텐츠 모더레이션	Content Moderation	safety
+output-filtering	출력 필터링	Output Filtering	safety
+model-audit	모델 감사	Model Audit	safety
+text-to-image	텍스트-이미지 생성	Text-to-Image	application
+text-to-speech	텍스트-음성 변환	Text-to-Speech	application
+speech-to-text	음성 인식	Speech-to-Text	application
+code-generation	코드 생성	Code Generation	application
+summarization	요약	Summarization	application
+translation	AI 번역	Machine Translation	application
+text-to-sql	텍스트-투-SQL	Text-to-SQL	application
+ai-video-generation	AI 비디오 생성	AI Video Generation	application
+voice-ai	보이스 AI	Voice AI	application
+ai-writing	AI 글쓰기	AI Writing	application
+document-ai	문서 AI	Document AI	application
+ai-code-review	AI 코드 리뷰	AI Code Review	application
+test-generation	테스트 생성	AI Test Generation	application
+no-code-ai	노코드 AI	No-Code AI	application
+ai-assistant	AI 어시스턴트	AI Assistant	application
+personalization	개인화	AI Personalization	application
+knowledge-base	지식 베이스	Knowledge Base	application
+ai-ops	AIOps	AIOps	application
+question-answering	질의응답	Question Answering	application
+semantic-search	시맨틱 검색	Semantic Search	application
+document-parsing	문서 파싱	Document Parsing	data
+multimodal-embedding	멀티모달 임베딩	Multimodal Embedding	data
+unstructured-data	비정형 데이터	Unstructured Data	data
+data-pipeline	데이터 파이프라인	Data Pipeline	data
+generative-ai	생성형 AI	Generative AI	model
+neural-network	신경망	Neural Network	model
+deep-learning	딥러닝	Deep Learning	model
+nlp	자연어 처리	Natural Language Processing	model
+machine-learning	머신러닝	Machine Learning	model
+attention-head	어텐션 헤드	Attention Head	model
+parameter	파라미터	Model Parameters	model
+overfitting	과적합	Overfitting	model
+loss-function	손실 함수	Loss Function	model
+gradient-descent	경사 하강법	Gradient Descent	model
+backpropagation	역전파	Backpropagation	model
+activation-function	활성화 함수	Activation Function	model
+federated-learning	연합학습	Federated Learning	model
+test-time-compute	추론 시 연산	Test-Time Compute	model
+context-engineering	컨텍스트 엔지니어링	Context Engineering	prompting
+on-device-ai	온디바이스 AI	On-Device AI	infra
+open-weights	오픈 웨이트	Open Weights	model
+model-collapse	모델 붕괴	Model Collapse	safety
+post-training	포스트 트레이닝	Post-Training	model
+codex	Codex	OpenAI Codex	tooling
+devin	Devin	Devin	tooling
+gemini	Gemini	Gemini	model
+llama	Llama	Llama	model
+gemma	Gemma	Gemma	model
+mistral	Mistral	Mistral	model
+qwen	Qwen	Qwen	model
+whisper	Whisper	Whisper	model
+ollama	Ollama	Ollama	tooling
+stable-diffusion	Stable Diffusion	Stable Diffusion	model
+self-improving-agent	자기학습 에이전트	Self-Improving Agent	agent
+agent-handoff	에이전트 핸드오프	Agent Handoff	agent
+agent-simulation	에이전트 시뮬레이션	Agent Simulation	agent
+copilot-sdk	Copilot SDK	Copilot SDK	tooling
+claude-dispatch	Claude Dispatch	Claude Dispatch	tooling
+ai-supply-chain-attack	AI 공급망 공격	AI Supply Chain Attack	safety
+ontology	온톨로지	Ontology	data
+agentic-engineering	에이전틱 엔지니어링	Agentic Engineering	application
+deepseek	DeepSeek	DeepSeek	model
+n8n	n8n	n8n (nodemation)	tooling
+token-economics	토큰 경제학	Token Economics	infra
+12-factor-agents	12-Factor Agents	Twelve-Factor Agents	agent
+pydantic-ai	Pydantic AI	Pydantic AI	agent
+background-agent	백그라운드 에이전트	Background Agent	agent
+spec-driven-dev	스펙 기반 개발	Spec-Driven Development	application
+agent-friendly-cli	에이전트 CLI	Agent-Friendly CLI	tooling
+mastra	Mastra	Mastra	agent
+llamafile	llamafile	llamafile	infra
+hermes-agent	Hermes Agent	Hermes Agent	agent
+protocol-wars	프로토콜 전쟁	AI Protocol Wars	infra
+kokoro-tts	Kokoro TTS	Kokoro Text-to-Speech	model
+open-webui	Open WebUI	Open WebUI	tooling
+time-series-fm	시계열 파운데이션 모델	Time-Series Foundation Model	model
+goose	Goose	Goose (Block AI Agent)	tooling
+emotion-prompting	감정 프롬프팅	Emotion Prompting	prompting
+mechanistic-interpretability	메커니스틱 해석 가능성	Mechanistic Interpretability	safety
+ai-vulnerability-discovery	AI 취약점 발견	AI Vulnerability Discovery	safety
+neurosymbolic-ai	뉴로심볼릭 AI	Neurosymbolic AI	model
