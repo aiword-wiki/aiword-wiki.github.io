@@ -27,14 +27,17 @@ GeekNews MCP로 수집한다 (HN/Reddit 핫토픽을 이미 커버):
 선정된 키워드마다:
 
 ### 검색 1: 리서치 + 레퍼런스
-- WebSearch로 "{키워드} 공식 문서 설명 tutorial"을 검색
-- 이 한 번의 검색에서: 정의/개념/활용사례 + 공식 문서/블로그/논문 URL을 함께 수집
+- WebSearch로 "{키워드} 공식 문서 설명"을 검색
+- **공식 자료 우선**: 공식 문서 > 공식 블로그 > 논문 > 튜토리얼 (서드파티 블로그는 공식 자료 없을 때만)
 - refs 최대 5개, arXiv 논문 최대 2개 (있으면)
+- 기존 항목에 이미 refs가 있으면 누락분만 추가
 
-### 검색 2: YouTube
-- WebSearch `site:youtube.com {키워드}` (한국어 우선, 최대 3개)
-- 한국어 영상 최소 1개 필수 — 없으면 `{키워드} 한국어 설명 site:youtube.com`으로 재검색
+### 검색 2: YouTube (정확히 3개 = 영어 2 + 한국어 1)
+- WebSearch `site:youtube.com {keyword}` → 영어 영상 2개
+- WebSearch `site:youtube.com {한국어키워드}` → 한국어 영상 1개
+- 한국어 영상 못 찾으면 `{키워드} 한국어 설명 site:youtube.com`으로 재검색
 - YouTube ID는 v= 뒤 11자리만
+- 기존 항목에 이미 videos가 있으면 누락분만 추가 (예: 영어 2개 있으면 한국어 1개만)
 
 ### 콘텐츠 작성
 - **sum**: 1~2문장. 뭔지 + 왜 쓰는지. 수치로 시작 금지.

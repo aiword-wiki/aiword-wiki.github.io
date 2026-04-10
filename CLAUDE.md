@@ -154,10 +154,10 @@ JS 배열 `D`의 각 항목:
   sum: '한 줄 요약',                    // 요약 (모달 본문 첫 문단)
   det: '<h4>...</h4><ul>...</ul>',     // 상세 HTML (모달 본문)
   rel: ['tool-use', 'claude-code'],    // 관련 항목 ID 배열
-  refs: [                              // 레퍼런스 (reference-collector)
+  refs: [                              // 레퍼런스 — 공식 자료 우선 (공식문서 > 공식블로그 > 논문 > 튜토리얼)
     {title: '제목', url: 'https://...', type: 'official|blog|paper|tutorial'}
   ],
-  videos: [                            // YouTube 영상 (reference-collector)
+  videos: [                            // YouTube 영상 — 정확히 3개: 영어 2개 + 한국어 1개
     {title: '영상 제목', id: 'youtube_id', lang: 'ko|en'}
   ],
   added: '2026-04-01',                  // 위키 추가 날짜
@@ -169,6 +169,9 @@ JS 배열 `D`의 각 항목:
 - 수동: `D` 배열에 객체 추가
 - 자동: `/add-keyword` 스킬 사용 (서브에이전트가 리서치+검증+수집 처리)
 - 자동/대량: `/scheduling-add` 스킬 사용
+- **기존 데이터 보존**: 이미 refs/videos가 있으면 누락분만 채운다. 기존 항목을 덮어쓰지 않는다
+- **refs 공식 자료 우선**: 공식 문서 > 공식 블로그 > 논문 > 튜토리얼 순서
+- **videos 구성**: 영어 2개 + 한국어 1개 = 총 3개 고정
 
 ---
 
