@@ -372,3 +372,37 @@
 | 2026-04-05 | LAST_UPDATED + fmtLastUpdated() 구현, 타임존 자동 변환 |
 | 2026-04-05 | New Uploaded 필터 추가 (최초 "최근추가" → "NEW" → "New Uploaded") |
 | 2026-04-05 | added 필드 도입, 기존 항목 일괄 세팅, 필터 기준 updated→added 변경 |
+
+---
+
+## 배치로직 — 직접 웹서치/유튜브 API 호출 후 에이전트는 채택만 (2026-04-11 완료)
+
+- [x] 웹서치 API 선정 및 API 키 발급 — Tavily Search (1,000/월 무료)
+- [x] YouTube Data API 키 발급 및 할당량 확인 — 10,000 units/일
+- [x] fetch 스크립트 작성 — fetch-sources.js (Tavily+YouTube), fetch-trends.js (HN+Tavily+GeekNews)
+- [x] 에이전트 정의 수정 — researcher.md, reference-collector.md 검색→채택 역할로
+- [x] add-keyword 스킬 워크플로우 수정 — 스크립트→에이전트 채택 순서로
+- [x] scheduling-add 스킬 워크플로우 수정 — run-daily.sh 6-stage 파이프라인
+- [x] .env / API 키 관리 구조 세팅 (.gitignore 포함)
+- [x] launchd 스케줄러에서 환경변수 접근 확인
+- [x] 기존 키워드 1개로 end-to-end 테스트
+
+### 주요 결과
+- run-daily.sh 6-stage 파이프라인: 트렌드→선정→소스→콘텐츠→반영→빌드+커밋
+- 트렌드 수집 4소스: HN API + Tavily (Reddit) + GeekNews /new 10개 + GeekNews 주간뉴스
+- Claude --print hang 문제 해결: JSON 완성 감지 폴링 → 즉시 kill 후 진행
+- set -e + watchdog &&체인 버그 수정: kill_tree 재귀 함수로 교체
+- Global watchdog 수정: 실제로 메인 프로세스에 TERM 전송
+- API 비용: Tavily 1회/실행 (트렌드) + 2회/키워드 (소스), GeekNews/HN 무료
+
+### 진행 로그
+| 시간 | 작업 내용 |
+|------|----------|
+| 2026-04-10 | 플랜 시작, Tavily+YouTube API 선정 |
+| 2026-04-10 | fetch-sources.js, fetch-trends.js 작성 |
+| 2026-04-10 | run-daily.sh 6-stage 파이프라인 구축, launchd 등록 |
+| 2026-04-11 | 스케줄러 오류 진단: set -e + watchdog &&체인 → kill 실패 |
+| 2026-04-11 | kill_tree 재귀 함수, global watchdog TERM 전송, stale temp 정리 |
+| 2026-04-11 | GeekNews /new + 주간뉴스 수집 추가, Tavily HN 검색 제거 |
+| 2026-04-11 | Claude --print hang 대응: JSON 완성 감지 폴링으로 교체 |
+| 2026-04-11 | 스케줄러 11:21 테스트 실행 성공 (0개 키워드 → 정상 종료) |
