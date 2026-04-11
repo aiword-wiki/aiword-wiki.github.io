@@ -222,7 +222,7 @@ JS 배열 `D`의 각 항목:
 │   ├── complete-phase/SKILL.md    # /complete-phase — 플랜 항목 완료
 │   └── validate-plan/SKILL.md     # /validate-plan — 현재 플랜 검증
 fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + YouTube API)
-fetch-trends.js                    # 트렌드 수집 (HN API + Tavily)
+fetch-trends.js                    # 트렌드 수집 (HN API + Tavily Reddit + GeekNews)
 .env                               # API 키 (TAVILY_API_KEY, YOUTUBE_API_KEY)
 ```
 
@@ -230,21 +230,20 @@ fetch-trends.js                    # 트렌드 수집 (HN API + Tavily)
 
 에이전트는 검색(API 호출)을 하지 않는다. 스크립트가 데이터를 수집하고, 에이전트는 수집된 데이터로 글쓰기/채택만 한다.
 
-#### /scheduling-add 전체 흐름
+#### /scheduling-add 전체 흐름 (run-daily.sh 6-stage 파이프라인)
 
-| 단계 | 작업 | 실행 주체 | 비고 |
-|------|------|----------|------|
-| 1 | 트렌드 토픽 수집 | `node fetch-trends.js` | HN API + Tavily (HN/Reddit) |
-| 2 | 긱뉴스 수집 | GeekNews MCP | get_articles + get_weekly_news |
-| 3 | 신규 키워드 선정 | 메인 컨텍스트 | data.js 대조, 중복 제거 |
-| 4 | 키워드별 자료 수집 | `node fetch-sources.js` | Tavily (웹 EN/KO) + YouTube API (EN/KO) |
-| 5 | 콘텐츠 작성 | **에이전트** (researcher) | 수집된 web 결과 기반 sum/det 작성 |
-| 6 | refs/videos 채택 | **에이전트** (reference-collector) | 수집된 web+youtube에서 선정 (조회수 반영) |
-| 7 | 검증 + data.js 반영 | 메인 컨텍스트 | 중복 확인, rel 매칭, HTML 검증 |
-| 8 | 번역 | **에이전트** | EN/ZH/JA 3개 언어 |
-| 9 | HOT_IDS 갱신 | 메인 컨텍스트 | data.js 직접 수정 |
-| 10 | 빌드 | `node build.js` | SEO 페이지 + sitemap |
-| 11 | 로깅 + 커밋 | 메인 컨텍스트 | log.md, git push |
+| Stage | 작업 | 실행 주체 | 비고 |
+|-------|------|----------|------|
+| 1 | 트렌드 수집 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews /new 10개 + GeekNews 주간뉴스 |
+| 2 | 키워드 선정 | `claude --print` | 트렌드 + 기존 키워드 대조 → 새 키워드 JSON 출력 |
+| 3 | 소스 수집 | `node fetch-sources.js` | 키워드별 Tavily (웹 EN/KO) + YouTube API (EN/KO) |
+| 4 | 콘텐츠 생성 | `claude --print` | sum/det 작성 + refs/videos 채택 + 번역(EN/ZH/JA) — 올인원 |
+| 5 | data.js 반영 | `node apply-entries.js` | 중복 확인, 항목 추가 |
+| 6 | 빌드 + 커밋 | `node build.js` + git | SEO 페이지 + sitemap + log.md + git push |
+
+- GeekNews /new는 10개만 수집 (하루 게시글 2~3건 수준의 소규모 커뮤니티)
+- 키워드 0개 선정 시 Stage 3~5 건너뛰고 Stage 6으로 점프
+- Stage 2, 4에서 Claude 프로세스가 출력 완료 후 hang 시 JSON 완성 감지 → 즉시 kill 후 진행
 
 #### /add-keyword 흐름
 
@@ -257,13 +256,16 @@ fetch-trends.js                    # 트렌드 수집 (HN API + Tavily)
 | 5 | 번역 | **에이전트** | EN/ZH/JA |
 | 6 | 빌드 | `node build.js` | SEO 페이지 + sitemap |
 
-#### API 사용량 (키워드 1개당)
+#### API 사용량
 
 | API | 호출 수 | 무료 한도 |
 |-----|---------|----------|
-| Tavily | 2회 (EN/KO 검색) | 1,000/월 |
-| YouTube search.list | 2회 (EN/KO) | 10,000 units/일 |
-| YouTube videos.list | 1회 (조회수) | (search와 합산) |
+| Tavily (트렌드) | 1회/실행 (Reddit 검색) | 1,000/월 |
+| Tavily (소스) | 2회/키워드 (EN/KO 검색) | (합산) |
+| YouTube search.list | 2회/키워드 (EN/KO) | 10,000 units/일 |
+| YouTube videos.list | 1회/키워드 (조회수) | (search와 합산) |
+| GeekNews | 2회/실행 (/new + /weekly) | 무료 (HTML 스크래핑) |
+| HN API | 31회/실행 (top + 개별) | 무료 |
 
 ### HOT 키워드 표식
 
@@ -276,8 +278,8 @@ fetch-trends.js                    # 트렌드 수집 (HN API + Tavily)
 
 ### 로컬 스케줄러 (launchd + pmset)
 
-- **스케줄**: 매일 09:00 KST
-- **자동 기상**: `pmset repeat wakeorpoweron MTWRFSU 08:59:00` — 잠자기 상태에서 08:59에 자동 wake
+- **스케줄**: 매일 09:00 KST (plist `Hour`/`Minute`로 조정)
+- **자동 기상**: `pmset repeat wakeorpoweron MTWRFSU 08:59:00` — 잠자기 상태에서 스케줄 1분 전 자동 wake
 - **방식**: macOS launchd → `~/run-daily.sh` → 6-stage 파이프라인
 - **plist**: `~/Library/LaunchAgents/com.aiwiki.daily.plist`
 - **스크립트**: `~/run-daily.sh` (6-stage 파이프라인)
@@ -286,14 +288,14 @@ fetch-trends.js                    # 트렌드 수집 (HN API + Tavily)
 
 | Stage | 실행 주체 | 동작 | timeout |
 |-------|----------|------|---------|
-| 1 | `node fetch-trends.js` | HN API + Tavily 트렌드 수집 | - |
+| 1 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews 수집 | - |
 | 2 | Claude `--print` | 키워드 선정 (JSON 출력) | 10분 |
 | 3 | `node fetch-sources.js` | 키워드별 Tavily + YouTube API | - |
 | 4 | Claude `--print` | 콘텐츠 작성 + refs/videos 채택 (JSON 출력) | 10분 |
 | 5 | `node apply-entries.js` | data.js에 반영 | - |
 | 6 | 쉘 | build.js + log.md + git commit/push | - |
 
-- **전체 timeout**: 20분
+- **전체 timeout**: 30분
 - **로그**: `logs/daily.log`, `logs/daily-err.log`
 - **실행 기록**: `logs/runs/YYYY-MM-DD_HHMM/` (단계별 원본 데이터 + 결과)
 - **실행 기록 요약**: `log.md` (날짜+시간별 추가/HOT/보강 키워드)
