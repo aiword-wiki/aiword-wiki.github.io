@@ -243,3 +243,6 @@ mechanistic-interpretability	메커니스틱 해석 가능성	Mechanistic Interp
 ai-vulnerability-discovery	AI 취약점 발견	AI Vulnerability Discovery	safety
 neurosymbolic-ai	뉴로심볼릭 AI	Neurosymbolic AI	model
 research-driven-agent	리서치 기반 에이전트	Research-Driven Agent	agent
+agi	인공 일반 지능	Artificial General Intelligence	model
+scaling-law	스케일링 법칙	Scaling Law	model
+gan	GAN	Generative Adversarial Network	model
