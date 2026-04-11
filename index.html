@@ -303,6 +303,58 @@
 
   .card-new { position:absolute; bottom:16px; right:18px; font-size:10px; font-weight:900; color:#C4613A; letter-spacing:0.5px; }
   .card-hot { position:absolute; top:16px; right:18px; font-size:10px; font-weight:900; color:#C4613A; letter-spacing:0.5px; }
+  .card-bookmark { position:absolute; top:14px; right:18px; color:#c49080; }
+  .card-bookmark svg { width:13px; height:13px; fill:currentColor; }
+  .card-hot ~ .card-bookmark { right:42px; }
+  .share-btn.bm.active { color:#c49080; border-color:#d4b0a0; }
+  .kw-link { color:#C4613A; text-decoration:none; cursor:pointer; border-bottom:1px dotted rgba(196,97,58,0.4); }
+  .kw-link:hover { border-bottom-color:#C4613A; border-bottom-style:solid; }
+  .card.visited .card-keyword { color:#9a958e; }
+  .card.visited:hover .card-keyword { color:#2d2a26; }
+  .progress-info { font-size:11px; color:#a09888; margin-left:auto; white-space:nowrap; }
+  .detail-nav { display:flex; justify-content:space-between; margin-top:24px; padding-top:16px; border-top:1px solid #e8e4de; }
+  .detail-nav button { background:none; border:1px solid #d5d0c8; border-radius:8px; padding:8px 16px; font-size:13px; font-family:inherit; color:#6a6560; cursor:pointer; max-width:45%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .detail-nav button:hover:not(:disabled) { border-color:#b0a898; color:#2d2a26; }
+  .detail-nav button:disabled { opacity:0.3; cursor:default; }
+  .read-next { margin-top:24px; padding-top:20px; border-top:1px solid #e8e4de; }
+  .read-next h4 { font-size:13px; font-weight:700; color:#2d2a26; margin:0 0 12px; }
+  .read-next-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; }
+  .read-next-card { padding:12px; border:1px solid #e4dfd8; border-radius:10px; cursor:pointer; background:#fdfcfb; }
+  .read-next-card:hover { background:#f5f2ed; border-color:#d5d0c8; }
+  .read-next-card.visited .rnc-title { color:#9a958e; }
+  .read-next-card.visited:hover .rnc-title { color:#2d2a26; }
+  .rnc-title { font-size:13px; font-weight:700; color:#2d2a26; margin-bottom:4px; }
+  .rnc-sum { font-size:11px; color:#8a8478; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .random-btn { background:none; border:none; color:#a09888; cursor:pointer; padding:6px; flex-shrink:0; display:flex; align-items:center; }
+  .random-btn:hover { color:#C4613A; }
+  .random-btn svg { width:18px; height:18px; }
+  .compare-view { display:none; max-width:1100px; margin:24px auto; padding:0 32px; }
+  .compare-view.open { display:block; }
+  .compare-back { display:inline-flex; align-items:center; background:none; border:none; color:#a09888; font-size:13px; font-family:inherit; cursor:pointer; padding:0; margin-bottom:16px; }
+  .compare-back:hover { color:#6a6560; }
+  .compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .compare-col { background:#fff; border:1px solid #e4dfd8; border-radius:16px; padding:24px; overflow:hidden; }
+  .compare-col .modal-title { font-size:20px; }
+  .compare-col .modal-body { max-height:600px; overflow-y:auto; }
+  .compare-search { width:100%; padding:8px 12px; border:1px solid #d5d0c8; border-radius:8px; font-family:inherit; font-size:13px; outline:none; margin-bottom:12px; }
+  .compare-search:focus { border-color:#C4613A; }
+  .graph-view { display:none; max-width:1100px; margin:24px auto; padding:0 32px; }
+  .graph-view.open { display:block; }
+  .graph-back { display:inline-flex; align-items:center; background:none; border:none; color:#a09888; font-size:13px; font-family:inherit; cursor:pointer; padding:0; margin-bottom:16px; }
+  .graph-back:hover { color:#6a6560; }
+  .graph-legend { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px; }
+  .graph-legend span { font-size:11px; color:#6a6560; display:flex; align-items:center; gap:4px; cursor:pointer; }
+  .graph-legend span:hover { color:#2d2a26; }
+  .gl-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; display:inline-block; }
+  .graph-canvas-wrap { position:relative; background:#fff; border:1px solid #e4dfd8; border-radius:16px; overflow:hidden; }
+  #graph-canvas { width:100%; display:block; cursor:grab; }
+  #graph-canvas:active { cursor:grabbing; }
+  .graph-tooltip { position:absolute; padding:6px 10px; background:rgba(45,42,38,0.9); color:#fff; font-size:11px; border-radius:6px; pointer-events:none; display:none; z-index:5; white-space:nowrap; }
+  .detail-tools { display:flex; gap:12px; margin-top:16px; }
+  .detail-tools button { background:none; border:1px solid #d5d0c8; border-radius:8px; padding:6px 14px; font-size:12px; font-family:inherit; color:#a09888; cursor:pointer; }
+  .detail-tools button:hover { border-color:#b0a898; color:#6a6560; }
+  .detail-graph-box { background:#fff; border:1px solid #e4dfd8; border-radius:16px; padding:24px; margin-top:20px; }
+  .detail-graph-box h4 { font-size:13px; font-weight:700; color:#2d2a26; margin:0 0 12px; }
   .modal-born { font-size:12px; color:#a09888; margin-bottom:12px; }
   .modal-added { margin-top:16px; text-align:right; font-size:11px; color:#a09888; }
 
@@ -317,6 +369,11 @@
     .detail-page { padding:0 12px; margin:16px auto 32px; }
     .share-actions { top:14px; right:14px; }
     .modal { padding:24px 20px; }
+    .compare-grid { grid-template-columns:1fr; }
+    .compare-view { padding:0 12px; }
+    .graph-view { padding:0 12px; }
+    .detail-nav button { padding:6px 10px; font-size:12px; }
+    .read-next-cards { grid-template-columns:1fr; }
   }
 </style>
 </head>
@@ -325,6 +382,7 @@
 <header>
   <a href="/" class="logo" style="text-decoration:none;color:#C4613A;">AI Wiki</a>
   <input type="text" id="q" placeholder="검색..." autocomplete="off">
+  <button class="random-btn" id="random-btn" onclick="openRandom()"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h3.5l5 6H14"/><path d="M2 11h3.5l5-6H14"/><path d="M12.5 3.5l2 1.5-2 1.5"/><path d="M12.5 9.5l2 1.5-2 1.5"/></svg></button>
   <div class="filters" id="filters"></div>
 </header>
 
@@ -334,6 +392,8 @@
   <button class="sort-btn" id="hot-btn">HOT</button>
   <span class="sort-sep">|</span>
   <button class="sort-btn" id="new7-btn">New Uploaded</button>
+  <span class="sort-sep">|</span>
+  <button class="sort-btn" id="bm-btn">Bookmarks</button>
   <span class="search-count" id="search-count"></span>
 </div>
 <div class="grid" id="grid"></div>
@@ -342,6 +402,7 @@
 <div class="detail-page" id="detail">
   <button class="detail-back" id="detail-back" onclick="close_m()"></button>
   <div class="modal" id="modal"></div>
+  <div class="detail-graph-box" id="detail-graph-box" style="display:none"></div>
 </div>
 
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -355,25 +416,25 @@ document.documentElement.lang = LANG;
 const I18N = {
   ko: {
     search:'검색...', all:'전체', hot:'HOT', recent:'최근추가', noResults:'검색 결과 없음', loadMore:'더 보기', newest:'최신순', back:'← 돌아가기', copyLink:'링크 복사', copied:'복사됨!',
-    refs:'레퍼런스', videos:'영상', related:'관련 키워드',
+    refs:'레퍼런스', videos:'영상', related:'관련 키워드', bookmark:'북마크', bookmarks:'북마크', readNext:'다음에 읽을 키워드', compare:'비교', graph:'관계도', selectCompare:'비교할 키워드 검색...', progress:(n,t)=>`${n}/${t} 탐색`,
     born:(y,m)=> m&&+m ? y+'년 '+(+m)+'월 등장' : y+'년 등장',
     cats:{prompting:'프롬프팅',model:'모델',tooling:'도구',data:'데이터',agent:'에이전트',infra:'인프라',safety:'안전',application:'응용'}
   },
   en: {
     search:'Search...', all:'All', hot:'HOT', recent:'Recently Added', noResults:'No results found', loadMore:'Load more', newest:'Newest', back:'← Back', copyLink:'Copy link', copied:'Copied!',
-    refs:'References', videos:'Videos', related:'Related',
+    refs:'References', videos:'Videos', related:'Related', bookmark:'Bookmark', bookmarks:'Bookmarks', readNext:'Read Next', compare:'Compare', graph:'Graph', selectCompare:'Search keyword to compare...', progress:(n,t)=>`${n}/${t} explored`,
     born:(y,m)=> m&&+m ? `Appeared ${y}-${String(+m).padStart(2,'0')}` : `Appeared ${y}`,
     cats:{prompting:'Prompting',model:'Model',tooling:'Tooling',data:'Data',agent:'Agent',infra:'Infra',safety:'Safety',application:'Application'}
   },
   zh: {
     search:'搜索...', all:'全部', hot:'HOT', recent:'最近追加', noResults:'未找到结果', loadMore:'加载更多', newest:'最新', back:'← 返回', copyLink:'复制链接', copied:'已复制!',
-    refs:'参考资料', videos:'视频', related:'相关关键词',
+    refs:'参考资料', videos:'视频', related:'相关关键词', bookmark:'书签', bookmarks:'书签', readNext:'接下来阅读', compare:'比较', graph:'关系图', selectCompare:'搜索要比较的关键词...', progress:(n,t)=>`${n}/${t} 已探索`,
     born:(y,m)=> m&&+m ? `${y}年${+m}月出现` : `${y}年出现`,
     cats:{prompting:'提示工程',model:'模型',tooling:'工具',data:'数据',agent:'智能体',infra:'基础设施',safety:'安全',application:'应用'}
   },
   ja: {
     search:'検索...', all:'すべて', hot:'HOT', recent:'最近追加', noResults:'結果が見つかりません', loadMore:'もっと見る', newest:'新しい順', back:'← 戻る', copyLink:'リンクをコピー', copied:'コピー済み!',
-    refs:'参考資料', videos:'動画', related:'関連キーワード',
+    refs:'参考資料', videos:'動画', related:'関連キーワード', bookmark:'ブックマーク', bookmarks:'ブックマーク', readNext:'次に読む', compare:'比較', graph:'関係図', selectCompare:'比較するキーワードを検索...', progress:(n,t)=>`${n}/${t} 探索`,
     born:(y,m)=> m&&+m ? `${y}年${+m}月登場` : `${y}年登場`,
     cats:{prompting:'プロンプト',model:'モデル',tooling:'ツール',data:'データ',agent:'エージェント',infra:'インフラ',safety:'安全性',application:'応用'}
   }
@@ -405,6 +466,30 @@ function searchScore(e,raw){
   return sc;
 }
 
+// Bookmark (localStorage)
+function getBookmarks(){try{return JSON.parse(localStorage.getItem('aw-bm')||'[]')}catch(e){return[]}}
+function isBookmarked(id){return getBookmarks().includes(id)}
+function toggleBookmark(id){const bm=getBookmarks();const i=bm.indexOf(id);if(i>=0)bm.splice(i,1);else bm.push(id);localStorage.setItem('aw-bm',JSON.stringify(bm));return i<0}
+
+// Visited (localStorage)
+function getVisited(){try{return JSON.parse(localStorage.getItem('aw-vis')||'[]')}catch(e){return[]}}
+function markVisited(id){const v=getVisited();if(!v.includes(id)){v.push(id);localStorage.setItem('aw-vis',JSON.stringify(v))}}
+
+// Auto-link keywords in HTML
+function autoLinkKw(html,cid){
+  const kws=D.filter(x=>x.id!==cid).flatMap(x=>{const t=[];if(x.t&&x.t.length>=2)t.push({term:x.t,id:x.id});if(x.en&&x.en!==x.t&&x.en.length>=3)t.push({term:x.en,id:x.id});return t}).sort((a,b)=>b.term.length-a.term.length);
+  const linked=new Set();const parts=html.split(/(<[^>]+>)/);
+  for(let i=0;i<parts.length;i++){if(parts[i].startsWith('<'))continue;for(const kw of kws){if(linked.has(kw.id))continue;const esc=kw.term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');const re=new RegExp(esc,'i');if(re.test(parts[i])){parts[i]=parts[i].replace(re,`<span class="kw-link" onclick="event.stopPropagation();open_m('${kw.id}')">$&</span>`);linked.add(kw.id)}}}
+  return parts.join('');
+}
+
+// Prev/Next
+let _currentList=[];
+function getPrevNext(id){const idx=_currentList.findIndex(x=>x.id===id);return{prev:idx>0?_currentList[idx-1]:null,next:idx<_currentList.length-1?_currentList[idx+1]:null}}
+
+// Graph colors
+const CAT_COLORS={prompting:'#E8A87C',model:'#D4A574',tooling:'#C4613A',data:'#85B8CB',agent:'#7EB09B',infra:'#A39BCC',safety:'#CC8B8B',application:'#C9B95E'};
+
 // State
 const PAGE_SIZE = 20;
 let cat = 'all', q = '', page = 1;
@@ -424,6 +509,7 @@ function render() {
     list = D.filter(e => {
       if (cat === 'hot') return HOT_IDS.includes(e.id);
       if (cat === 'new7') return (e.added||'') >= _c7;
+      if (cat === 'bm') return isBookmarked(e.id);
       return cat === 'all' || e.c === cat;
     });
     if (cat === 'new7') list.sort((a,b) => (b.added||'').localeCompare(a.added||''));
@@ -434,6 +520,7 @@ function render() {
       if (cat === 'new7' && (e.added||'') < _c7) continue;
       if (cat !== 'all' && cat !== 'hot' && cat !== 'new7' && e.c !== cat) continue;
       if (cat === 'hot' && !HOT_IDS.includes(e.id)) continue;
+      if (cat === 'bm' && !isBookmarked(e.id)) continue;
       const sc = searchScore(e, q);
       if (sc > 0) scored.push({e, sc});
     }
@@ -441,6 +528,9 @@ function render() {
     list = scored.map(x => x.e);
   }
 
+  _currentList = list;
+  const _vis = getVisited();
+  const _bms = getBookmarks();
   const g = document.getElementById('grid');
   const pg = document.getElementById('pagination');
   const countEl = document.getElementById('search-count');
@@ -461,9 +551,12 @@ function render() {
     const sub = secondary ? `<div class="card-sub">${secondary}</div>` : '';
     const isNew = e.born && e.born >= cutoff;
     const isHot = HOT_IDS.includes(e.id);
-    return `<div class="card" onclick="open_m('${e.id}')">
+    const isBM = _bms.includes(e.id);
+    const isVis = _vis.includes(e.id);
+    return `<div class="card${isVis?' visited':''}" onclick="open_m('${e.id}')">
       <div class="card-cat">${CATS[e.c]}</div>
       ${isHot ? '<div class="card-hot">▲</div>' : ''}
+      ${isBM ? '<div class="card-bookmark"><svg viewBox="0 0 16 16"><path d="M3 2.5A1.5 1.5 0 014.5 1h7A1.5 1.5 0 0113 2.5V15l-5-3.5L3 15V2.5z"/></svg></div>' : ''}
       ${isNew ? '<div class="card-new">NEW</div>' : ''}
       <div class="card-keyword">${primary}</div>
       ${sub}
@@ -503,23 +596,27 @@ function goPage(n) {
     b.classList.add('on');
     document.getElementById('hot-btn').classList.remove('on');
     document.getElementById('new7-btn').classList.remove('on');
+    document.getElementById('bm-btn').classList.remove('on');
     cat = b.dataset.c;
     page = 1;
     render();
   });
 })();
 
-// Sort toggle (최신순 / HOT / 최근추가)
+// Sort toggle (최신순 / HOT / 최근추가 / 북마크)
 (function(){
   const newest = document.getElementById('sort-newest');
   const hot = document.getElementById('hot-btn');
   const new7 = document.getElementById('new7-btn');
+  const bmBtn = document.getElementById('bm-btn');
   if (!HOT_IDS.length) hot.style.display='none';
+  bmBtn.textContent = L.bookmarks;
   function toggle(mode) {
-    cat = mode === 'hot' ? 'hot' : mode === 'new7' ? 'new7' : 'all';
+    cat = mode === 'hot' ? 'hot' : mode === 'new7' ? 'new7' : mode === 'bm' ? 'bm' : 'all';
     newest.classList.toggle('on', mode === 'newest');
     hot.classList.toggle('on', mode === 'hot');
     new7.classList.toggle('on', mode === 'new7');
+    bmBtn.classList.toggle('on', mode === 'bm');
     document.querySelectorAll('.f').forEach(x => x.classList.toggle('on', mode === 'newest' && x.dataset.c === 'all'));
     page = 1;
     render();
@@ -527,6 +624,7 @@ function goPage(n) {
   newest.addEventListener('click', () => toggle('newest'));
   hot.addEventListener('click', () => toggle(cat === 'hot' ? 'newest' : 'hot'));
   new7.addEventListener('click', () => toggle(cat === 'new7' ? 'newest' : 'new7'));
+  bmBtn.addEventListener('click', () => toggle(cat === 'bm' ? 'newest' : 'bm'));
 })();
 
 // Search (debounced)
@@ -536,16 +634,28 @@ document.getElementById('q').addEventListener('input', e => {
   _dt = setTimeout(() => { q = e.target.value.trim(); page = 1; render(); }, 150);
 });
 
+// View helpers
+function _hideAll(){document.getElementById('detail').classList.remove('open')}
+function _showGrid(){document.querySelector('.grid-header').style.display='';document.getElementById('grid').style.display='';document.getElementById('pagination').style.display=''}
+function _hideGrid(){document.querySelector('.grid-header').style.display='none';document.getElementById('grid').style.display='none';document.getElementById('pagination').style.display='none'}
+
 // Detail page
 let _scrollY = 0;
 function open_m(id, pushState) {
   const e = D.find(x=>x.id===id);
   if (!e) return;
+  markVisited(id);
   if (pushState !== false) { if (!document.getElementById('detail').classList.contains('open')) _scrollY = window.scrollY; history.pushState({modal:id}, '', '#'+id); }
   const _tr = LANG!=='ko'&&I18N_CONTENT[LANG]&&I18N_CONTENT[LANG][e.id]||null;
   const rels = (e.rel||[]).map(r=>D.find(x=>x.id===r)).filter(Boolean);
+  const bm = isBookmarked(id);
+  const bodyHtml = autoLinkKw(`<p>${_tr?_tr.sum:e.sum}</p>${_tr?_tr.det:e.det}`, id);
+  const {prev,next} = getPrevNext(id);
+  const pN = prev?(LANG==='ko'?prev.t:(prev.en||prev.t)):'';
+  const nN = next?(LANG==='ko'?next.t:(next.en||next.t)):'';
   document.getElementById('modal').innerHTML = `
     <div class="share-actions">
+      <button class="share-btn bm${bm?' active':''}" onclick="toggleBM('${e.id}')" title="${L.bookmark}"><svg viewBox="0 0 16 16" ${bm?'fill="currentColor"':'fill="none"'} stroke="currentColor" stroke-width="1.5"><path d="M3 2.5A1.5 1.5 0 014.5 1h7A1.5 1.5 0 0113 2.5V15l-5-3.5L3 15V2.5z"/></svg></button>
       <button class="share-btn" id="copy-btn" onclick="copyLink('${e.id}')" title="${L.copyLink}"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="8" height="9" rx="1"/><path d="M3 11V3a1 1 0 011-1h6"/></svg></button>
       <button class="share-btn kakao" onclick="shareKakao('${e.id}',this)" title="KakaoTalk"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1C4.13 1 1 3.53 1 6.6c0 1.97 1.31 3.7 3.28 4.67-.1.56-.65 2.03-.68 2.15 0 0-.01.09.04.12.06.04.12.01.12.01.16-.02 1.87-1.23 2.65-1.81.19.02.38.03.59.03 3.87 0 7-2.53 7-5.6S11.87 1 8 1z"/></svg></button>
     </div>
@@ -553,31 +663,76 @@ function open_m(id, pushState) {
     <div class="modal-title">${LANG==='ko' ? e.t : (e.en||e.t)}</div>
     <div class="modal-en">${LANG==='ko' ? e.en : (!/[\uAC00-\uD7AF]/.test(e.t)&&e.t!==(e.en||e.t) ? e.t : '')}</div>
     ${e.born ? `<div class="modal-born">${(()=>{const[y,m]=e.born.split('-');return L.born(y,m);})()}</div>` : ''}
-    <div class="modal-body"><p>${_tr?_tr.sum:e.sum}</p>${_tr?_tr.det:e.det}</div>
-    ${e.tags.length?`<div class="modal-tags">${e.tags.map(t=>`<span onclick="document.getElementById('q').value='${t}';q='${t}';close_m();render()">#${t}</span>`).join('')}</div>`:''}
-    ${(e.refs&&e.refs.length)||( e.videos&&e.videos.length)?`<div class="modal-refs">
+    <div class="modal-body">${bodyHtml}</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-top:20px">
+      ${e.tags.length?`<div class="modal-tags" style="margin:0">${e.tags.map(t=>`<span onclick="document.getElementById('q').value='${t}';q='${t}';close_m();render()">#${t}</span>`).join('')}</div>`:'<div></div>'}
+      ${e.added?`<div class="modal-added" style="margin:0">updated at ${e.updated||e.added}</div>`:''}
+    </div>
+    ${(e.refs&&e.refs.length)||(e.videos&&e.videos.length)?`<div class="modal-refs">
       ${e.refs&&e.refs.length?`<h4>${L.refs}</h4>${e.refs.map(r=>`<a href="${r.url}" target="_blank" rel="noopener">${r.title}<span class="ref-type">${r.type}</span></a>`).join('')}`:''}
       ${e.videos&&e.videos.length?`<div class="modal-videos"><h4>${L.videos}</h4>${e.videos.map(v=>`<a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener"><span class="yt-icon">▶</span>${v.title}<span class="vid-lang">${v.lang}</span></a>`).join('')}</div>`:''}</div>`:''}
-    ${rels.length?`<div class="modal-related"><h4>${L.related}</h4><div class="rel-links">${rels.map(r=>`<span class="rel-link" onclick="open_m('${r.id}')">${LANG==='ko'?r.t:(r.en||r.t)}</span>`).join('')}</div></div>`:''}
-    ${e.added?`<div class="modal-added">updated at ${e.updated||e.added}</div>`:''}
+    ${rels.length?`<div class="read-next"><h4>${L.readNext}</h4><div class="read-next-cards">${(()=>{const _v=getVisited();return rels.map(r=>{const rN=LANG==='ko'?r.t:(r.en||r.t);const rS=(LANG!=='ko'&&I18N_CONTENT[LANG]&&I18N_CONTENT[LANG][r.id])?I18N_CONTENT[LANG][r.id].sum:(r.sum||'');const rv=_v.includes(r.id);return`<div class="read-next-card${rv?' visited':''}" onclick="open_m('${r.id}')"><div class="rnc-title">${rN}</div><div class="rnc-sum">${rS}</div></div>`}).join('')})()}</div></div>`:''}
+    <div class="detail-nav">
+      <button ${prev?`onclick="open_m('${prev.id}')"`:' disabled'}>${prev?'← '+pN:''}</button>
+      <button ${next?`onclick="open_m('${next.id}')"`:' disabled'}>${next?nN+' →':''}</button>
+    </div>
   `;
-  document.querySelector('.grid-header').style.display='none';
-  document.getElementById('grid').style.display='none';
-  document.getElementById('pagination').style.display='none';
+  const graphBox=document.getElementById('detail-graph-box');
+  if(rels.length){graphBox.style.display='';graphBox.innerHTML=`<h4>${L.graph}</h4><div class="graph-legend" id="graph-legend"></div><div class="graph-canvas-wrap"><canvas id="graph-canvas"></canvas><div class="graph-tooltip" id="graph-tooltip"></div></div>`}else{graphBox.style.display='none';graphBox.innerHTML=''}
+  _hideGrid();
   document.getElementById('detail').classList.add('open');
   window.scrollTo({top:0});
+  if(rels.length) renderInlineGraph(id);
 }
 
 function close_m(pushState) {
-  document.getElementById('detail').classList.remove('open');
-  document.querySelector('.grid-header').style.display='';
-  document.getElementById('grid').style.display='';
-  document.getElementById('pagination').style.display='';
+  _hideAll(); _showGrid();
   if (pushState !== false && location.hash) history.pushState({}, '', location.pathname+location.search);
   window.scrollTo({top:_scrollY});
+  render();
 }
 
-document.addEventListener('keydown', e => { if(e.key==='Escape'&&document.getElementById('detail').classList.contains('open')) close_m(); });
+// Bookmark toggle
+function toggleBM(id){const active=toggleBookmark(id);const btn=document.querySelector('.share-btn.bm');if(btn){btn.classList.toggle('active',active);btn.querySelector('svg').setAttribute('fill',active?'currentColor':'none')}}
+
+// Random keyword
+function openRandom(){const r=D[Math.floor(Math.random()*D.length)];if(r)open_m(r.id)}
+
+// Inline graph
+function renderInlineGraph(centerId){
+  document.getElementById('graph-legend').innerHTML=Object.entries(CATS).map(([k,v])=>`<span><span class="gl-dot" style="background:${CAT_COLORS[k]}"></span>${v}</span>`).join('');
+  const center=D.find(x=>x.id===centerId);if(!center)return;
+  const nodeIds=new Set([centerId]);const edges=[];
+  (center.rel||[]).forEach(r=>{if(D.find(x=>x.id===r)){nodeIds.add(r);edges.push([centerId,r])}});
+  const hop1=[...nodeIds];for(const nid of hop1){const n=D.find(x=>x.id===nid);if(!n)continue;(n.rel||[]).forEach(r=>{if(D.find(x=>x.id===r)){nodeIds.add(r);edges.push([nid,r])}})}
+  const nodes=[...nodeIds].map(id=>D.find(x=>x.id===id)).filter(Boolean);
+  const edgeSet=new Set();const dedupE=edges.filter(([a,b])=>{const k=[a,b].sort().join('|');if(edgeSet.has(k))return false;edgeSet.add(k);return true});
+  const canvas=document.getElementById('graph-canvas');const ctx=canvas.getContext('2d');
+  const dpr=window.devicePixelRatio||1;const W=canvas.parentElement.getBoundingClientRect().width;const H=Math.min(500,window.innerHeight-150);
+  canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.height=H+'px';ctx.scale(dpr,dpr);
+  const pos={};const gx=W/2,gy=H/2;
+  nodes.forEach((n,i)=>{if(n.id===centerId){pos[n.id]={x:gx,y:gy,vx:0,vy:0}}else{const a=(2*Math.PI*i)/nodes.length;const r=80+Math.random()*60;pos[n.id]={x:gx+r*Math.cos(a),y:gy+r*Math.sin(a),vx:0,vy:0}}});
+  for(let iter=0;iter<300;iter++){
+    for(let i=0;i<nodes.length;i++){for(let j=i+1;j<nodes.length;j++){const a=pos[nodes[i].id],b=pos[nodes[j].id];const dx=b.x-a.x,dy=b.y-a.y,d=Math.max(Math.sqrt(dx*dx+dy*dy),1);const f=4000/(d*d);a.vx-=(dx/d)*f;a.vy-=(dy/d)*f;b.vx+=(dx/d)*f;b.vy+=(dy/d)*f}}
+    for(const[ea,eb]of dedupE){const pa=pos[ea],pb=pos[eb];if(!pa||!pb)continue;const dx=pb.x-pa.x,dy=pb.y-pa.y,d=Math.max(Math.sqrt(dx*dx+dy*dy),1);const f=d*0.008;pa.vx+=(dx/d)*f;pa.vy+=(dy/d)*f;pb.vx-=(dx/d)*f;pb.vy-=(dy/d)*f}
+    for(const n of nodes){const p=pos[n.id];p.vx+=(gx-p.x)*0.005;p.vy+=(gy-p.y)*0.005;p.vx*=0.85;p.vy*=0.85;p.x+=p.vx;p.y+=p.vy}
+    pos[centerId].x=gx;pos[centerId].y=gy;pos[centerId].vx=0;pos[centerId].vy=0;
+  }
+  function draw(hId){
+    ctx.clearRect(0,0,W,H);ctx.strokeStyle='#e4dfd8';ctx.lineWidth=1;
+    for(const[ea,eb]of dedupE){const pa=pos[ea],pb=pos[eb];if(!pa||!pb)continue;ctx.beginPath();ctx.moveTo(pa.x,pa.y);ctx.lineTo(pb.x,pb.y);ctx.stroke()}
+    for(const n of nodes){const p=pos[n.id];const r=n.id===centerId?10:6;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=CAT_COLORS[n.c]||'#a09888';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke();ctx.fillStyle=n.id===hId?'#C4613A':'#2d2a26';ctx.font=n.id===centerId?'700 11px Noto Sans KR':'10px Noto Sans KR';ctx.textAlign='center';ctx.fillText(LANG==='ko'?n.t:(n.en||n.t),p.x,p.y+r+13)}
+  }
+  draw();
+  canvas.onclick=function(ev){const rect=canvas.getBoundingClientRect();const mx=ev.clientX-rect.left,my=ev.clientY-rect.top;for(const n of nodes){const p=pos[n.id];if((mx-p.x)**2+(my-p.y)**2<144){open_m(n.id);return}}};
+  canvas.onmousemove=function(ev){const rect=canvas.getBoundingClientRect();const mx=ev.clientX-rect.left,my=ev.clientY-rect.top;const tt=document.getElementById('graph-tooltip');let found=false;for(const n of nodes){const p=pos[n.id];if((mx-p.x)**2+(my-p.y)**2<144){tt.style.display='block';tt.style.left=(p.x+12)+'px';tt.style.top=(p.y-8)+'px';tt.textContent=(LANG==='ko'?n.t:(n.en||n.t))+' ('+CATS[n.c]+')';canvas.style.cursor='pointer';found=true;draw(n.id);break}}if(!found){tt.style.display='none';canvas.style.cursor='grab';draw()}};
+  canvas.onmouseleave=function(){document.getElementById('graph-tooltip').style.display='none';draw()};
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key==='Escape'&&document.getElementById('detail').classList.contains('open'))close_m();
+  if(document.getElementById('detail').classList.contains('open')&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){const hash=location.hash.slice(1);if(!hash)return;const{prev,next}=getPrevNext(hash);if(e.key==='ArrowLeft'&&prev){e.preventDefault();open_m(prev.id)}if(e.key==='ArrowRight'&&next){e.preventDefault();open_m(next.id)}}
+});
 
 const BASE_URL='https://aiword-wiki.github.io/';
 const KAKAO_KEY=location.hostname==='localhost'||location.hostname==='127.0.0.1'?'c5d123be2f7b4ebcf0373e1866870893':'ef7fa3e76c33651598db26d7ab7990ec';
@@ -604,19 +759,20 @@ function shareKakao(id,btn){
 }
 
 window.addEventListener('popstate', () => {
-  const id = location.hash.slice(1);
-  if (id && D.find(x=>x.id===id)) open_m(id, false);
-  else close_m(false);
+  const hash = location.hash.slice(1);
+  _hideAll();
+  if (hash && D.find(x=>x.id===hash)) open_m(hash, false);
+  else { _showGrid(); window.scrollTo({top:_scrollY}); }
 });
-
-// 페이지 로드 시 해시가 있으면 모달 오픈
-if (location.hash) { const id = location.hash.slice(1); if (D.find(x=>x.id===id)) open_m(id, false); }
 
 // URL ?q= 파라미터 검색
 const _qq = new URLSearchParams(location.search).get('q');
 if (_qq) { q = _qq; document.getElementById('q').value = _qq; }
 
 render();
+
+// 페이지 로드 시 해시가 있으면 모달 오픈 (render 후 _currentList 확보)
+if (location.hash) { const id = location.hash.slice(1); if (D.find(x=>x.id===id)) open_m(id, false); }
 
 // JSON-LD DefinedTermSet 동적 생성
 (function(){
